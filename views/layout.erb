@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Reminders</title>
+  </head>
+  <body>
+    <% if session[:error] %>
+      <p class="error"><%= session.delete(:error) %></p>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
