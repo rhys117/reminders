@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader"
 require "yaml"
 require "bcrypt"
+require "date"
 
 def data_path
   if ENV["RACK_ENV"] == 'test'
@@ -9,6 +10,15 @@ def data_path
   else
     File.expand_path("../data", __FILE__)
   end
+end
+
+def load_reminder_list
+  reminder_path = if ENV["RACK_ENV"] == 'test'
+    File.expand_path("../test/data/reminder_list.yml", __FILE__)
+  else
+    File.expand_path("../data/reminder_list.yml", __FILE__)
+  end
+  YAML.load_file(reminder_path)
 end
 
 def load_user_credentials
@@ -48,11 +58,15 @@ configure do
 end
 
 helpers do
-  
+  def current_date
+    DateTime.now.strftime "%Y-%m-%d"
+  end
 end
 
 get "/" do
   redirect_unless_signed_in
+
+  @reminder_list = load_reminder_list
 
   erb :reminder_list
 end
@@ -72,4 +86,10 @@ post "/sign_in" do
     status 422
     erb :sign_in
   end
+end
+
+post "/sign_out" do
+  session.delete(:username)
+
+  redirect "/sign_in"
 end

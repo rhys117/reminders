@@ -1,0 +1,29 @@
+<% @reminder_list.each do |date, reminders| %>
+  <h1><%= date %></h1>
+  <table>
+  <% reminders.each do |reference, notes| %>
+    <tr>
+      <th><%= reference %></th>
+      <td><%= notes %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+
+<h1>New Reminder:</h1>
+<form method="post" action="/add_reminder">
+  <label for="date">Date:
+    <input name="date" type="date" value="<%= current_date %>">
+  </label>
+  <label for="reference">Reference Number:
+    <input type="number" name="reference">
+  </label>
+  <label for="notes">Notes:
+    <textarea name="notes"></textarea>
+  </label>
+  <button type="submit">Add Reminder</button>
+</form>
+
+<form method="post" action="/sign_out">
+  <button type="submit">Sign Out</button>
+</form>
