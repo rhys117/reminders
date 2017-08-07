@@ -1,11 +1,29 @@
 ---
 2017-08-08:
-- :reference: 123
+- :id: 0
+  :reference: 123
   :service_type: fttp
   :notes: ag
-- :reference: 1241
+  :complete: true
+- :id: 1
+  :reference: 1241
   :service_type: lts
   :notes: ea
-- :reference: 123
-  :service_type: fttp
-  :notes: ag
+  :complete: false
+- :id: 2
+  :reference: 31302
+  :service_type: fttn/b
+  :notes: adf
+  :complete: false
+2017-08-09:
+- :id: 0
+  :reference: 123
+  :service_type: lts
+  :notes: Another Note
+  :complete: false
+2017-08-14:
+- :id: 0
+  :reference: 12
+  :service_type: legacy service
+  :notes: lage
+  :complete: true

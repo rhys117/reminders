@@ -1,0 +1,15 @@
+table {
+  width: 80%;
+}
+
+th {
+  text-align: left;
+}
+
+th, td {
+  width: 25%;
+}
+
+main h2 {
+  margin-top: 40px;
+}
