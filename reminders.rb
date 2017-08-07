@@ -3,6 +3,7 @@ require "sinatra/reloader"
 require "yaml"
 require "bcrypt"
 require "date"
+require "pry"
 
 def data_path
   if ENV["RACK_ENV"] == 'test'
@@ -12,13 +13,20 @@ def data_path
   end
 end
 
-def load_reminder_list
-  reminder_path = if ENV["RACK_ENV"] == 'test'
+def reminder_path
+  if ENV["RACK_ENV"] == 'test'
     File.expand_path("../test/data/reminder_list.yml", __FILE__)
   else
     File.expand_path("../data/reminder_list.yml", __FILE__)
   end
-  YAML.load_file(reminder_path)
+end
+
+def service_type_path
+  if ENV["RACK_ENV"] == 'test'
+    File.expand_path("../test/data/service_types.yml", __FILE__)
+  else
+    File.expand_path("../data/service_types.yml", __FILE__)
+  end
 end
 
 def load_user_credentials
@@ -28,6 +36,14 @@ def load_user_credentials
     File.expand_path("../users.yml", __FILE__)
   end
   YAML.load_file(credentials_path)
+end
+
+def load_reminder_list
+  YAML.load_file(reminder_path)
+end
+
+def load_service_types
+  YAML.load_file(service_type_path)
 end
 
 def valid_credentials?(username, password)
@@ -52,6 +68,14 @@ def redirect_unless_signed_in
   end
 end
 
+def calculate_date(input)
+  date = if input.include?('day')
+      Date.today.next_day(input[0].to_i)
+    else
+      Date.parse(input)
+    end
+end
+
 configure do
   enable :sessions
   set :session_secret, "0165359735"
@@ -61,12 +85,17 @@ helpers do
   def current_date
     DateTime.now.strftime "%Y-%m-%d"
   end
+
+  def display_date(date)
+    date.strftime "%d-%m-%Y"
+  end
 end
 
 get "/" do
   redirect_unless_signed_in
 
   @reminder_list = load_reminder_list
+  @service_types = load_service_types
 
   erb :reminder_list
 end
@@ -92,4 +121,29 @@ post "/sign_out" do
   session.delete(:username)
 
   redirect "/sign_in"
+end
+
+post "/add_reminder" do
+  reminder_hash = load_reminder_list
+  new_reminder = { reference: params[:reference].to_i, service_type: params[:service_type], notes: params[:notes] }
+
+  reminder_date = if params[:date] == 'custom_date'
+      calculate_date(params[:customDate])
+    else
+      calculate_date(params[:date])
+    end
+
+  binding.pry
+
+  if reminder_hash[reminder_date] == nil
+    reminder_hash[reminder_date] = [new_reminder]
+  else
+    reminder_hash[reminder_date] << new_reminder
+  end
+
+  File.open(reminder_path, "w") do |file|
+    file.write reminder_hash.to_yaml
+  end
+
+  redirect "/"
 end

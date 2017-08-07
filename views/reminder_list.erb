@@ -1,10 +1,15 @@
-<% @reminder_list.each do |date, reminders| %>
-  <h1><%= date %></h1>
+<% @reminder_list.each do |date, reminders_array| %>
+  <h2><%= display_date(date) %></h2>
   <table>
-  <% reminders.each do |reference, notes| %>
+  <tr>
+    <th>Ref #</th>
+    <th>Service Type</th>
+    <th>Notes</th>
+  <% reminders_array.each do |reminder_hash| %>
     <tr>
-      <th><%= reference %></th>
-      <td><%= notes %></td>
+      <td><%= reminder_hash[:reference] %></td>
+      <td><%= reminder_hash[:service_type].upcase %></td>
+      <td><%= reminder_hash[:notes] %></td>
     </tr>
   <% end %>
   </table>
@@ -12,12 +17,25 @@
 
 <h1>New Reminder:</h1>
 <form method="post" action="/add_reminder">
-  <label for="date">Date:
-    <input name="date" type="date" value="<%= current_date %>">
-  </label>
+  <p>Remind me in:</p>
+    <label><input type="radio" name="date" value="1day">Tomorrow</label>
+    <label><input type="radio" name="date" value="2day">Two days</label>
+    <label><input type="radio" name="date" value="3day">Three days</label>
+    <label><input type="radio" name="date" value="5day">Five days</label>
+    <label><input type="radio" name="date" value="7day">Seven days</label>
+    <label><input type="radio" name="date" value="custom_date">Custom Date:
+      <input name="custom_date" type="date" value="<%= current_date %>">
+    </label>
+
   <label for="reference">Reference Number:
     <input type="number" name="reference">
   </label>
+
+  <p>Service Type:</p>
+    <% @service_types.each do | service_type | %>
+      <label><input type="radio" name="service_type" value="<%= service_type %>"><%= service_type.upcase %></label>
+    <% end %>
+
   <label for="notes">Notes:
     <textarea name="notes"></textarea>
   </label>
