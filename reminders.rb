@@ -103,6 +103,13 @@ helpers do
     return 'incomplete' if reminder[:complete]
     return 'complete' if !reminder[:complete]
   end
+
+  def sort_reminders(reminders, &block)
+    complete_reminders, incomplete_reminders = reminders.partition { |reminder| reminder[:complete] }
+    
+    incomplete_reminders.sort_by { |reminder| reminder[:priority] }.reverse.each(&block)
+    complete_reminders.sort_by { |reminder| reminder[:priority] }.reverse.each(&block)
+  end
 end
 
 get "/" do
@@ -146,9 +153,16 @@ post "/add_reminder" do
     calculate_date(params[:date])
   end
 
+  service_type = if params[:is_vocus?] == 'true'
+                   "#{params[:service_type]} (VOCUS)"
+                 else
+                   params[:service_type]
+                 end
+
   new_reminder = { id: next_element_id(reminder_hash[reminder_date]),
                    reference: params[:reference].to_i,
-                   service_type: params[:service_type],
+                   service_type: service_type,
+                   priority: params[:priority],
                    notes: params[:notes],
                    complete: false }
 

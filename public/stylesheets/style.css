@@ -13,3 +13,7 @@ th, td {
 main h2 {
   margin-top: 40px;
 }
+
+form section {
+  margin-bottom: 20px;
+}

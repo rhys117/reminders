@@ -1,29 +1,20 @@
 ---
-2017-08-08:
-- :id: 0
-  :reference: 123
-  :service_type: fttp
-  :notes: ag
-  :complete: true
-- :id: 1
-  :reference: 1241
-  :service_type: lts
-  :notes: ea
-  :complete: false
-- :id: 2
-  :reference: 31302
-  :service_type: fttn/b
-  :notes: adf
-  :complete: false
 2017-08-09:
 - :id: 0
-  :reference: 123
-  :service_type: lts
-  :notes: Another Note
+  :reference: 1
+  :service_type: fttn/b
+  :priority: '1'
+  :notes: a
   :complete: false
-2017-08-14:
-- :id: 0
-  :reference: 12
-  :service_type: legacy service
-  :notes: lage
+- :id: 1
+  :reference: 32
+  :service_type: fttn/b (VOCUS)
+  :priority: '3'
+  :notes: '3'
+  :complete: false
+- :id: 2
+  :reference: 3
+  :service_type: fttp (VOCUS)
+  :priority: '4'
+  :notes: real 3
   :complete: true
