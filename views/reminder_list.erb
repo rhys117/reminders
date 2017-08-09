@@ -5,28 +5,31 @@
 </form>
 
 <main>
-  <% @reminder_list.each do |date, reminders_array| %>
-    <h2><%= display_date(date) %></h2>
-    <table>
-    <tr>
-      <th>Ref #</th>
-      <th>Service Type</th>
-      <th>Priority</th>
-      <th>Notes</th>
-    <% sort_reminders(reminders_array) do |reminder_hash| %>
-      <tr>
-        <td><%= reminder_hash[:reference] %></td>
-        <td><%= reminder_hash[:service_type].upcase %></td>
-        <td><%= reminder_hash[:priority] %></td>
-        <td><%= reminder_hash[:notes] %></td>
-        <td>
-          <form method="post" action="/<%= date %>/<%= reminder_hash[:id] %>/<%= inverse_complete_value(reminder_hash) %>">
-            <button type="submit">Mark as <%= inverse_complete_value(reminder_hash) %></button>
-          </form>
-        </td>
-      </tr>
-    <% end %>
-    </table>
+  <% @reminder_list.sort.each do |date, reminders_array| %>
+    <article class="<%= date_classes(date) %>">
+      <h2><%= display_date(date) %></h2>
+      <table>
+        <tr>
+          <th>Ref #</th>
+          <th>Service Type</th>
+          <th>Priority</th>
+          <th>Notes</th>
+        </tr>
+        <% sort_reminders(reminders_array) do |reminder_hash| %>
+          <tr>
+            <td><%= reminder_hash[:reference] %></td>
+            <td><%= reminder_hash[:service_type].upcase %></td>
+            <td><%= reminder_hash[:priority] %></td>
+            <td><%= reminder_hash[:notes] %></td>
+            <td>
+              <form method="get" action="/<%= date %>/<%= reminder_hash[:id] %>/<%= inverse_complete_value(reminder_hash) %>">
+                <button type="submit">Mark as <%= inverse_complete_value(reminder_hash) %></button>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </article>
   <% end %>
 </main>
 
@@ -39,7 +42,7 @@
       <label><input type="radio" name="date" value="3day">Three days</label>
       <label><input type="radio" name="date" value="5day">Five days</label>
       <label><input type="radio" name="date" value="7day">Seven days</label>
-      <label><input type="radio" name="date" value="custom_date">Custom Date:
+      <label>Custom Date:
         <input name="custom_date" type="date" value="<%= current_date %>">
       </label>
   </section>

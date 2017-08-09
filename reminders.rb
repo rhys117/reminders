@@ -68,12 +68,16 @@ def redirect_unless_signed_in
   end
 end
 
-def calculate_date(input)
-  date = if input.include?('day')
-      Date.today.next_day(input[0].to_i)
-    else
-      Date.parse(input)
-    end
+def date_classes(date)
+  "hidden" if date < Date.today
+end
+
+def calculate_date(radio_date, custom_date)
+  unless radio_date == nil
+    Date.today.next_day(radio_date[0].to_i) if radio_date.include?('day')
+  else
+    Date.parse(custom_date)
+  end
 end
 
 def next_element_id(array)
@@ -106,7 +110,7 @@ helpers do
 
   def sort_reminders(reminders, &block)
     complete_reminders, incomplete_reminders = reminders.partition { |reminder| reminder[:complete] }
-    
+
     incomplete_reminders.sort_by { |reminder| reminder[:priority] }.reverse.each(&block)
     complete_reminders.sort_by { |reminder| reminder[:priority] }.reverse.each(&block)
   end
@@ -147,13 +151,9 @@ end
 post "/add_reminder" do
   reminder_hash = load_reminder_list
 
-  reminder_date = if params[:date] == 'custom_date'
-    calculate_date(params[:customDate])
-  else
-    calculate_date(params[:date])
-  end
+  reminder_date = calculate_date(params[:date], params[:custom_date])
 
-  service_type = if params[:is_vocus?] == 'true'
+  service_type = if params[:is_vocus?]
                    "#{params[:service_type]} (VOCUS)"
                  else
                    params[:service_type]
@@ -161,6 +161,7 @@ post "/add_reminder" do
 
   new_reminder = { id: next_element_id(reminder_hash[reminder_date]),
                    reference: params[:reference].to_i,
+                   vocus_ticket: params[:vocus_ticket],
                    service_type: service_type,
                    priority: params[:priority],
                    notes: params[:notes],
@@ -179,7 +180,7 @@ post "/add_reminder" do
   redirect "/"
 end
 
-post "/:date/:id/complete" do
+get "/:date/:id/complete" do
   id = params[:id].to_i
 
   date = Date.parse(params[:date])
@@ -196,7 +197,7 @@ post "/:date/:id/complete" do
   redirect "/"
 end
 
-post "/:date/:id/incomplete" do
+get "/:date/:id/incomplete" do
   id = params[:id].to_i
 
   date = Date.parse(params[:date])
