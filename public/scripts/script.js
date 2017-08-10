@@ -1,0 +1,21 @@
+$(document).ready(function () {
+  set_past_reminders_checkbox();
+  hide_reminders_if_checked();
+});
+
+function hide_reminders_if_checked() {
+  if($('.show_past_reminders').is(":checked")) {
+    localStorage.setItem('show_past_reminders', 'true');
+    $(".past_date").show();
+  } else {
+    localStorage.setItem('show_past_reminders', 'false');
+    $(".past_date").hide();
+  }
+}
+
+function set_past_reminders_checkbox() {
+  if(localStorage.getItem('show_past_reminders') == 'true') {
+    $(".show_past_reminders").prop("checked", true);
+  }
+}
+

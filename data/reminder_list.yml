@@ -39,7 +39,7 @@
   :service_type: " (VOCUS)"
   :priority: '1'
   :notes: a
-  :complete: false
+  :complete: true
 2017-08-11:
 - :id: 0
   :reference: 12
@@ -47,4 +47,25 @@
   :service_type: fttn/b (VOCUS)
   :priority: '1'
   :notes: '1'
+  :complete: false
+- :id: 1
+  :reference: 1
+  :vocus_ticket: '1'
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: a
+  :complete: false
+- :id: 2
+  :reference: 1
+  :vocus_ticket: '1'
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: '1'
+  :complete: false
+- :id: 3
+  :reference: 1
+  :vocus_ticket: '1'
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: a
   :complete: false

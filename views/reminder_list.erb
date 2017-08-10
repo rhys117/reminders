@@ -4,6 +4,11 @@
   <button type="submit">Sign Out</button>
 </form>
 
+<label>
+  <input class="show_past_reminders" type="checkbox" onchange="hide_reminders_if_checked()">
+  Show Past Reminders
+</label>
+
 <main>
   <% @reminder_list.sort.each do |date, reminders_array| %>
     <article class="<%= date_classes(date) %>">

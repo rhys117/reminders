@@ -1,9 +1,12 @@
 require "sinatra"
 require "sinatra/reloader"
+require "sinatra/config_file"
 require "yaml"
 require "bcrypt"
 require "date"
 require "pry"
+
+config_file File.expand_path('../config.yml', __FILE__)
 
 def data_path
   if ENV["RACK_ENV"] == 'test'
@@ -69,7 +72,7 @@ def redirect_unless_signed_in
 end
 
 def date_classes(date)
-  "hidden" if date < Date.today
+  "past_date" if date < Date.today
 end
 
 def calculate_date(radio_date, custom_date)
