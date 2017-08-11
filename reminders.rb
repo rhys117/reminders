@@ -33,7 +33,7 @@ def load_user_credentials
   YAML.load_file(credentials_path)
 end
 
-def load_reminder_list
+def load_reminders_list
   YAML.load_file(reminder_path)
 end
 
@@ -81,7 +81,7 @@ def next_element_id(array)
 end
 
 def set_service_type(params)
-  vocus = params[:is_vocus] || false
+  vocus = params[:is_vocus?] || false
   if vocus
     "#{params[:service_type]} (VOCUS)"
   else
@@ -98,6 +98,16 @@ def error_message(params)
   return 'You must specify a reference number' unless reference
   return 'You must specify some notes' unless notes
   false
+end
+
+def generate_new_reminder_hash(params, reminders_hash, reminder_date, service_type)
+  { id: next_element_id(reminders_hash[reminder_date]),
+     reference: params[:reference].strip.to_i,
+     vocus_ticket: params[:vocus_ticket].strip.to_i,
+     service_type: service_type,
+     priority: params[:priority],
+     notes: params[:notes].strip,
+     complete: false }
 end
 
 configure do
@@ -129,12 +139,16 @@ helpers do
   def reference_url(ref)
     settings.reference_url + ref.to_s
   end
+
+  def checked(param_value, value)
+    return 'checked' if param_value == value
+  end
 end
 
 get "/" do
   redirect_unless_signed_in
 
-  @reminder_list = load_reminder_list
+  @reminder_list = load_reminders_list
 
   erb :reminder_list
 end
@@ -163,36 +177,27 @@ post "/sign_out" do
 end
 
 post "/add_reminder" do
-  reminder_hash = load_reminder_list
-
+  reminders_hash = load_reminders_list
   reminder_date = calculate_date(params[:date], params[:custom_date])
 
   error = error_message(params)
-
   if error
     session[:error] = error
 
-    @reminder_list = load_reminder_list
+    @reminder_list = load_reminders_list
     erb :reminder_list
   else
     service_type = set_service_type(params)
+    new_reminder = generate_new_reminder_hash(params, reminders_hash, reminder_date, service_type)
 
-    new_reminder = { id: next_element_id(reminder_hash[reminder_date]),
-                     reference: params[:reference].strip.to_i,
-                     vocus_ticket: params[:vocus_ticket].strip.to_i,
-                     service_type: service_type,
-                     priority: params[:priority],
-                     notes: params[:notes].strip,
-                     complete: false }
-
-    if reminder_hash[reminder_date] == nil
-      reminder_hash[reminder_date] = [new_reminder]
+    if reminders_hash[reminder_date] == nil
+      reminders_hash[reminder_date] = [new_reminder]
     else
-      reminder_hash[reminder_date] << new_reminder
+      reminders_hash[reminder_date] << new_reminder
     end
 
     File.open(reminder_path, "w") do |file|
-      file.write reminder_hash.to_yaml
+      file.write reminders_hash.to_yaml
     end
 
     redirect "/"
@@ -204,7 +209,7 @@ get "/:date/:id/complete" do
 
   date = Date.parse(params[:date])
 
-  reminders_hash = load_reminder_list
+  reminders_hash = load_reminders_list
 
   reminder_index = reminders_hash[date].index { |reminders| reminders[:id] == id }
   reminders_hash[date][reminder_index][:complete] = true
@@ -221,7 +226,7 @@ get "/:date/:id/incomplete" do
 
   date = Date.parse(params[:date])
 
-  reminders_hash = load_reminder_list
+  reminders_hash = load_reminders_list
 
   reminder_index = reminders_hash[date].index { |reminders| reminders[:id] == id }
   reminders_hash[date][reminder_index][:complete] = false

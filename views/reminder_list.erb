@@ -44,11 +44,11 @@
 <form method="post" action="/add_reminder">
   <section>
     <h3>Remind me in:</h3>
-      <label><input type="radio" name="date" value="1day">Tomorrow</label>
-      <label><input type="radio" name="date" value="2day">Two days</label>
-      <label><input type="radio" name="date" value="3day">Three days</label>
-      <label><input type="radio" name="date" value="5day">Five days</label>
-      <label><input type="radio" name="date" value="7day">Seven days</label>
+      <label><input type="radio" name="date" value="1day" <%= checked?(params[:date], '1day') %>>Tomorrow</label>
+      <label><input type="radio" name="date" value="2day" <%= checked?(params[:date], '2day') %>>Two days</label>
+      <label><input type="radio" name="date" value="3day" <%= checked?(params[:date], '3day') %>>Three days</label>
+      <label><input type="radio" name="date" value="5day" <%= checked?(params[:date], '5day') %>>Five days</label>
+      <label><input type="radio" name="date" value="7day" <%= checked?(params[:date], '7day') %>>Seven days</label>
       <label>Custom Date:
         <input name="custom_date" type="date" value="<%= current_date %>">
       </label>
@@ -70,7 +70,7 @@
     <h3>Service Type:</h3>
     <label><input type="checkbox" name="is_vocus?" value="true">VOCUS</label>
     <% settings.service_types.each do | service_type | %>
-      <label><input type="radio" name="service_type" value="<%= service_type %>"><%= service_type.upcase %></label>
+      <label><input type="radio" name="service_type" value="<%= service_type %>" <%= checked?(params[:service_type], service_type) %>><%= service_type.upcase %></label>
     <% end %>
   </section>
 
