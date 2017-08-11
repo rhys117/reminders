@@ -24,14 +24,6 @@ def reminder_path
   end
 end
 
-def service_type_path
-  if ENV["RACK_ENV"] == 'test'
-    File.expand_path("../test/data/service_types.yml", __FILE__)
-  else
-    File.expand_path("../data/service_types.yml", __FILE__)
-  end
-end
-
 def load_user_credentials
   credentials_path = if ENV["RACK_ENV"] == 'test'
     File.expand_path("../test/users.yml", __FILE__)
@@ -43,10 +35,6 @@ end
 
 def load_reminder_list
   YAML.load_file(reminder_path)
-end
-
-def load_service_types
-  YAML.load_file(service_type_path)
 end
 
 def valid_credentials?(username, password)
@@ -92,6 +80,26 @@ def next_element_id(array)
   end
 end
 
+def set_service_type(params)
+  vocus = params[:is_vocus] || false
+  if vocus
+    "#{params[:service_type]} (VOCUS)"
+  else
+    params[:service_type]
+  end
+end
+
+def error_message(params)
+  service_type = params[:service_type] || false
+  reference = true unless params[:reference].strip.empty?
+  notes = true unless params[:notes].strip.empty?
+
+  return 'You must specify a service type' unless service_type
+  return 'You must specify a reference number' unless reference
+  return 'You must specify some notes' unless notes
+  false
+end
+
 configure do
   enable :sessions
   set :session_secret, "0165359735"
@@ -117,13 +125,16 @@ helpers do
     incomplete_reminders.sort_by { |reminder| reminder[:priority] }.reverse.each(&block)
     complete_reminders.sort_by { |reminder| reminder[:priority] }.reverse.each(&block)
   end
+
+  def reference_url(ref)
+    settings.reference_url + ref.to_s
+  end
 end
 
 get "/" do
   redirect_unless_signed_in
 
   @reminder_list = load_reminder_list
-  @service_types = load_service_types
 
   erb :reminder_list
 end
@@ -156,31 +167,36 @@ post "/add_reminder" do
 
   reminder_date = calculate_date(params[:date], params[:custom_date])
 
-  service_type = if params[:is_vocus?]
-                   "#{params[:service_type]} (VOCUS)"
-                 else
-                   params[:service_type]
-                 end
+  error = error_message(params)
 
-  new_reminder = { id: next_element_id(reminder_hash[reminder_date]),
-                   reference: params[:reference].to_i,
-                   vocus_ticket: params[:vocus_ticket],
-                   service_type: service_type,
-                   priority: params[:priority],
-                   notes: params[:notes],
-                   complete: false }
+  if error
+    session[:error] = error
 
-  if reminder_hash[reminder_date] == nil
-    reminder_hash[reminder_date] = [new_reminder]
+    @reminder_list = load_reminder_list
+    erb :reminder_list
   else
-    reminder_hash[reminder_date] << new_reminder
-  end
+    service_type = set_service_type(params)
 
-  File.open(reminder_path, "w") do |file|
-    file.write reminder_hash.to_yaml
-  end
+    new_reminder = { id: next_element_id(reminder_hash[reminder_date]),
+                     reference: params[:reference].strip.to_i,
+                     vocus_ticket: params[:vocus_ticket].strip.to_i,
+                     service_type: service_type,
+                     priority: params[:priority],
+                     notes: params[:notes].strip,
+                     complete: false }
 
-  redirect "/"
+    if reminder_hash[reminder_date] == nil
+      reminder_hash[reminder_date] = [new_reminder]
+    else
+      reminder_hash[reminder_date] << new_reminder
+    end
+
+    File.open(reminder_path, "w") do |file|
+      file.write reminder_hash.to_yaml
+    end
+
+    redirect "/"
+  end
 end
 
 get "/:date/:id/complete" do

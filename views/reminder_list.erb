@@ -22,7 +22,9 @@
         </tr>
         <% sort_reminders(reminders_array) do |reminder_hash| %>
           <tr>
-            <td><%= reminder_hash[:reference] %></td>
+            <td>
+              <a target="_blank" href="<%= reference_url(reminder_hash[:reference]) %>"><%= reminder_hash[:reference] %></a>
+            </td>
             <td><%= reminder_hash[:service_type].upcase %></td>
             <td><%= reminder_hash[:priority] %></td>
             <td><%= reminder_hash[:notes] %></td>
@@ -54,27 +56,27 @@
 
   <section>
     <label for="reference"><h3>Reference Number:</h3>
-      <input type="number" name="reference">
+      <input type="number" name="reference" value="<%= params[:reference] %>">
     </label>
   </section>
 
   <section>
     <label for="vocus_ticket"><h3>VOCUS Ticket Number:</h3>
-      <input type="number" name="vocus_ticket">
+      <input type="number" name="vocus_ticket" value="<%= params[:vocus_ticket] %>">
     </label>
   </section>
 
   <section>
     <h3>Service Type:</h3>
     <label><input type="checkbox" name="is_vocus?" value="true">VOCUS</label>
-    <% @service_types.each do | service_type | %>
+    <% settings.service_types.each do | service_type | %>
       <label><input type="radio" name="service_type" value="<%= service_type %>"><%= service_type.upcase %></label>
     <% end %>
   </section>
 
   <section>
     <label for="notes"><h3>Notes:</h3>
-      <textarea name="notes"></textarea>
+      <textarea name="notes"><%= params[:notes] %></textarea>
     </label>
   </section>
 
