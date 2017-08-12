@@ -44,11 +44,11 @@
 <form method="post" action="/add_reminder">
   <section>
     <h3>Remind me in:</h3>
-      <label><input type="radio" name="date" value="1day" <%= checked?(params[:date], '1day') %>>Tomorrow</label>
-      <label><input type="radio" name="date" value="2day" <%= checked?(params[:date], '2day') %>>Two days</label>
-      <label><input type="radio" name="date" value="3day" <%= checked?(params[:date], '3day') %>>Three days</label>
-      <label><input type="radio" name="date" value="5day" <%= checked?(params[:date], '5day') %>>Five days</label>
-      <label><input type="radio" name="date" value="7day" <%= checked?(params[:date], '7day') %>>Seven days</label>
+      <label><input type="radio" name="date" value="1day" <%= checked(params[:date], '1day') %>>Tomorrow</label>
+      <label><input type="radio" name="date" value="2day" <%= checked(params[:date], '2day') %>>Two days</label>
+      <label><input type="radio" name="date" value="3day" <%= checked(params[:date], '3day') %>>Three days</label>
+      <label><input type="radio" name="date" value="5day" <%= checked(params[:date], '5day') %>>Five days</label>
+      <label><input type="radio" name="date" value="7day" <%= checked(params[:date], '7day') %>>Seven days</label>
       <label>Custom Date:
         <input name="custom_date" type="date" value="<%= current_date %>">
       </label>
@@ -69,15 +69,20 @@
   <section>
     <h3>Service Type:</h3>
     <label><input type="checkbox" name="is_vocus?" value="true">VOCUS</label>
-    <% settings.service_types.each do | service_type | %>
-      <label><input type="radio" name="service_type" value="<%= service_type %>" <%= checked?(params[:service_type], service_type) %>><%= service_type.upcase %></label>
+    <% settings.service_types.each do | service | %>
+      <label><input type="radio" name="service_type" value="<%= service %>" <%= checked(params[:service_type], service) %>><%= service.upcase %></label>
     <% end %>
   </section>
 
   <section>
     <label for="notes"><h3>Notes:</h3>
-      <textarea name="notes"><%= params[:notes] %></textarea>
+      <textarea id="notes" name="notes"><%= params[:notes] %></textarea>
     </label>
+    <div class="quick_notes">
+      <% settings.quick_notes.each do |note| %>
+        <button type="button" onclick="add_to_notes('<%= note %>')"><%= note %></button>
+      <% end %>
+    </div>
   </section>
 
   <section>

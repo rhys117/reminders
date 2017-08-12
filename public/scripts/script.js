@@ -19,3 +19,6 @@ function set_past_reminders_checkbox() {
   }
 }
 
+function add_to_notes(note) {
+  $('#notes').val($('#notes').val() + note + ' ')
+}

@@ -34,7 +34,7 @@ def load_user_credentials
 end
 
 def load_reminders_list
-  YAML.load_file(reminder_path)
+  YAML.load_file(reminder_path) || {}
 end
 
 def valid_credentials?(username, password)
@@ -200,6 +200,7 @@ post "/add_reminder" do
       file.write reminders_hash.to_yaml
     end
 
+    session[:success] = "#{service_type.upcase} #{params[:notes]} <br/> #{reminder_date}"
     redirect "/"
   end
 end
