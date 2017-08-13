@@ -246,3 +246,19 @@ get "/:date/:id/incomplete" do
   session[:success] = "Reminder Marked as Incomplete"
   redirect "/"
 end
+
+post "/delete_all_complete" do
+  reminders_hash = load_reminders_list
+
+  reminders_hash.each do |_, reminders_array|
+    reminders_array.reject! { |reminder| reminder[:complete] }
+  end
+
+  reminders_hash.reject! { |_, reminders_array| reminders_array.empty? }
+
+  File.open(reminder_path, "w") do |file|
+    file.write reminders_hash.to_yaml
+  end
+  session[:success] = "All completed reminders deleted"
+  redirect "/"
+end
