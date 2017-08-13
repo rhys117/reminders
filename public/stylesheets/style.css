@@ -1,13 +1,11 @@
 table {
-  width: 80%;
+  width: 90%;
+  padding-left: 15px;
+  max-width: 900px;
 }
 
 th {
   text-align: left;
-}
-
-th, td {
-  width: 25%;
 }
 
 main h2 {
@@ -17,3 +15,59 @@ main h2 {
 form section {
   margin-bottom: 20px;
 }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.complete td {
+  border: none !important;
+  text-decoration: line-through;
+}
+
+tr th:nth-of-type(1), tr td:nth-of-type(1) {
+  min-width: 90px;
+  width: 10%;
+}
+tr th:nth-of-type(2), tr td:nth-of-type(2) {
+  min-width: 160px;
+  width: 15%;
+}
+tr th:nth-of-type(3), tr td:nth-of-type(3) {
+  min-width: 80px;
+  width: 10%;
+}
+tr th:nth-of-type(4), tr td:nth-of-type(4) {
+  min-width: 200px;
+  width: 50%;
+}
+tr th:nth-of-type(5), tr td:nth-of-type(5) {
+  min-width: 120px;
+  text-align: right;
+}
+
+.priority_1 td {
+  /*border-bottom: 2px solid blue;*/
+  border-top: 2px solid blue;
+}
+
+.priority_2 td {
+  /*border-bottom: 2px solid green;*/
+  border-top: 2px solid green;
+}
+
+.priority_3 td {
+  /*border-bottom: 2px solid #bdc400;*/
+  border-top: 2px solid #bdc400;
+}
+
+.priority_4 td {
+  /*border-bottom: 2px solid orange;*/
+  border-top: 2px solid orange;
+}
+
+.priority_5 td {
+  /*border-bottom: 2px solid red;*/
+  border-top: 2px solid red;
+}​

@@ -21,7 +21,7 @@
           <th>Notes</th>
         </tr>
         <% sort_reminders(reminders_array) do |reminder_hash| %>
-          <tr>
+          <tr class="<%= reminder_classes(reminder_hash) %>">
             <td>
               <a target="_blank" href="<%= reference_url(reminder_hash[:reference]) %>"><%= reminder_hash[:reference] %></a>
             </td>

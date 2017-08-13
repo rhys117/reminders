@@ -59,10 +59,6 @@ def redirect_unless_signed_in
   end
 end
 
-def date_classes(date)
-  "past_date" if date < Date.today
-end
-
 def calculate_date(radio_date, custom_date)
   unless radio_date == nil
     Date.today.next_day(radio_date[0].to_i) if radio_date.include?('day')
@@ -115,6 +111,7 @@ configure do
   set :session_secret, "0165359735"
 end
 
+
 helpers do
   def current_date
     DateTime.now.strftime "%Y-%m-%d"
@@ -122,6 +119,10 @@ helpers do
 
   def display_date(date)
     date.strftime "%d-%m-%Y"
+  end
+
+  def date_classes(date)
+    "past_date" if date < Date.today
   end
 
   def inverse_complete_value(reminder)
@@ -142,6 +143,13 @@ helpers do
 
   def checked(param_value, value)
     return 'checked' if param_value == value
+  end
+
+  def reminder_classes(reminder)
+    classes = ''
+    classes << 'complete ' if reminder[:complete]
+    classes << "priority_#{reminder[:priority]} "
+    classes
   end
 end
 
