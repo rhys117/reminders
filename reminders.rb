@@ -141,6 +141,10 @@ helpers do
     settings.reference_url + ref.to_s
   end
 
+  def vocus_url(ref)
+    settings.vocus_url + ref.to_s
+  end
+
   def checked(param_value, value)
     return 'checked' if param_value == value
   end
@@ -170,6 +174,7 @@ post "/sign_in" do
 
   if valid_credentials?(username, params[:password])
     session[:username] = username
+    session[:success] = "Welcome"
     redirect "/"
   else
     session[:error] = "Invalid Credentials"

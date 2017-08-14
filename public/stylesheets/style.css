@@ -1,3 +1,41 @@
+body {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.flash {
+  max-width: 960px;
+  padding: 10px 20px;
+  margin: 20px auto 1.5em auto;
+  color: #3399cc;
+  background: #CBE5F2; 
+}
+
+.flash p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.flash.error {
+  color: #ff6633;
+  background: #FFCFBF;
+}
+
+.flash.success {
+  color: #33cc99;
+  background: #CBF2E5;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding-bottom: 20px;
+}
+
 table {
   width: 90%;
   padding-left: 15px;
@@ -31,20 +69,56 @@ tr th:nth-of-type(1), tr td:nth-of-type(1) {
   width: 10%;
 }
 tr th:nth-of-type(2), tr td:nth-of-type(2) {
-  min-width: 160px;
-  width: 15%;
-}
-tr th:nth-of-type(3), tr td:nth-of-type(3) {
   min-width: 80px;
   width: 10%;
 }
+tr th:nth-of-type(3), tr td:nth-of-type(3) {
+  min-width: 160px;
+  width: 15%;
+}
 tr th:nth-of-type(4), tr td:nth-of-type(4) {
-  min-width: 200px;
+  min-width: 240px;
   width: 50%;
 }
 tr th:nth-of-type(5), tr td:nth-of-type(5) {
+  min-width: 140px;
+  text-align: right;
+}
+tr th:nth-of-type(6), tr td:nth-of-type(6) {
   min-width: 120px;
   text-align: right;
+}
+
+.new_reminder {
+  padding-top: 50px;
+}
+
+.remind_me, .service_type {
+  width: 30%;
+  min-width: 250px;
+  float: left;
+}
+
+.remind_me label, .service_type label {
+  display: block;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+#custom_date {
+  padding-top: 15px;
+}
+
+.notes {
+  display: block;
+  clear: both;
+}
+
+.notes textarea {
+  width: 400px;
+  height: 30px;
 }
 
 .priority_1 td {
@@ -66,26 +140,3 @@ tr th:nth-of-type(5), tr td:nth-of-type(5) {
 .priority_5 td {
   border-top: 2px solid red;
 }​
-
-.flash {
-  max-width: 960px;
-  padding: 10px 20px;
-  margin: 20px auto 1.5em auto;
-  color: #3399cc;
-  background: #CBE5F2; 
-}
-
-.flash p {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.flash.error {
-  color: #ff6633;
-  background: #FFCFBF;
-}
-
-.flash.success {
-  color: #33cc99;
-  background: #CBF2E5;
-}
