@@ -208,7 +208,7 @@ post "/add_reminder" do
       file.write reminders_hash.to_yaml
     end
 
-    session[:success] = "#{service_type.upcase} #{params[:notes]} <br/> #{reminder_date}"
+    session[:success] = "#{service_type.upcase} #{params[:notes]} <br/> #{display_date(reminder_date)}"
     redirect "/"
   end
 end
@@ -232,18 +232,34 @@ end
 
 get "/:date/:id/incomplete" do
   id = params[:id].to_i
-
   date = Date.parse(params[:date])
-
   reminders_hash = load_reminders_list
 
-  reminder_index = reminders_hash[date].index { |reminders| reminders[:id] == id }
+  reminder_index = reminders_hash[date].index { |reminder| reminder[:id] == id }
   reminders_hash[date][reminder_index][:complete] = false
 
   File.open(reminder_path, "w") do |file|
     file.write reminders_hash.to_yaml
   end
   session[:success] = "Reminder Marked as Incomplete"
+  redirect "/"
+end
+
+post "/:date/:id/delete" do
+  id = params[:id].to_i
+  date = Date.parse(params[:date])
+
+  reminders_hash = load_reminders_list
+
+  reminder_index = reminders_hash[date].index { |reminder| reminder[:id] == id }
+  reminders_hash[date].delete_at(reminder_index)
+
+  reminders_hash.reject! { |_, reminders_array| reminders_array.empty? }
+
+  File.open(reminder_path, "w") do |file|
+    file.write reminders_hash.to_yaml
+  end
+  session[:success] = "Reminder deleted"
   redirect "/"
 end
 

@@ -4,8 +4,8 @@
   <button type="submit">Sign Out</button>
 </form>
 
-<form method="post" action="/delete_all_complete">
-  <button type="submit">Delete all completed reminders</button>
+<form class="delete" method="post" action="/delete_all_complete">
+  <button onclick="confirm_destructive_action(this)" type="submit">Delete all completed reminders</button>
 </form>
 
 <label>
@@ -35,6 +35,11 @@
             <td>
               <form method="get" action="/<%= date %>/<%= reminder_hash[:id] %>/<%= inverse_complete_value(reminder_hash) %>">
                 <button type="submit">Mark as <%= inverse_complete_value(reminder_hash) %></button>
+              </form>
+            </td>
+            <td>
+              <form class="delete"method="post" action="/<%= date %>/<%= reminder_hash[:id] %>/delete">
+                <button type="submit">Delete reminder</button>
               </form>
             </td>
           </tr>
@@ -94,7 +99,7 @@
       <select name="priority">
       <% 5.times do |x| %>
         <% x += 1 %>
-        <option value="<%= x %>"><%= x %></option>
+        <option <%= 'selected' if x == params[:priority].to_i %> value="<%= x %>"><%= x %></option>
       <% end %>
     </select>
 

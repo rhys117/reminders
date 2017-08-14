@@ -48,26 +48,44 @@ tr th:nth-of-type(5), tr td:nth-of-type(5) {
 }
 
 .priority_1 td {
-  /*border-bottom: 2px solid blue;*/
-  border-top: 2px solid blue;
+ border-top: 2px solid blue;
 }
 
 .priority_2 td {
-  /*border-bottom: 2px solid green;*/
   border-top: 2px solid green;
 }
 
 .priority_3 td {
-  /*border-bottom: 2px solid #bdc400;*/
   border-top: 2px solid #bdc400;
 }
 
 .priority_4 td {
-  /*border-bottom: 2px solid orange;*/
-  border-top: 2px solid orange;
+   border-top: 2px solid orange;
 }
 
 .priority_5 td {
-  /*border-bottom: 2px solid red;*/
   border-top: 2px solid red;
 }​
+
+.flash {
+  max-width: 960px;
+  padding: 10px 20px;
+  margin: 20px auto 1.5em auto;
+  color: #3399cc;
+  background: #CBE5F2; 
+}
+
+.flash p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.flash.error {
+  color: #ff6633;
+  background: #FFCFBF;
+}
+
+.flash.success {
+  color: #33cc99;
+  background: #CBF2E5;
+}
