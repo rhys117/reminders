@@ -1,9 +1,11 @@
-body {
+header, main {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
-  padding-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .flash {
   max-width: 960px;
   padding: 10px 20px;
@@ -91,6 +93,7 @@ tr th:nth-of-type(6), tr td:nth-of-type(6) {
 
 .new_reminder {
   padding-top: 50px;
+  padding-bottom: 150px;
 }
 
 .remind_me, .service_type {

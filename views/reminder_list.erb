@@ -1,17 +1,19 @@
-<h1>Reminders</h1>
+<header>
+  <h1>Reminders</h1>
 
-<form method="post" action="/sign_out">
-  <button type="submit">Sign Out</button>
-</form>
+  <form method="post" action="/sign_out">
+    <button type="submit">Sign Out</button>
+  </form>
 
-<form class="delete" method="post" action="/delete_all_complete">
-  <button onclick="confirm_destructive_action(this)" type="submit">Delete all completed reminders</button>
-</form>
+  <form class="delete" method="post" action="/delete_all_complete">
+    <button onclick="confirm_destructive_action(this)" type="submit">Delete all completed reminders</button>
+  </form>
 
-<label>
-  <input class="show_past_reminders" type="checkbox" onchange="hide_reminders_if_checked()">
-  Show Past Reminders
-</label>
+  <label>
+    <input class="show_past_reminders" type="checkbox" onchange="hide_reminders_if_checked()">
+    Show Past Reminders
+  </label>
+</header>
 
 <main>
   <% @reminder_list.sort.each do |date, reminders_array| %>
@@ -53,66 +55,67 @@
         <% end %>
       </table>
     </article>
-  <% end %>
-</main>
+    <% end %>
 
-<div class="new_reminder">
-  <h2>New Reminder</h2>
-  <form method="post" action="/add_reminder">
-    <section class="remind_me">
-      <h3>Remind me in:</h3>
-        <label><input type="radio" name="date" value="1day" <%= checked(params[:date], '1day') %>>Tomorrow</label>
-        <label><input type="radio" name="date" value="2day" <%= checked(params[:date], '2day') %>>Two days</label>
-        <label><input type="radio" name="date" value="3day" <%= checked(params[:date], '3day') %>>Three days</label>
-        <label><input type="radio" name="date" value="5day" <%= checked(params[:date], '5day') %>>Five days</label>
-        <label><input type="radio" name="date" value="7day" <%= checked(params[:date], '7day') %>>Seven days</label>
+  <div class="new_reminder">
+    <h2>New Reminder</h2>
+    <form method="post" action="/add_reminder">
+      <section class="remind_me">
+        <h3>Remind me in:</h3>
+          <label><input type="radio" name="date" value="1day" <%= checked(params[:date], '1day') %>>Tomorrow</label>
+          <label><input type="radio" name="date" value="2day" <%= checked(params[:date], '2day') %>>Two days</label>
+          <label><input type="radio" name="date" value="3day" <%= checked(params[:date], '3day') %>>Three days</label>
+          <label><input type="radio" name="date" value="5day" <%= checked(params[:date], '5day') %>>Five days</label>
+          <label><input type="radio" name="date" value="7day" <%= checked(params[:date], '7day') %>>Seven days</label>
 
-        <label id="custom_date">Custom Date:
-          <input name="custom_date" type="date" value="<%= current_date %>">
-        </label>
-    </section>
-
-    <section class="service_type">
-      <h3>Service Type:</h3>
-      <label><input type="checkbox" name="is_vocus?" value="true">VOCUS</label>
-      <% settings.service_types.each do | service | %>
-        <label><input type="radio" name="service_type" value="<%= service %>" <%= checked(params[:service_type], service) %>><%= service.upcase %></label>
-      <% end %>
-    </section>
-
-    <section class="reference">
-      <label for="reference"><h3>Reference Number:</h3>
-        <input type="number" name="reference" value="<%= params[:reference] %>">
-      </label>
-    </section>
-
-    <section class="vocus">
-      <label for="vocus_ticket"><h3>VOCUS Ticket Number:</h3>
-        <input type="number" name="vocus_ticket" value="<%= params[:vocus_ticket] %>">
-      </label>
-    </section>
-
-    <section class="priority">
-      <label for="priority"><h3>Priority:</h3></label>
-        <select name="priority">
-        <% 5.times do |x| %>
-          <% x += 1 %>
-          <option <%= 'selected' if x == params[:priority].to_i %> value="<%= x %>"><%= x %></option>
-        <% end %>
-        </select>
+          <label id="custom_date">Custom Date:
+            <input name="custom_date" type="date" value="<%= current_date %>">
+          </label>
+          <input type="reset" />
       </section>
 
-
-    <section class="notes">
-      <label for="notes"><h3>Notes:</h3>
-        <textarea id="notes" name="notes"><%= params[:notes] %></textarea>
-      </label>
-      <div class="quick_notes">
-        <% settings.quick_notes.each do |note| %>
-          <button type="button" onclick="add_to_notes('<%= note %>')"><%= note %></button>
+      <section class="service_type">
+        <h3>Service Type:</h3>
+        <label><input type="checkbox" name="is_vocus?" value="true">VOCUS</label>
+        <% settings.service_types.each do | service | %>
+          <label><input type="radio" name="service_type" value="<%= service %>" <%= checked(params[:service_type], service) %>><%= service.upcase %></label>
         <% end %>
-      </div>
-    </section>
-    <button type="submit">Add Reminder</button>
-  </form>
-</div>
+      </section>
+
+      <section class="reference">
+        <label for="reference"><h3>Reference Number:</h3>
+          <input type="number" name="reference" value="<%= params[:reference] %>">
+        </label>
+      </section>
+
+      <section class="vocus">
+        <label for="vocus_ticket"><h3>VOCUS Ticket Number:</h3>
+          <input type="number" name="vocus_ticket" value="<%= params[:vocus_ticket] %>">
+        </label>
+      </section>
+
+      <section class="priority">
+        <label for="priority"><h3>Priority:</h3></label>
+          <select name="priority">
+          <% 5.times do |x| %>
+            <% x += 1 %>
+            <option <%= 'selected' if x == params[:priority].to_i %> value="<%= x %>"><%= x %></option>
+          <% end %>
+          </select>
+        </section>
+
+
+      <section class="notes">
+        <label for="notes"><h3>Notes:</h3>
+          <textarea id="notes" name="notes"><%= params[:notes] %></textarea>
+        </label>
+        <div class="quick_notes">
+          <% settings.quick_notes.each do |note| %>
+            <button type="button" onclick="add_to_notes('<%= note %>')"><%= note %></button>
+          <% end %>
+        </div>
+      </section>
+      <button type="submit">Add Reminder</button>
+    </form>
+  </div>
+</main>
