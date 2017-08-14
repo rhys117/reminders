@@ -5,8 +5,12 @@
     <button type="submit">Sign Out</button>
   </form>
 
-  <form class="delete" method="post" action="/delete_all_complete">
-    <button onclick="confirm_destructive_action(this)" type="submit">Delete all completed reminders</button>
+  <form onclick="return confirm('Delete all complete reminders?')" method="post" action="/delete_all_complete">
+    <button type="submit">Delete all completed reminders</button>
+  </form>
+
+  <form onclick="return confirm('Move incomplete past reminders to current date')" method="post" action="/make_incomplete_current">
+    <button onclick="confirm_destructive_action(this)" type="submit">Make all incomplete past reminders current (todays date)</button>
   </form>
 
   <label>
@@ -47,8 +51,8 @@
               </form>
             </td>
             <td>
-              <form class="delete"method="post" action="/<%= date %>/<%= reminder[:id] %>/delete">
-                <button type="submit">Delete Reminder</button>
+              <form method="post" action="/<%= date %>/<%= reminder[:id] %>/delete">
+                <button onclick="return confirm('Delete reminder?')" type="submit">Delete Reminder</button>
               </form>
             </td>
           </tr>

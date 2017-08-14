@@ -23,16 +23,20 @@ function add_to_notes(note) {
   $('#notes').val($('#notes').val() + note + ' ')
 }
 
-$(function () {
+function confirm_action(message) {
+  return confirm(message);
+}
 
-  $("form.delete").submit(function(event) {
-    event.preventDefault();
-    event.stopPropagation();
+// $(function () {
 
-    var ok = confirm("Are you sure? This cannot be undone!");
-    if (ok) {
-      this.submit();
-    }
-  });
+//   $("form.delete").submit(function(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
 
-});
+//     var ok = confirm("Are you sure? This cannot be undone!");
+//     if (ok) {
+//       this.submit();
+//     }
+//   });
+
+// });

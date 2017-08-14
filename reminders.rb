@@ -283,3 +283,38 @@ post "/delete_all_complete" do
   session[:success] = "All completed reminders deleted"
   redirect "/"
 end
+
+# super messy must be refactored
+post "/make_incomplete_current" do
+  reminders_hash = load_reminders_list
+
+  today = Date.today
+
+  out_of_date = []
+  reminders_hash.each do |date, reminders|
+    if date < today
+      reminders.each do |reminder|
+        unless reminder[:complete]
+          out_of_date << reminder
+          reminder_index = reminders_hash[date].index { |re| reminder[:id] == re[:id] }
+          reminders_hash[date].delete_at(reminder_index)
+        end
+      end
+    end
+  end
+
+  reminders_hash[today] = [] if reminders_hash[today] == nil
+
+  out_of_date.each do |reminder|
+    reminder[:id] = next_element_id(reminders_hash[today])
+    reminders_hash[today] << reminder
+  end
+
+  reminders_hash.reject! { |_, reminders_array| reminders_array.empty? }
+
+  File.open(reminder_path, "w") do |file|
+    file.write reminders_hash.to_yaml
+  end
+  session[:success] = "All past incomplete reminders moved to today"
+  redirect "/"
+end
