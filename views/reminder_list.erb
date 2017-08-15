@@ -14,9 +14,22 @@
   </form>
 
   <label>
-    <input class="show_past_reminders" type="checkbox" onchange="hide_reminders_if_checked()">
+    <input class="show_past_reminders" type="checkbox" onchange="hide_reminders_if_checked('show_past_reminders', 'past_date')">
     Show Past Reminders
   </label>
+
+  <label>
+    <input class="show_future_reminders" type="checkbox" onchange="hide_reminders_if_checked('show_future_reminders', 'future_date')">
+    Show Future Reminders
+  </label>
+
+<!--   <label for="above_priority">Only show reminders above priority:</label>
+    <select class="above_priority" type="select" onchange="hide_reminders_below_selected()">
+      <% 5.times do |x| %>
+        <% x += 1 %>
+        <option <%= 'selected' if x == params[:priority].to_i %> value="<%= x %>"><%= x %></option>
+      <% end %>
+    </select> -->
 </header>
 
 <main>

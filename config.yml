@@ -1,17 +1,22 @@
-reference_url: 'https://www.google.com.au/search?q='
-vocus_url: 'https://www.google.com.au/search?q='
+reference_url: 'https://rt.skymesh.net.au/Ticket/Display.html?id='
+vocus_url: 'https://members.wcg.net.au/view_ticket.php?id='
 service_types:
 - fttn/b
 - fttp
 - hfc
 - lts
+- fixed wireless
 - voip/univ
+- pstn
 - legacy service
 quick_notes:
 - OFFLINE |
 - DROPOUTS |
 - SPEED |
+- BROWSING |
 - Online?
 - Usage?
 - Contact?
 - Work done?
+- NBN response?
+- Vocus response?

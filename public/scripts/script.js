@@ -1,23 +1,26 @@
 $(document).ready(function () {
-  set_past_reminders_checkbox();
-  hide_reminders_if_checked();
+  set_checkbox_from_storage('show_past_reminders');
+  hide_reminders_if_checked('show_past_reminders', 'past_date');
+  hide_reminders_if_checked('show_future_reminders', 'future_date');
 });
 
-function hide_reminders_if_checked() {
-  if($('.show_past_reminders').is(":checked")) {
-    localStorage.setItem('show_past_reminders', 'true');
-    $(".past_date").show();
+function hide_reminders_if_checked(button, affected_class) {
+  if($('.' + button).is(":checked")) {
+    localStorage.setItem(button, 'true');
+    $('.'+ affected_class).show();
   } else {
-    localStorage.setItem('show_past_reminders', 'false');
-    $(".past_date").hide();
+    localStorage.setItem(button, 'false');
+    $('.' + affected_class).hide();
   }
 }
 
-function set_past_reminders_checkbox() {
-  if(localStorage.getItem('show_past_reminders') == 'true') {
-    $(".show_past_reminders").prop("checked", true);
+function set_checkbox_from_storage(button) {
+  if(localStorage.getItem(button) == 'true') {
+    $('.' + button).prop("checked", true);
   }
 }
+
+
 
 function add_to_notes(note) {
   $('#notes').val($('#notes').val() + note + ' ')

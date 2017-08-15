@@ -122,7 +122,8 @@ helpers do
   end
 
   def date_classes(date)
-    "past_date" if date < Date.today
+    return "past_date" if date < Date.today
+    "future_date" if date > Date.today
   end
 
   def inverse_complete_value(reminder)
