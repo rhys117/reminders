@@ -44,17 +44,3 @@ function add_to_notes(note) {
 function set_select_from_storage(value) {
   $('.' + value).val(localStorage.getItem(value));
 }
-
-// $(function () {
-
-//   $("form.delete").submit(function(event) {
-//     event.preventDefault();
-//     event.stopPropagation();
-
-//     var ok = confirm("Are you sure? This cannot be undone!");
-//     if (ok) {
-//       this.submit();
-//     }
-//   });
-
-// });

@@ -15,19 +15,11 @@
   :priority: '1'
   :notes: OFFLINE | Online?
   :complete: false
-2017-08-14:
-- :id: 1
-  :reference: 1231
+2017-08-17:
+- :id: 0
+  :reference: 12312
   :vocus_ticket: 0
-  :service_type: fttn/b
+  :service_type: fw
   :priority: '1'
   :notes: SPEED |
-  :complete: false
-2017-08-01:
-- :id: 0
-  :reference: 1231
-  :vocus_ticket: 0
-  :service_type: fttn/b
-  :priority: '1'
-  :notes: DROPOUTS |
   :complete: false

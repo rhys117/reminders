@@ -1,35 +1,42 @@
 <header>
   <h1>Reminders</h1>
+  <section>
+    <form method="post" action="/sign_out">
+      <button type="submit">Sign Out</button>
+    </form>
 
-  <form method="post" action="/sign_out">
-    <button type="submit">Sign Out</button>
-  </form>
+    <form onclick="return confirm('Delete all complete reminders?')" method="post" action="/delete_all_complete">
+      <button type="submit">Delete all completed reminders</button>
+    </form>
 
-  <form onclick="return confirm('Delete all complete reminders?')" method="post" action="/delete_all_complete">
-    <button type="submit">Delete all completed reminders</button>
-  </form>
+    <form onclick="return confirm('Move incomplete past reminders to current date')" method="post" action="/make_incomplete_current">
+      <button onclick="confirm_destructive_action(this)" type="submit">Make all incomplete past reminders current (todays date)</button>
+    </form>
+  </section>
 
-  <form onclick="return confirm('Move incomplete past reminders to current date')" method="post" action="/make_incomplete_current">
-    <button onclick="confirm_destructive_action(this)" type="submit">Make all incomplete past reminders current (todays date)</button>
-  </form>
+  <section>
+    <label>
+      <input class="show_past_reminders" type="checkbox" onchange="hide_reminders_if_checked('show_past_reminders', 'past_date')">
+      Show Past Reminders
+    </label>
 
-  <label>
-    <input class="show_past_reminders" type="checkbox" onchange="hide_reminders_if_checked('show_past_reminders', 'past_date')">
-    Show Past Reminders
-  </label>
+    <label>
+      <input class="show_future_reminders" type="checkbox" onchange="hide_reminders_if_checked('show_future_reminders', 'future_date')">
+      Show Future Reminders
+    </label>
+  </section>
 
-  <label>
-    <input class="show_future_reminders" type="checkbox" onchange="hide_reminders_if_checked('show_future_reminders', 'future_date')">
-    Show Future Reminders
-  </label>
-
-  <label for="show_above_priority">Only show reminders above priority:</label>
-    <select class="show_above_priority" type="select" onchange="hide_reminders_below_priority()">
-      <% 5.times do |x| %>
-        <% x += 1 %>
-        <option value="<%= x %>"><%= x %></option>
-      <% end %>
-    </select>
+  <section>
+    <label for="show_above_priority">Only show reminders priority
+      <select class="show_above_priority" type="select" onchange="hide_reminders_below_priority()">
+        <% 5.times do |x| %>
+          <% x += 1 %>
+          <option value="<%= x %>"><%= x %></option>
+        <% end %>
+      </select>
+      or above
+    </label>
+  </section>
 </header>
 
 <main>

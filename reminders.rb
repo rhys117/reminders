@@ -20,7 +20,7 @@ def reminder_path
   if ENV["RACK_ENV"] == 'test'
     File.expand_path("../test/data/reminder_list.yml", __FILE__)
   else
-    File.expand_path("../data/reminder_list.yml", __FILE__)
+    File.expand_path("../data/#{session[:username]}/reminder_list.yml", __FILE__)
   end
 end
 
