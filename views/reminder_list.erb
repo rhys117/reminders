@@ -23,13 +23,13 @@
     Show Future Reminders
   </label>
 
-<!--   <label for="above_priority">Only show reminders above priority:</label>
-    <select class="above_priority" type="select" onchange="hide_reminders_below_selected()">
+  <label for="show_above_priority">Only show reminders above priority:</label>
+    <select class="show_above_priority" type="select" onchange="hide_reminders_below_priority()">
       <% 5.times do |x| %>
         <% x += 1 %>
-        <option <%= 'selected' if x == params[:priority].to_i %> value="<%= x %>"><%= x %></option>
+        <option value="<%= x %>"><%= x %></option>
       <% end %>
-    </select> -->
+    </select>
 </header>
 
 <main>

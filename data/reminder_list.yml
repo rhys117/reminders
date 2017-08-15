@@ -30,4 +30,4 @@
   :service_type: fttn/b
   :priority: '1'
   :notes: DROPOUTS |
-  :complete: true
+  :complete: false
