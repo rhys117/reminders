@@ -92,7 +92,7 @@
           <label><input type="radio" name="date" value="5day" <%= checked(params[:date], '5day') %>>Five days</label>
           <label><input type="radio" name="date" value="7day" <%= checked(params[:date], '7day') %>>Seven days</label>
 
-          <label id="custom_date">Custom Date:
+          <label onclick="deselect('input[name=date]')" id="custom_date">Custom Date:
             <input name="custom_date" type="date" value="<%= current_date %>">
           </label>
           <input type="reset" />

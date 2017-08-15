@@ -1,6 +1,6 @@
 $(document).ready(function () {
   set_checkbox_from_storage('show_past_reminders');
-  set_checkbox_from_storage('above_priority');
+  set_checkbox_from_storage('show_future_reminders');
   hide_reminders_if_checked('show_past_reminders', 'past_date');
   hide_reminders_if_checked('show_future_reminders', 'future_date');
   set_select_from_storage('show_above_priority');
@@ -23,12 +23,15 @@ function set_checkbox_from_storage(button) {
   }
 }
 
+function deselect(element) {
+  $(element).prop('checked', false)
+}
+
 function hide_reminders_below_priority() {
   var priority_level = $('.show_above_priority').find(':selected').text();
   localStorage.setItem('show_above_priority', priority_level);
 
   for (var i = 5; i > 0; i--) {
-    console.log('.priority_' + i)
     $('.priority_' + i).show();
   }
 
