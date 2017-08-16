@@ -1,0 +1,64 @@
+<div class="new_reminder">
+    <h2>Edit Reminder</h2>
+      <p><%= params[:date] %><%= params[:id] %></p>
+    <form method="post" action="/<%= params[:date] %>/<%= params[:id] %>/edit">
+      <section class="remind_me">
+      <input class="hidden" type="date" name="old_date" value="<%= params[:date] %>">
+      <input class="hidden" type="number" name="old_id" value="<%= params[:id] %>">
+        <h3>Remind me in:</h3>
+          <label><input type="radio" name="new_date" value="1day">Tomorrow</label>
+          <label><input type="radio" name="new_date" value="2day">Two days</label>
+          <label><input type="radio" name="new_date" value="3day">Three days</label>
+          <label><input type="radio" name="new_date" value="5day">Five days</label>
+          <label><input type="radio" name="new_date" value="7day">Seven days</label>
+
+          <label onclick="deselect('input[name=new_date]')" id="custom_date">Custom new_date:
+            <input name="custom_date" type="date" value="<%= @date %>">
+          </label>
+          <input type="reset" />
+      </section>
+
+      <section class="service_type">
+        <h3>Service Type:</h3>
+        <label><input type="checkbox" name="is_vocus?" value="true" <%= checked(@is_vocus, true) %>>VOCUS</label>
+        <% settings.service_types.each do | service | %>
+          <label><input type="radio" name="service_type" value="<%= service %>" <%= checked(@service_type, service) %>><%= service.upcase %></label>
+        <% end %>
+      </section>
+
+      <section class="reference">
+        <label for="reference"><h3>Reference Number:</h3>
+          <input type="number" name="reference" value="<%= @reminder[:reference] %>">
+        </label>
+      </section>
+
+      <section class="vocus">
+        <label for="vocus_ticket"><h3>VOCUS Ticket Number:</h3>
+          <input type="number" name="vocus_ticket" value="<%= @reminder[:vocus_ticket] %>">
+        </label>
+      </section>
+
+      <section class="priority">
+        <label for="priority"><h3>Priority:</h3></label>
+        <select name="priority">
+        <% 5.times do |x| %>
+          <% x += 1 %>
+          <option <%= 'selected' if x == @reminder[:priority].to_i %> value="<%= x %>"><%= x %></option>
+        <% end %>
+        </select>
+      </section>
+
+
+      <section class="notes">
+        <label for="notes"><h3>Notes:</h3>
+          <textarea id="notes" name="notes"><%= @reminder[:notes] %></textarea>
+        </label>
+        <div class="quick_notes">
+          <% settings.quick_notes.each do |note| %>
+            <button type="button" onclick="add_to_notes('<%= note %>')"><%= note %></button>
+          <% end %>
+        </div>
+      </section>
+      <button type="submit">Edit Reminder</button>
+    </form>
+  </div>

@@ -35,6 +35,10 @@ header, main {
   background: #CBF2E5;
 }
 
+.hidden {
+  display: none;
+}
+
 h1 {
   font-size: 2.5em;
 }
@@ -95,11 +99,14 @@ tr th:nth-of-type(4), tr td:nth-of-type(4) {
   width: 50%;
 }
 tr th:nth-of-type(5), tr td:nth-of-type(5) {
-  min-width: 160px;
+  min-width: 130px;
   text-align: right;
 }
 tr th:nth-of-type(6), tr td:nth-of-type(6) {
-  min-width: 120px;
+  min-width: 40px;
+  text-align: middle;
+}
+tr th:nth-of-type(6), tr td:nth-of-type(6) {
   text-align: right;
 }
 

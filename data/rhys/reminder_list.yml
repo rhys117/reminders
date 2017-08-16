@@ -1,12 +1,4 @@
 ---
-2017-08-15:
-- :id: 0
-  :reference: 1231
-  :vocus_ticket: 0
-  :service_type: fttp (VOCUS)
-  :priority: '5'
-  :notes: OFFLINE | Contact?
-  :complete: false
 2017-08-16:
 - :id: 0
   :reference: 12312
@@ -14,6 +6,20 @@
   :service_type: fttn/b
   :priority: '1'
   :notes: OFFLINE | Online?
+  :complete: false
+- :id: 1
+  :reference: 1231
+  :vocus_ticket: 0
+  :service_type: fttp (VOCUS)
+  :priority: '5'
+  :notes: OFFLINE | Contact?
+  :complete: false
+- :id: 2
+  :reference: 2121
+  :vocus_ticket: 0
+  :service_type: fttn/b
+  :priority: '1'
+  :notes: DROPOUTS |
   :complete: false
 2017-08-17:
 - :id: 0
@@ -29,4 +35,12 @@
   :service_type: legacy service
   :priority: '4'
   :notes: BROWSING | Usage? Usage?
+  :complete: false
+2017-08-18:
+- :id: 0
+  :reference: 1231
+  :vocus_ticket: 0
+  :service_type: fttn/b
+  :priority: '1'
+  :notes: SPEED |
   :complete: false

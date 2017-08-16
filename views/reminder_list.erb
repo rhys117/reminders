@@ -72,9 +72,13 @@
             </td>
             <td>
               <form method="post" action="/<%= date %>/<%= reminder[:id] %>/delete">
-                <button onclick="return confirm('Delete reminder?')" type="submit">Delete Reminder</button>
+                <button onclick="return confirm('Delete reminder?')" type="submit">Delete</button>
               </form>
             </td>
+            <td>
+              <form method="get" action="/<%= date %>/<%= reminder[:id] %>/edit">
+                <button type="submit">Edit</button>
+              </form>
           </tr>
         <% end %>
       </table>
@@ -100,7 +104,7 @@
 
       <section class="service_type">
         <h3>Service Type:</h3>
-        <label><input type="checkbox" name="is_vocus?" value="true">VOCUS</label>
+        <label><input type="checkbox" name="is_vocus?" value="true" <%= checked(params[:is_vocus?], 'true') %>>VOCUS</label>
         <% settings.service_types.each do | service | %>
           <label><input type="radio" name="service_type" value="<%= service %>" <%= checked(params[:service_type], service) %>><%= service.upcase %></label>
         <% end %>
@@ -120,14 +124,13 @@
 
       <section class="priority">
         <label for="priority"><h3>Priority:</h3></label>
-          <select name="priority">
-          <% 5.times do |x| %>
-            <% x += 1 %>
-            <option <%= 'selected' if x == params[:priority].to_i %> value="<%= x %>"><%= x %></option>
-          <% end %>
-          </select>
-        </section>
-
+        <select name="priority">
+        <% 5.times do |x| %>
+          <% x += 1 %>
+          <option <%= 'selected' if x == params[:priority].to_i %> value="<%= x %>"><%= x %></option>
+        <% end %>
+        </select>
+      </section>
 
       <section class="notes">
         <label for="notes"><h3>Notes:</h3>
