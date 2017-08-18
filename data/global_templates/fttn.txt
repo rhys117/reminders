@@ -1,0 +1,56 @@
+NBN FTTB/N - Modem offline
+
+Fault Description (summary):
+
+-----------------------------------------------------------
+Modem lights: 
+Modem (brand & model):
+Modem sync light indicates: sync / no sync / negotiating
+Modem online (internet) light indicates: online / offline
+
+-- Customer Availability --
+If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+Mornings or Afternoons?:
+What is the best contact phone number for us to pass on to NBN?
+What is the best contact email for us to pass on to NBN?: (Optional)
+Name of the person who will be on site:
+What is the best way for SkyMesh get customer updates?: (sms / phone / email) [Provide + email/phone number]
+
+-----------------------------------------------------------
+
+Customer has agreed to leave NTD and CPE powered on:
+
+LST results (include Test IDs):
+- status:
+- service stability:
+- CPE type detected:
+- Physical profile:
+
+Troubleshooting done:
+- Rebooted all equipment: 
+- LQD run with robust re-sync option:
+- Port reset attempted:
+- SELT test run with no devices or cables connected to ports(include test code):
+- Number of phone sockets:
+- Alternate phone/VDSL line cable tested:
+- Modem reset?
+- Alternate modem tested (include model & FW version):
+
+- Has active PSTN service: yes / no<
+-- If so, is does the PSTN voice service (if present) work correctly, and without line noise and/or interference?
+
+Modem Brand & Model Number:
+Modem MAC Address: 
+Modem firmware version: 
+SkyMesh Supplied?: Yes / No
+
+*--------------STOP HERE IF THE MODEM IS STILL INDICATING NO DSL SYNC-----------------* 
+
+Tested with the 2nd patch cable?
+Devices tested while directly connected to Modem (at the very least, obtain brand & model numbers + MAC addresses):
+
+Ping statistics for 180.181.127.4:
+Packets: Sent = 100, Received = n Lost = n (n% loss),
+Approximate round trip times in milliseconds:
+Minimum = 0ms, Maximum = 0ms, Average = 0ms
+Traceroute 180.181.127.4:

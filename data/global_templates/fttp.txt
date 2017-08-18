@@ -1,0 +1,127 @@
+FTTH - Dead NTD
+
+Fault Description (summary):
+
+---------------------------
+Tested NTD in a different power outlet: [Yes/No]
+If unable, have you confirmed the outlet they're using works with another device?: [Yes/No]
+Disconnected Battery Backup unit from NTD, did BBU light up?: [Yes/No]
+Did any other equipment in the property die at the same time?: [Yes/No]
+
+-- Customer Availability --
+If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+Mornings or Afternoons?:
+What is the best contact phone number for us to pass on to NBN?
+Name of the person who will be on site:
+What is the best way for SkyMesh get customer updates?: (sms / phone / email) [Provide + email/phone number]
+
+*********************************************************************************************
+*********************************************************************************************
+*********************************************************************************************
+
+FTTH - Offline / Dropouts
+
+NB: Ensure NTD has been left powered on prior to lodgement!
+Fault Description (summary):
+
+-------------------------------------------
+AVC-ID:
+
+-- NTD Lights --
+Power: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING
+Optical: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING
+Alarm: OFF / RED SOLID / GREEN SOLID
+UNI-D1: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING 
+UNI-D2: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING 
+UNI-D3: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING 
+UNI-D4: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING 
+UNI-V1/2: OFF / GREEN SOLID / GREEN FLASHING 
+Update: OFF / RED SOLID/ GREEN SOLID
+
+-- Battery Pack Lights --
+Installed : YES / NO
+System Status: GREEN SOLID / GREEN FLASHING / OFF
+Battery Power: GREEN SOLID / GREEN FLASHING / OFF
+Replace Battery: RED SOLID / RED FLASHING / OFF
+Alarm Silence: YELLOW SOLID / YELLOW FLASHING / OFF
+
+-- Customer Availability --
+If NBN were to organise a service call in the next week, what day would be best between Monday and Friday?:
+Mornings or Afternoons?:
+What is the best contact phone number for us to pass on to NBN?
+Name of the person who will be on site:
+What is the best way for SkyMesh get customer updates?: (sms / phone / email) [Provide + email/phone number]
+
+-- General Troubleshooting --
+Customer has agreed to leave NTD and CPE powered on: Yes / No
+
+NTD, PSU, Cables and power points and own equipment are all powered on and cables are all secure? Yes / No
+PSU tested in alternative power source:
+Factory Reset NTD? Yes / No
+Any known damage to equipment or cabling? Yes / No
+Any damage to visible to outdoor cabling? Yes / No
+If Yes, Description of damage:
+
+Intermittent issue?: Yes / No
+If Yes, when did it begin?:
+If Yes, How often does it occur (be detailed):
+Time of last DHCPACK/Time left on DHCP Lease: <time> / never
+
+AVC Diagnostics Performed (include Test ID):
+
+*--------------STOP HERE IF THE OPTICAL LIGHT IS STILL OFF/RED-----------------*
+
+Device left connected to UNI-D: PC / ROUTER
+MAC Address:
+If Router, Brand & Model Number:
+SkyMesh Supplied?: Yes / No
+
+Tested with the 2nd patch cable?
+Models and MACs of devices tested:
+DHCP Configuration verified for each device used for direct-to-NTD testing? Yes / No
+If customer offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static entries):
+
+If recent, can customer PING www.google.com? Yes / No
+
+Ping statistics for 180.181.127.4:
+Packets: Sent = 100, Received = n Lost = n (n% loss),
+Approximate round trip times in milliseconds:
+Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+Traceroute 180.181.127.4:
+
+*********************************************************************************************
+*********************************************************************************************
+*********************************************************************************************
+
+FTTH - Speed/Packet Loss
+
+This is in addition to standard troubleshooting:
+-- Speed / Packet loss Issues --
+
+Customer connected via Wired/Wireless?
+Router Capable of Speed Expected? Yes / No
+Security Software (include version):
+Multiple Web browsers tried? Yes /No
+List which ones (include version):
+Proxies disabled? Yes / No / NA
+VPNs disabled? Yes / No / NA
+Internet options reset? Yes / No
+
+Reset Winsock (netsh winsock reset)? Yes / No / Not Windows
+Reset TCP/IP (netsh int ip reset resetlog.txt)? Yes / No / Not Windows
+Network adapters restarted? Yes / No
+
+Non-essential programs closed? Yes / No
+Tried Safe mode with Networking? Yes / No
+
+Customer experiencing Packet Loss?: Yes / No
+Customer experiencing increased latency than before?: Yes / No
+
+Speed Test Results (morning, afternoon, and evening). If not using netgauge.skymesh.net.au, specify servers used:
+Day 1(date)  Morning: Afternoon:    Evening:
+Day 2(date)  Morning:    Afternoon:    Evening:
+Day 3(date)  Morning:    Afternoon:    Evening:  
+(3 days of testing is not required, but this is the format we'd like you to use to present your results, you can include more tests to show the issue)
+
+Additional Diagnostics/Comments:

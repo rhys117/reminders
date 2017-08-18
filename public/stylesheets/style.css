@@ -12,12 +12,40 @@ header, main {
   margin: 0 auto;
 }
 
+.left_column, .rightcolumn {
+    float: left;
+}
+.left_column {
+  padding-right: 200px;
+  float: left;
+  min-height: 250px;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+.custom_copy {
+  padding-top: 20px;
+}
+
+main {
+  clear: both;
+}
+
 .flash {
   max-width: 1200px;
   padding: 10px 20px;
   margin: 20px auto 1.5em auto;
   color: #3399cc;
-  background: #CBE5F2; 
+  background: #CBE5F2;
 }
 
 .flash p {
@@ -37,6 +65,11 @@ header, main {
 
 .hidden {
   display: none;
+}
+.copy_data {
+  position: absolute;
+  left: -1000px;
+  top: -1000px;
 }
 
 h1 {

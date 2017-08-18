@@ -1,46 +1,362 @@
 ---
 2017-08-16:
-- :id: 0
-  :reference: 12312
-  :vocus_ticket: 0
-  :service_type: fttn/b
-  :priority: '1'
-  :notes: OFFLINE | Online?
-  :complete: false
 - :id: 1
-  :reference: 1231
+  :reference: 4044217
   :vocus_ticket: 0
-  :service_type: fttp (VOCUS)
+  :service_type: voip/univ
+  :priority: '3'
+  :notes: PSTN | Work done?
+  :complete: true
+- :id: 3
+  :reference: 3365958
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '3'
+  :notes: FW SPEED | Contact?
+  :complete: true
+- :id: 5
+  :reference: 4049660
+  :vocus_ticket: 0
+  :service_type: fw
   :priority: '5'
-  :notes: OFFLINE | Contact?
-  :complete: false
-- :id: 2
-  :reference: 2121
-  :vocus_ticket: 0
-  :service_type: fttn/b
-  :priority: '1'
-  :notes: DROPOUTS |
-  :complete: false
+  :notes: OFFLINE | Call customer. Contact?
+  :complete: true
 2017-08-17:
 - :id: 0
-  :reference: 12312
+  :reference: 4047465
+  :vocus_ticket: 0
+  :service_type: fttp
+  :priority: '1'
+  :notes: ROUTER | Contact? Online?
+  :complete: true
+- :id: 1
+  :reference: 4018277
+  :vocus_ticket: 0
+  :service_type: fttn/b
+  :priority: '2'
+  :notes: OFFLINE | Contact?
+  :complete: true
+- :id: 3
+  :reference: 3852992
+  :vocus_ticket: 0
+  :service_type: hfc (VOCUS)
+  :priority: '3'
+  :notes: DROPOUTS | Contact? LES
+  :complete: true
+- :id: 4
+  :reference: 4049736
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Contact?
+  :complete: true
+- :id: 5
+  :reference: 4017148
   :vocus_ticket: 0
   :service_type: fw
   :priority: '1'
-  :notes: SPEED |
-  :complete: false
-- :id: 1
-  :reference: 1231
+  :notes: FW SPEED | nbn response?
+  :complete: true
+- :id: 6
+  :reference: 4041261
   :vocus_ticket: 0
-  :service_type: legacy service
-  :priority: '4'
-  :notes: BROWSING | Usage? Usage?
-  :complete: false
+  :service_type: fw
+  :priority: '2'
+  :notes: OFFLINE | Online? Usage?
+  :complete: true
+- :id: 8
+  :reference: 4052732
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: ROUTER PW | Contact?
+  :complete: true
 2017-08-18:
+- :id: 4
+  :reference: 4029983
+  :vocus_ticket: 0
+  :service_type: hfc (VOCUS)
+  :priority: '3'
+  :notes: OFFLINE | Auth splash page
+  :complete: true
+- :id: 7
+  :reference: 4054884
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: PROVISIONING | Online?
+  :complete: true
+2017-08-15:
 - :id: 0
-  :reference: 1231
+  :reference: 1
   :vocus_ticket: 0
   :service_type: fttn/b
+  :priority: '5'
+  :notes: ADD FW. add PTSN
+  :complete: true
+- :id: 1
+  :reference: 1
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '5'
+  :notes: "https://rt.skymesh.net.au/Ticket/Display.html?id=\r\nhttps://members.wcg.net.au/view_ticket.php?id="
+  :complete: true
+2017-08-20:
+- :id: 0
+  :reference: 4049000
+  :vocus_ticket: 0
+  :service_type: lts
   :priority: '1'
-  :notes: SPEED |
+  :notes: BROWSING | Work done?
+  :complete: false
+- :id: 1
+  :reference: 4050275
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '1'
+  :notes: FW SPEED | Contact?
+  :complete: false
+- :id: 2
+  :reference: 4056268
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: ROUTER COMPAT | Contact? Online?
+  :complete: false
+2017-08-22:
+- :id: 0
+  :reference: 4049222
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: IPV6 | Work done?
+  :complete: false
+- :id: 1
+  :reference: 4040095
+  :vocus_ticket: 0
+  :service_type: fw (VOCUS)
+  :priority: '1'
+  :notes: FW | Outage, Contact?
+  :complete: false
+- :id: 2
+  :reference: 4050460
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: ROUTER CONFIGURE |  Contact?
+  :complete: false
+- :id: 3
+  :reference: 3733363
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | APPT Booked?
+  :complete: false
+- :id: 4
+  :reference: 4045772
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: DROPOUTS ROUTER | Contact?
+  :complete: false
+- :id: 5
+  :reference: 4038623
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '2'
+  :notes: CHARGEN | Usage?
+  :complete: false
+2017-08-23:
+- :id: 0
+  :reference: 4051886
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: ROUTER | Contact?
+  :complete: false
+- :id: 1
+  :reference: 4042603
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: BROWSING | ipv6 resolved?
+  :complete: false
+- :id: 2
+  :reference: 4049924
+  :vocus_ticket: 0
+  :service_type: fttp
+  :priority: '1'
+  :notes: SPEED | Contact?
+  :complete: false
+- :id: 3
+  :reference: 4055847
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: DROPOUTS | Contact?
+  :complete: false
+2017-08-19:
+- :id: 0
+  :reference: 4041261
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Usage? Contact?
+  :complete: true
+- :id: 1
+  :reference: 4052182
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: OFFLINE | Contact? Active Session?
+  :complete: true
+- :id: 2
+  :reference: 4052488
+  :vocus_ticket: 0
+  :service_type: fttp (VOCUS)
+  :priority: '1'
+  :notes: OFFLINE | Contact?
+  :complete: false
+- :id: 3
+  :reference: 4046470
+  :vocus_ticket: 0
+  :service_type: fttp
+  :priority: '2'
+  :notes: OFFLINE | Contact?
+  :complete: true
+- :id: 4
+  :reference: 4038933
+  :vocus_ticket: 322204
+  :service_type: fttn/b (VOCUS)
+  :priority: '2'
+  :notes: OFFLINE | Online?
+  :complete: false
+- :id: 5
+  :reference: 4054434
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: USAGE | Contact?
+  :complete: true
+- :id: 6
+  :reference: 4054477
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: SETUP HELP | Online?
+  :complete: false
+- :id: 7
+  :reference: 4036182
+  :vocus_ticket: 0
+  :service_type: fw (VOCUS)
+  :priority: '2'
+  :notes: OFFLINE | Wrong PPPoE Contact?
+  :complete: true
+- :id: 11
+  :reference: 3996144
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '4'
+  :notes: PACKETLOSS | Work done?
+  :complete: false
+- :id: 12
+  :reference: 4032159
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '1'
+  :notes: SPEED | Contact?
+  :complete: true
+- :id: 13
+  :reference: 3924013
+  :vocus_ticket: 0
+  :service_type: voip/univ
+  :priority: '1'
+  :notes: IVox Response?
+  :complete: false
+- :id: 14
+  :reference: 3944576
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '4'
+  :notes: OFFLINE | Work done? Online?
+  :complete: true
+- :id: 15
+  :reference: 3953325
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '4'
+  :notes: OFFLINE | Push for nbn response again
+  :complete: false
+- :id: 16
+  :reference: 4054645
+  :vocus_ticket: 0
+  :service_type: fttp
+  :priority: '2'
+  :notes: OFFLINE | Contact?
+  :complete: false
+- :id: 17
+  :reference: 4054522
+  :vocus_ticket: 0
+  :service_type: pstn
+  :priority: '5'
+  :notes: OFFLINE | Call Contact?
+  :complete: false
+2017-08-21:
+- :id: 0
+  :reference: 4052461
+  :vocus_ticket: 0
+  :service_type: legacy service
+  :priority: '1'
+  :notes: Router Deployed?
+  :complete: false
+- :id: 1
+  :reference: 4051561
+  :vocus_ticket: 0
+  :service_type: pstn
+  :priority: '5'
+  :notes: OFFLINE | Online?
+  :complete: false
+- :id: 2
+  :reference: 3922729
+  :vocus_ticket: 0
+  :service_type: fttp
+  :priority: '1'
+  :notes: SPEED | Contact?
+  :complete: false
+- :id: 3
+  :reference: 4057549
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '2'
+  :notes: Contact?
+  :complete: false
+- :id: 4
+  :reference: 3989293
+  :vocus_ticket: 0
+  :service_type: voip/univ
+  :priority: '4'
+  :notes: FIXED | Contact?
+  :complete: false
+- :id: 5
+  :reference: 4054545
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '3'
+  :notes: OFFLINE | Work done?
+  :complete: false
+2017-08-24:
+- :id: 0
+  :reference: 3912775
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: ROUTER | Returned?
+  :complete: false
+2017-08-25:
+- :id: 0
+  :reference: 4049736
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Online?
   :complete: false

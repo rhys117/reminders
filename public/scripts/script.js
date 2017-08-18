@@ -5,6 +5,7 @@ $(document).ready(function () {
   hide_reminders_if_checked('show_future_reminders', 'future_date');
   set_select_from_storage('show_above_priority');
   hide_reminders_below_priority();
+  new Clipboard('.copy-text');
 });
 
 function hide_reminders_if_checked(button, affected_class) {

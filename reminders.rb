@@ -133,7 +133,6 @@ configure do
   set :session_secret, "0165359735"
 end
 
-
 helpers do
   def current_date
     DateTime.now.strftime "%Y-%m-%d"
@@ -180,10 +179,38 @@ helpers do
   end
 end
 
+def get_quick_copy_hash
+  path = data_path + "/global_templates/*"
+
+  quick_copy_data = {}
+  Dir[path].each do |file|
+    file_name = File.basename(file, ".*")
+    file_content = File.read(file)
+    quick_copy_data[file_name] = file_content.gsub("\n", "<br />")
+  end
+
+  quick_copy_data
+end
+
+def get_quick_copy_custom_hash
+  path = data_path + "/#{session[:username]}/custom_clips/*"
+
+  quick_copy_data = {}
+  Dir[path].each do |file|
+    file_name = File.basename(file, ".*")
+    file_content = File.read(file)
+    quick_copy_data[file_name] = file_content.gsub("\n", "<br />")
+  end
+
+  quick_copy_data
+end
+
 get "/" do
   redirect_unless_signed_in
 
   @reminder_list = load_reminders_list
+  @quick_copy = get_quick_copy_hash
+  @quick_copy_custom = get_quick_copy_custom_hash
 
   erb :reminder_list
 end
@@ -356,4 +383,36 @@ post "/make_incomplete_current" do
 
   session[:success] = "All past incomplete reminders moved to today"
   redirect "/"
+end
+
+get "/new_custom_clip" do
+  erb :new_custom_clip
+end
+
+SUPPORTED_FILETYPES = [".txt"]
+
+def filetype_supported?(file)
+  SUPPORTED_FILETYPES.include?(File.extname(file))
+end
+
+post "/new_custom_clip" do
+  redirect_unless_signed_in
+  file = params[:filename].to_s
+
+  if file.size == 0
+    session[:error] = "A name is required"
+    status 422
+    erb :new_custom_clip
+  elsif filetype_supported?(file)
+    file_path = File.join(data_path + "/#{session[:username]}/custom_clips", file)
+
+    File.write(file_path, params[:content])
+    session[:success] = "#{params[:filename]} has been created"
+
+    redirect "/"
+  else
+    session[:error] = "Filetype not supported. Must end in '.txt'"
+    status 422
+    erb :new_custom_clip
+  end
 end
