@@ -38,6 +38,10 @@
         or above
       </label>
     </section>
+
+    <section>
+      <input type="text" id="search" placeholder="Search..">
+    </section>
   </div>
 
   <div class="right_column">
@@ -53,7 +57,10 @@
       <p class="copy_data" id="<%= name %>"><%= content %></p>
       <a class="copy-text button" data-clipboard-target="#<%= name %>" href="#"><%= name.upcase %></a>
     <% end %>
-    <a href="/new_custom_clip">Create New Custom Clip</a>
+    <div class="quick_copy_actions">
+      <a href="/new_custom_clip">Create New</a>
+      <a href="/edit_custom_clips">Edit Current</a>
+    </div>
   </div>
 </header>
 
@@ -61,10 +68,9 @@
   <% @reminder_list.sort.each do |date, reminders_array| %>
     <article class="<%= date_classes(date) %>">
       <h2><%= display_date(date) %></h2>
-      <table>
+      <table id="reminder_table">
         <tr>
           <th>Ref #</th>
-          <th>Priority</th>
           <th>Service Type</th>
           <th>Notes</th>
         </tr>
@@ -73,10 +79,9 @@
             <td>
               <a target="_blank" href="<%= reference_url(reminder[:reference]) %>"><%= reminder[:reference] %></a>
             </td>
-            <td><%= reminder[:priority] %></td>
             <td>
-              <% if reminder[:vocus_ticket] != 0 %>
-                <a target="_blank" href="<%= vocus_url(reminder[:vocus_ticket]) %>">
+              <% if reminder[:vocus_ticket] > 0  || reminder[:nbn_ticket] > 0 %>
+                <a target="_blank" href="<%= service_url(reminder) %>">
                   <%= reminder[:service_type].upcase %></td>
                 </a>
               <% else %>
@@ -84,13 +89,13 @@
               <% end %>
             <td><%= reminder[:notes] %></td>
             <td>
-              <form method="get" action="/<%= date %>/<%= reminder[:id] %>/<%= inverse_complete_value(reminder) %>">
-                <button type="submit">Mark as <%= inverse_complete_value(reminder) %></button>
+              <form class="alter_complete_status" method="get" action="/<%= date %>/<%= reminder[:id] %>/<%= inverse_complete_value(reminder) %>">
+                <button type="submit"><%= inverse_complete_value(reminder).capitalize %></button>
               </form>
             </td>
             <td>
-              <form method="post" action="/<%= date %>/<%= reminder[:id] %>/delete">
-                <button onclick="return confirm('Delete reminder?')" type="submit">Delete</button>
+              <form class="delete" method="post" action="/<%= date %>/<%= reminder[:id] %>/delete">
+                <button type="submit">Delete</button>
               </form>
             </td>
             <td>
@@ -108,16 +113,15 @@
     <form method="post" action="/add_reminder">
       <section class="remind_me">
         <h3>Remind me in:</h3>
-          <label><input type="radio" name="date" value="1day" <%= checked(params[:date], '1day') %>>Tomorrow</label>
-          <label><input type="radio" name="date" value="2day" <%= checked(params[:date], '2day') %>>Two days</label>
-          <label><input type="radio" name="date" value="3day" <%= checked(params[:date], '3day') %>>Three days</label>
-          <label><input type="radio" name="date" value="5day" <%= checked(params[:date], '5day') %>>Five days</label>
-          <label><input type="radio" name="date" value="7day" <%= checked(params[:date], '7day') %>>Seven days</label>
+        <label><input type="radio" name="date" value="1day" <%= checked(params[:date], '1day') %>>Tomorrow</label>
+        <label><input type="radio" name="date" value="2day" <%= checked(params[:date], '2day') %>>Two days</label>
+        <label><input type="radio" name="date" value="3day" <%= checked(params[:date], '3day') %>>Three days</label>
+        <label><input type="radio" name="date" value="5day" <%= checked(params[:date], '5day') %>>Five days</label>
+        <label><input type="radio" name="date" value="7day" <%= checked(params[:date], '7day') %>>Seven days</label>
 
-          <label onclick="deselect('input[name=date]')" id="custom_date">Custom Date:
-            <input name="custom_date" type="date" value="<%= current_date %>">
-          </label>
-          <input type="reset" />
+        <label onclick="deselect('input[name=date]')" id="custom_date">Custom Date:
+          <input name="custom_date" type="date" value="<%= current_date %>">
+        </label>
       </section>
 
       <section class="service_type">
@@ -137,6 +141,12 @@
       <section class="vocus">
         <label for="vocus_ticket"><h3>VOCUS Ticket Number:</h3>
           <input type="number" name="vocus_ticket" value="<%= params[:vocus_ticket] %>">
+        </label>
+      </section>
+
+      <section class="nbn_ticket">
+        <label for="nbn_ticket"><h3>nbn Incident Number:</h3>
+          <input type="number" name="nbn_ticket" value="<%= params[:nbn_ticket] %>">
         </label>
       </section>
 

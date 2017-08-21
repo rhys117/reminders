@@ -1,0 +1,10 @@
+<a href="/">Home</a>
+<% @files.each do |file| %>
+  <li>
+    <%= file %>
+    <a href="/edit_custom_clips/<%= file %>">Edit</a>
+    <form class="inline" method="post" action="/edit_custom_clips/delete/<%= file %>" onclick="return confirm('Are you sure you want to delete this quicknote?')">
+      <button type="submit">Delete</button>
+    </form>
+  </li>
+<% end %>

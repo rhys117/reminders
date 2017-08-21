@@ -14,7 +14,7 @@
           <label><input type="radio" name="new_date" value="5day">Five days</label>
           <label><input type="radio" name="new_date" value="7day">Seven days</label>
 
-          <label onclick="deselect('input[name=new_date]')" id="custom_date">Custom new_date:
+          <label onclick="deselect('input[name=new_date]')" id="custom_date">Custom date:
             <input name="custom_date" type="date" value="<%= @date %>">
           </label>
           <input type="reset" />
@@ -37,6 +37,12 @@
       <section class="vocus">
         <label for="vocus_ticket"><h3>VOCUS Ticket Number:</h3>
           <input type="number" name="vocus_ticket" value="<%= @reminder[:vocus_ticket] %>">
+        </label>
+      </section>
+
+      <section class="nbn_ticket">
+        <label for="nbn_ticket"><h3>nbn Incident Number:</h3>
+          <input type="number" name="nbn_ticket" value="<%= @reminder[:nbn_ticket] %>">
         </label>
       </section>
 

@@ -4,12 +4,20 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.inline {
+  display: inline !important;
+}
+
 header, main {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.reminder_copy_data {
+  padding-left: 20px;
 }
 
 .left_column, .rightcolumn {
@@ -19,6 +27,9 @@ header, main {
   padding-right: 200px;
   float: left;
   min-height: 250px;
+}
+#search {
+  font-size: 1em;
 }
 
 .button {
@@ -68,8 +79,11 @@ main {
 }
 .copy_data {
   position: absolute;
-  left: -1000px;
-  top: -1000px;
+  left: -3000px;
+  top: -3000px;
+}
+.quick_copy_actions {
+  display: block;
 }
 
 h1 {
@@ -118,24 +132,20 @@ tr th:nth-of-type(1), tr td:nth-of-type(1) {
   width: 10%;
 }
 tr th:nth-of-type(2), tr td:nth-of-type(2) {
-  min-width: 60px;
-  width: 10%;
-}
-tr th:nth-of-type(3), tr td:nth-of-type(3) {
   min-width: 160px;
   width: 15%;
   text-align: right;
   padding-right: 30px;
 }
-tr th:nth-of-type(4), tr td:nth-of-type(4) {
+tr th:nth-of-type(3), tr td:nth-of-type(3) {
   min-width: 240px;
-  width: 50%;
+  width: 60%;
 }
-tr th:nth-of-type(5), tr td:nth-of-type(5) {
-  min-width: 130px;
+tr th:nth-of-type(4), tr td:nth-of-type(4) {
+  min-width: 60px;
   text-align: right;
 }
-tr th:nth-of-type(6), tr td:nth-of-type(6) {
+tr th:nth-of-type(5), tr td:nth-of-type(5) {
   min-width: 40px;
   text-align: middle;
 }

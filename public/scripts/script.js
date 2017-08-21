@@ -6,6 +6,41 @@ $(document).ready(function () {
   set_select_from_storage('show_above_priority');
   hide_reminders_below_priority();
   new Clipboard('.copy-text');
+
+  $('#search').on('keyup',function(){
+    var searchTerm = $(this).val().toLowerCase();
+    $('#reminder_table tr').each(function(){
+        var lineStr = $(this).text().toLowerCase();
+        if(lineStr.indexOf(searchTerm) === -1){
+          $(this).hide();
+        }else{
+          $(this).show();
+        }
+    });
+  });
+
+  $("form.delete").submit(function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    var ok = confirm("Are you sure? This cannot be undone!");
+    if (ok) {
+      var form = $(this);
+
+      var request = $.ajax({
+        url: form.attr("action"),
+        method: form.attr("method")
+      });
+
+      request.done(function(data, textStatus, jqXHR) {
+        if (jqXHR.status === 204) {
+          form.parents("tr").remove();
+        } else if (jqXHR.status === 200) {
+          document.location = data;
+        }
+      });
+    }
+  });
 });
 
 function hide_reminders_if_checked(button, affected_class) {

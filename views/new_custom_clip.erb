@@ -3,11 +3,11 @@
   <div>
     <label for="filename">Filename:
       <br />
-      <input name="filename" id="filename" />
+      <input name="filename" id="filename" value="<%= params[:filename] %>" />
     </label>
     <br />
     <p>Content</p>
-    <textarea name="content" id="content" rows="20" cols="100"><%= @content%></textarea>
+    <textarea name="content" id="content" rows="20" cols="100"><%= params[:content] %></textarea>
     <br />
     <button type="submit">Create</button>
   </div>

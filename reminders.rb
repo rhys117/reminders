@@ -99,6 +99,7 @@ def generate_reminder(params, reminders_hash, date)
   new_reminder = { id: next_element_id(reminders_hash[date]),
                    reference: params[:reference].strip.to_i,
                    vocus_ticket: params[:vocus_ticket].strip.to_i,
+                   nbn_ticket: params[:nbn_ticket].strip.to_i,
                    service_type: service_type,
                    priority: params[:priority],
                    notes: params[:notes].strip,
@@ -163,8 +164,11 @@ helpers do
     settings.reference_url + ref.to_s
   end
 
-  def vocus_url(ref)
-    settings.vocus_url + ref.to_s
+  def service_url(reminder)
+    vocus = reminder[:vocus_ticket]
+    nbn = reminder[:nbn_ticket]
+    return settings.vocus_url + vocus.to_s if vocus > 0
+    settings.nbn_url + nbn.to_s
   end
 
   def checked(param_value, value)
@@ -179,7 +183,7 @@ helpers do
   end
 end
 
-def get_quick_copy_hash
+def quick_copy_hash
   path = data_path + "/global_templates/*"
 
   quick_copy_data = {}
@@ -192,7 +196,7 @@ def get_quick_copy_hash
   quick_copy_data
 end
 
-def get_quick_copy_custom_hash
+def quick_copy_custom_hash
   path = data_path + "/#{session[:username]}/custom_clips/*"
 
   quick_copy_data = {}
@@ -208,9 +212,11 @@ end
 get "/" do
   redirect_unless_signed_in
 
+  @outages = []
+
   @reminder_list = load_reminders_list
-  @quick_copy = get_quick_copy_hash
-  @quick_copy_custom = get_quick_copy_custom_hash
+  @quick_copy = quick_copy_hash
+  @quick_copy_custom = quick_copy_custom_hash
 
   erb :reminder_list
 end
@@ -240,15 +246,18 @@ post "/sign_out" do
 end
 
 post "/add_reminder" do
+  redirect_unless_signed_in
   error = error_message(params)
 
   if error
     session[:error] = error
-
+    @quick_copy = quick_copy_hash
+    @quick_copy_custom = quick_copy_custom_hash
     @reminder_list = load_reminders_list
     erb :reminder_list
   else
     reminders_hash = load_reminders_list
+
     date = calculate_date(params[:date], params[:custom_date])
     new_reminder = generate_reminder(params, reminders_hash, date)
 
@@ -259,12 +268,16 @@ post "/add_reminder" do
       file.write reminders_hash.to_yaml
     end
 
-    session[:success] = "#{set_service_type(params).upcase} #{params[:notes]} <br/> #{display_date(date)}"
+    rt_reminder = "#{set_service_type(params).upcase} #{params[:notes]}"
+    session[:success] = "#{rt_reminder} <br/> #{display_date(date)}"
+    session[:reminder_copy_content] = rt_reminder
+    session[:reminder_copy_date] = "#{display_date(date)}"
     redirect "/"
   end
 end
 
 get "/:date/:id/complete" do
+  redirect_unless_signed_in
   id = params[:id].to_i
 
   date = Date.parse(params[:date])
@@ -282,6 +295,7 @@ get "/:date/:id/complete" do
 end
 
 get "/:date/:id/incomplete" do
+  redirect_unless_signed_in
   id = params[:id].to_i
   date = Date.parse(params[:date])
   reminders_hash = load_reminders_list
@@ -297,6 +311,7 @@ get "/:date/:id/incomplete" do
 end
 
 post "/:date/:id/delete" do
+  redirect_unless_signed_in
   id = params[:id].to_i
   date = Date.parse(params[:date])
 
@@ -310,11 +325,17 @@ post "/:date/:id/delete" do
   File.open(reminder_path, "w") do |file|
     file.write reminders_hash.to_yaml
   end
-  session[:success] = "Reminder deleted"
-  redirect "/"
+
+  if env["HTTP_X_REQUESTED_WITH"] == "XMLHttpRequest"
+    status 204
+  else
+    redirect "/"
+    session[:success] = "Reminder deleted"
+  end
 end
 
 get "/:date/:id/edit" do
+  redirect_unless_signed_in
   id = params[:id].to_i
   @date = Date.parse(params[:date])
 
@@ -330,6 +351,7 @@ get "/:date/:id/edit" do
 end
 
 post "/:date/:id/edit" do
+  redirect_unless_signed_in
   error = error_message(params)
 
   if error
@@ -359,6 +381,7 @@ post "/:date/:id/edit" do
 end
 
 post "/delete_all_complete" do
+  redirect_unless_signed_in
   reminders_hash = load_reminders_list
 
   reminders_hash.each do |_, reminders_array|
@@ -375,6 +398,7 @@ post "/delete_all_complete" do
 end
 
 post "/make_incomplete_current" do
+  redirect_unless_signed_in
   reminders_hash = make_past_uncomplete_current
 
   File.open(reminder_path, "w") do |file|
@@ -386,6 +410,7 @@ post "/make_incomplete_current" do
 end
 
 get "/new_custom_clip" do
+  redirect_unless_signed_in
   erb :new_custom_clip
 end
 
@@ -416,3 +441,62 @@ post "/new_custom_clip" do
     erb :new_custom_clip
   end
 end
+
+get "/edit_custom_clips" do
+  redirect_unless_signed_in
+  path = data_path + "/#{session[:username]}/custom_clips"
+
+  pattern = File.join(path, "*")
+  @files = Dir.glob(pattern).map do |file|
+    File.basename(file)
+  end
+
+  erb :edit_quick_notes
+end
+
+get "/edit_custom_clips/:file" do
+  redirect_unless_signed_in
+
+  file_path = data_path + "/#{session[:username]}/custom_clips/#{params[:file]}"
+  @filename = params[:file]
+  @content = File.read(file_path)
+
+  erb :edit_quickcopy_file
+end
+
+post "/edit_custom_clips/:file" do
+  redirect_unless_signed_in
+
+  file_path = data_path + "/#{session[:username]}/custom_clips/#{params[:file]}"
+
+  File.write(file_path, params[:content])
+
+  session[:success] = "#{params[:file]} has been updated"
+  redirect("/")
+end
+
+post "/edit_custom_clips/delete/:file" do
+  redirect_unless_signed_in
+
+  file_path = data_path + "/#{session[:username]}/custom_clips/#{params[:file]}"
+
+  File.delete(file_path)
+  session[:success] = "Quick CLipboard #{params[:file]} has been deleted."
+  redirect "/"
+end
+
+# get "/edit_custom_clips" do
+#   def quick_copy_custom_hash
+#   path = data_path + "/#{session[:username]}/custom_clips/*"
+
+#   quick_copy_data = {}
+#   Dir[path].each do |file|
+#     file_name = File.basename(file, ".*")
+#     file_content = File.read(file)
+#     quick_copy_data[file_name] = file_content.gsub("\n", "<br />")
+#   end
+
+#   quick_copy_data
+
+
+# end
