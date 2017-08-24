@@ -1,889 +1,718 @@
 ---
-2017-08-17:
+2017-08-16:
 - :id: 1
-  :reference: 222
-  :vocus_ticket: 123
-  :service_type: hfc
+  :reference: 4044217
+  :vocus_ticket: 0
+  :service_type: voip/univ
   :priority: '3'
-  :notes: test
-  :complete: false
+  :notes: PSTN | Work done?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
 - :id: 3
-  :reference: 12312
+  :reference: 3365958
   :vocus_ticket: 0
   :service_type: fw
-  :priority: '4'
-  :notes: SPEED |
-  :complete: false
+  :priority: '3'
+  :notes: FW SPEED | Contact?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
-2017-08-19:
+- :id: 5
+  :reference: 4049660
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '5'
+  :notes: OFFLINE | Call customer. Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+2017-08-17:
 - :id: 0
-  :reference: 12312
+  :reference: 4047465
   :vocus_ticket: 0
   :service_type: fttp
   :priority: '1'
-  :notes: aaaaaa
-  :complete: false
+  :notes: ROUTER | Contact? Online?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
-- :id: 2
-  :reference: 122312
+- :id: 1
+  :reference: 4018277
   :vocus_ticket: 0
-  :service_type: fttp (VOCUS)
-  :priority: '1'
-  :notes: '12321'
-  :complete: false
+  :service_type: fttn/b
+  :priority: '2'
+  :notes: OFFLINE | Contact?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
 - :id: 3
+  :reference: 3852992
+  :vocus_ticket: 0
+  :service_type: hfc (VOCUS)
+  :priority: '3'
+  :notes: DROPOUTS | Contact? LES
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 4
+  :reference: 4049736
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 5
+  :reference: 4017148
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '1'
+  :notes: FW SPEED | nbn response?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 6
+  :reference: 4041261
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '2'
+  :notes: OFFLINE | Online? Usage?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 8
+  :reference: 4052732
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: ROUTER PW | Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+2017-08-18:
+- :id: 4
+  :reference: 4029983
+  :vocus_ticket: 0
+  :service_type: hfc (VOCUS)
+  :priority: '3'
+  :notes: OFFLINE | Auth splash page
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 7
+  :reference: 4054884
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: PROVISIONING | Online?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+2017-08-15:
+- :id: 0
   :reference: 1
   :vocus_ticket: 0
   :service_type: fttn/b
+  :priority: '5'
+  :notes: ADD FW. add PTSN
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 1
+  :reference: 1
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '5'
+  :notes: "https://rt.skymesh.net.au/Ticket/Display.html?id=\r\nhttps://members.wcg.net.au/view_ticket.php?id="
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+2017-08-22:
+- :id: 1
+  :reference: 4040095
+  :vocus_ticket: 0
+  :service_type: fw (VOCUS)
   :priority: '1'
-  :notes: "Contact/Enquiry (example only)\r\n\r\nLive [call/callback] [for/from] <number>
-    >> [spoke to <name> / left VM / unavailable / rang out with no option for VM]\r\n-
-    confirmed ID\r\n<name> reports...<general explanation in customer words>..\r\n-
-    <symptom>\r\n- <symptom>\r\n\r\n\r\nChecking [<system>/cables/modem/etc]...\r\n-
-    <findings>\r\n- <more findings>\r\n\r\n\r\nAsked user to <TS step>...\r\n- <outcome/new
-    symptoms>\r\n- <outcome/new symptoms>\r\n...\r\nAsked user to <TS step>...\r\n...\r\n<rinse
-    and repeat>\r\n...\r\n\r\n\r\nAdvised <outcome/diagnosis>...\r\n<Customer question>
-    >> <answer given>\r\n<Customer question> >> <answer given>\r\n\r\n \r\nAdvised
-    expected timeframe for <work>.....agreed to contact on [next update/<day>/<time>]\r\n-
-    <closing statement from the customer>\r\n- best contact is: <contact method>\r\nOR\r\nCustomer
-    will contact Support when <condition for calling>\r\nOR\r\nCustomer will monitor
-    for further issues.\r\nOR\r\nNo further query.\r\nAssistance Required\r\n\r\nSee
-    Support_Ticket_Types#Assistance_Required\r\nDetailed Summary of issue: \r\nWhat
-    troubleshooting has been done:\r\nWhat is the expected behavior:\r\nHow does the
-    troubleshooting differ from the expected behavior:\r\nEscalation to Supervisor\r\n\r\nCustomer
-    Name:\r\n\r\nPreferred Contact Method: Phone/Email\r\nContact Number/Email:\r\nSecond
-    Contact Option: Optional\r\n\r\nWhat would the customer like a Supervisor to Address/Look
-    into?:\r\n\r\nWhat is the outcome the customer is hoping for as a result of a
-    Supervisor looking into this?:\r\nOutage Response Templates\r\n\r\nOngoing\r\n\r\nFor
-    responding to enquiries received during (and related to) an outage, but service
-    appears to be back online\r\nSMS\r\nWe can confirm an outage is currently impacting
-    your service. Please visit https://www.skymesh.net.au/advisories/ for updates.
-    Thanks, SkyMesh\r\n\r\nEMAIL\r\nHi {FIRSTNAME},\r\n\r\nThank you for your enquiry,
-    There is presently an outage affecting customers in your area, This outage appears
-    to be the cause of the problems you've reported. \r\nWe are actively working with
-    our delivery partners to resolve the outage as quickly as possible, once the outage
-    has been resolved your service should be back online. \r\nCurrent outage status
-    is available at https://www.skymesh.net.au/advisories/ \r\nIf your service doesn't
-    come back online once the outage is listed as resolved, please try power cycling
-    all of your equipment including your NTD, router and computer.\r\n\r\nIf you require
-    further assistance, please reply to this email or call 1300 759 637.\r\n\r\nWe
-    apologise for the inconvenience this has caused you.\r\n\r\nThanks,\r\n\r\nSkyMesh
-    Support Team\r\nResolved\r\n\r\nFor when enquiry was received during (and related
-    to) a now-resolved outage and service appears to be back online\r\nSMS\r\nThe
-    recent outage that affected your service has now been resolved. If your service
-    isn't already back online, please try power cycling all of your equipment. If
-    you require assistance, please reply with CALLBACK SUPPORT or call 1300759637.
-    We apologise for the inconvenience this has caused you. Thanks, SkyMesh\r\n\r\nEMAIL\r\nHi
-    {FIRSTNAME},\r\n\r\nThank you for your enquiry. The recent outage that affected
-    your service also inconvenienced many of our customers and, unfortunately, we
-    weren't able to reply to your email promptly.\r\n\r\nThe outage has now been resolved
-    and your service should be back online. If your service isn't already back online,
-    please try power cycling all of your equipment including your NTD, router and
-    computer.\r\n\r\nIf you require further assistance, please reply to this email
-    or call 1300 759 637.\r\n\r\nWe apologise for the inconvenience this has caused
-    you.\r\n\r\nThanks,\r\n\r\nSkyMesh Support Team\r\nIPA Templates\r\n\r\nIPA -
-    Level 1 Information\r\n\r\nFault Description (summary):\r\n\r\nUTSN:\r\n\r\n--------
-    Level 1 Information --------\r\nAre there any current beam/gateway outages?\r\nRecent
-    weather conditions:\r\nAny line of sight issues?\r\nAre the TX and RX cables tightly
-    secured, with no signs of damage to F-Connectors?\r\nHas the modem been powercycled?\r\nHave
-    the Tx and Rx cables been removed and reseated?\r\nHas a Factory Reset been performed?\r\n\r\n----
-    Level 1 ----\r\nSignal Strength:\r\nEsN0:\r\nLast Login Status Message:\r\nTx
-    Gain:\r\nMax Gain:\r\nLNB Frequency*:\r\nRx Frequency(RF)*:\r\nRx Frequency(L-Band)*\r\nEnabled
-    Login: Yes / No\r\nNettgain: Enabled / Disabled\r\nNAT: Yes / No\r\nModem Firmware:\r\nIs
-    there an external attenuator?: TX / RX / None\r\nTX attenuator removed?: Yes /
-    No\r\n\r\n* Ensure you check the modem is on the correct beam before lodging a
-    fault*\r\n* If Signal Strength and EsNo show 0.0 or 1.0 please try swapping the
-    coaxial cables* \r\nIPA - Factory Reset\r\n\r\nIn addition to Level 1 information:\r\nHas
-    TX Gain defaulted to -15db?: Yes / No\r\nHas Max Gain defaulted to -14db?: Yes
-    / No\r\nWas the Factory Reset a Success? : Yes/No\r\nHas the beam frequencies
-    been reset to customer’s beam?*: Yes/No\r\nHas Login Enabled been ticked: Yes/No\r\nHas
-    DNS reset to 203.192.33.34 and then changed to SkyMesh DNS settings?: Yes/No\r\n\r\nCurrent
-    Signal Strength:\r\nCurrent EsN0:\r\nLast Login Status Message:\r\n\r\n* Ensure
-    you have put the modem on the correct beam before lodging a fault*\r\nIPA - Speed
-    Issues\r\n\r\nIn addition to Level 1 information:\r\n--Plan Information\r\nShaped
-    / FAPd: Yes / No\r\nPlan Speed:\r\nPID:\r\n\r\n--Computer Settings--\r\nOperating
-    System:\r\nPC connected directly to UT? Yes / No\r\nSecurity Software (include
-    version):\r\nMultiple Web browsers tried? Yes /No\r\nList which ones (include
-    version):\r\n\r\nProxies been disabled: Yes / No / NA\r\nVPNs disabled: Yes /
-    No / NA\r\nIE Reset: Yes / No\r\nReset Winsock (netsh winsock reset): Yes / No
-    / Not Windows\r\nReset TCP/IP (netsh int ip reset resetlog.txt): Yes / No / Not
-    Windows\r\nNetwork adapters restarted? Yes / No\r\nNon-essential programs closed?
-    Yes / No\r\nLogged into Safe-Mode w/ Networking? Yes / No / Not Windows\r\nTried
-    2nd Computer? Yes / No\r\n\r\n-- SkyMesh OOKLA Test –-\r\nMorning Test (6-9am)\r\nTime
-    completed:\r\nResults (Download / Upload / Latency):\r\nAfternoon Test (1-5pm)\r\nTime
-    completed:\r\nResults (Download / Upload / Latency):\r\nEvening Test (6-11pm)\r\nTime
-    completed:\r\nResults (Download / Upload / Latency):\r\nIPA - Packet Loss\r\n\r\nIn
-    addition to Level 1 information:\r\nShaped / FAPd (check Webpro & PacketLogic)?
-    Yes / No\r\nDoes the customer usually connect via a router? Include model #\r\nDiagnostics
-    completed with PC connected directly to UT? Yes / No\r\n\r\nPing statistics for
-    192.168.5.100:\r\nPackets: Sent = 100, Received = n, Lost = n (n% loss),\r\nApproximate
-    round trip times in milli-seconds:\r\nMinimum = 0ms, Maximum = 0ms, Average =
-    0ms\r\n\r\nPing statistics for 192.168.1.1:\r\nPackets: Sent = 100, Received =
-    100, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\nMinimum
-    = 0ms, Maximum = 0ms, Average = 0ms\r\n\r\nPing statistics for 180.181.127.3:\r\nPackets:
-    Sent = 100, Received = 100, Lost = 0 (0% loss),\r\nApproximate round trip times
-    in milli-seconds:\r\nMinimum = 0ms, Maximum = 0ms, Average = 0ms\r\n\r\nOperating
-    System: \r\nLogin to Safe-Mode w/ Networking: Yes / No\r\nSecurity Software (include
-    version):\r\nDisabled Security Software: Yes / No / Non installed\r\n\r\nProxies
-    disabled: Yes / No / NA\r\nVPNs disabled: Yes / No / NA\r\nIE Reset: Yes / No\r\nReset
-    Winsock (netsh winsock reset): Yes / No / Not Windows\r\nReset TCP/IP (netsh int
-    ip reset resetlog.txt): Yes / No / Not Windows\r\nNetwork adapters restarted:
-    Yes / No\r\nDiagnostics also done on a second PC? Yes / No / Not Available - Customer
-    will need a second one to confirm issue\r\nIPA - VOIP\r\n\r\nIn addition to Level
-    1 information:\r\nPhone Number of Service:\r\n\r\nDevice Model:\r\nConnected correctly?
-    Yes / No\r\nSkyMesh-Supplied? Yes / No\r\nConnected through Router? Yes / No\r\nRouter
-    Model:\r\nSkyMesh-Supplied? Yes / No / NA\r\n\r\nRegistering? Yes / No (if not,
-    does it register in office?)\r\nCBR enabled? Yes / No\r\nWhat CBR entries are
-    in the Modem?\r\nPower Cycled? Yes / No\r\n\r\nRTP Packet size set to 0.020: Yes
-    / No\r\nSIP ToS/DiffServ Value: 0x68\r\nJitter Level: High / Very High\r\nInbound
-    Proxy set to sip.skymesh.net.au: Yes / No\r\nOutbound Proxy set to sip.skymesh.net.au:
-    Yes / No\r\nUse Outbound Proxy set to Yes: Yes / No\r\nSIP Username re-entered:
-    Yes / No\r\nSIP Display name re-entered: Yes / No\r\nSIP Password re-entered:
-    Yes / No\r\nG711a Codec used: Yes / No\r\nDial Plan re-entered: Yes / No\r\n\r\nCustomer
-    tried with 2nd handset? Yes / No\r\nCustomer tried with different phone cable?
-    Yes / No / Unable\r\nBypassed router? Yes / No\r\nPacketlogic showing SIP Traffic
-    during test call? Yes / No\r\n\r\nFactory Reset and reconfigured? Yes / No\r\nTried
-    configuring ATA Phone Phone Port 2 (if available)? Yes / No\r\nIPA - Dead PSU/UT\r\n\r\nUTSN:\r\nFault
-    summary:\r\n\r\n-------------------------------------------\r\n\r\nEsno Graph:
-    Normal / Possible Issue\r\n \r\nAfter powercycle, modem power light is: on /off\r\nWhen
-    connected to different power socket, modem power light is: on /off\r\n      If
-    another power socket is not available, what confirms the power socket works? \r\nWhen
-    TX / RX Cables removed, modem power light is: on /off\r\nWhen not connected to
-    modem, PSU Light is: on / off\r\n\r\nWarranty Status (for equipment previously
-    replaced): In/Out of warranty(include warranty expiration date)\r\n\r\nNSS Templates\r\n\r\nNSS
-    - RF Fault (Offline)\r\n\r\nUTSN:\r\nFault Description (summary):\r\n\r\n--Level
-    1 Information--\r\nAre there any current beam/gateway outages?\r\nRecent weather
-    conditions:\r\nAny line of sight issues?\r\nAre the Tx and Rx cables tightly secured,
-    with no signs of damage to F-Connectors?\r\nHas the modem been power-cycled?\r\nHave
-    the Tx and Rx cables been removed and re-seated?\r\nHas a Factory Reset been performed*?\r\n\r\n--Modem
-    Configuration--\r\nSignal Strength**:\r\nEsN0**:\r\nLast Login Status Message:\r\n\r\nTx
-    Gain:\r\nMax Gain:\r\nLNB Frequency:\r\nRx Frequency(RF):\r\nRx Frequency(L-Band):\r\nEnable
-    Login: True/ False\r\nNettgain: Enabled / Disabled\r\nNAT: Enabled / Disables\r\n\r\nModem
-    Firmware (Satellite Modem field):\r\n\r\nIs there an external attenuator?: TX
-    / RX / None\r\nTX attenuator removed?: Yes / No / N/A\r\n \r\nIn the event that
-    a modem replacement is required, please confirm with the customer the postal address
-    and fill in this field (to minimize delays):\r\n\r\n*Only perform a Factory Reset
-    on IPSTAR's authorisation - Units are likely under NSS warrenty**\r\n**If no Signal
-    Strength or ESnO swap TX/RX cables around and test for Signal Strength and ESnO,
-    if no change swap back**\r\nNSS - Power Issue (No Lights on Modem)\r\n\r\nIn addition
-    to general level 1 for power issues\r\n\r\n(List the outcome of each test below)\r\nUTSN:\r\nAVC
-    ID:\r\nDetailed summary of reported fault:\r\n\r\n-------------------------------------------\r\n\r\nIs
-    PSU light ON or OFF:\r\nIs PSU light ON or OFF with MODEM DISCONNECTED:\r\nDoes
-    light stay on when connecting the modem:\r\nDoes modem power on with TX+RX cables
-    disconnected:\r\nAny change after bypassing power board:\r\nAny change after trying
-    another wall socket:\r\n\r\nIn the event that a modem replacement is required,
-    please confirm with the customer the postal address and fill in this field (to
-    minimize delays):\r\nNSS - Speed Issue/Packet Loss\r\n\r\nIn addition to general
-    level 1 for speed issues\r\nUTSN:\r\nAVC ID:\r\nDetailed summary of reported fault:\r\n\r\n-------------------------------------------\r\nWhat
-    firmware is on the UT (Satellite Modem field):\r\nSignal Strength:\r\nEsN0:\r\nRxFrequency(L-Band):\r\nTx
-    Gain:\r\nMax Gain:\r\nBypass router:\r\nIpconfig (copy and paste):\r\nPing test
-    (internal and external IP) 100x\r\nSpeed tests 3x morning, midday, night:\r\nTrace
-    route (internal and external IP):\r\n\r\nNBN - Misc\r\n\r\nApplies to all NBN
-    services except ISS & NSS\r\nRelocation Request\r\n\r\nCustomer Name:\r\nCustomer
-    Address:\r\nCustomer Phone: \r\nCustomer Email: \r\n\r\nReason for relocation:\r\nNBN
-    FTTH\r\n\r\nFTTH - Dead NTD\r\n\r\nFault Description (summary):\r\n\r\n---------------------------\r\nTested
-    NTD in a different power outlet: [Yes/No]\r\nIf unable, have you confirmed the
-    outlet they're using works with another device?: [Yes/No]\r\nDisconnected Battery
-    Backup unit from NTD, did BBU light up?: [Yes/No]\r\nDid any other equipment in
-    the property die at the same time?: [Yes/No]\r\n\r\n-- Customer Availability --\r\nIf
-    NBN were to organise a service call in the next week, what day would be best between
-    Monday and Friday?:\r\nMornings or Afternoons?:\r\nWhat is the best contact phone
-    number for us to pass on to NBN?\r\nName of the person who will be on site:\r\nWhat
-    is the best way for SkyMesh get customer updates?: (sms / phone / email) [Provide
-    + email/phone number]\r\nFTTH - Offline / Dropouts\r\n\r\nNB: Ensure NTD has been
-    left powered on prior to lodgement!\r\nFault Description (summary):\r\n\r\n-------------------------------------------\r\nAVC-ID:\r\n\r\n--
-    NTD Lights --\r\nPower: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING\r\nOptical:
-    OFF / RED SOLID / GREEN SOLID / GREEN FLASHING\r\nAlarm: OFF / RED SOLID / GREEN
-    SOLID\r\nUNI-D1: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
-    \r\nUNI-D2: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
-    \r\nUNI-D3: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
-    \r\nUNI-D4: OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID / GREEN FLASHING
-    \r\nUNI-V1/2: OFF / GREEN SOLID / GREEN FLASHING \r\nUpdate: OFF / RED SOLID/
-    GREEN SOLID\r\n\r\n-- Battery Pack Lights --\r\nInstalled : YES / NO\r\nSystem
-    Status: GREEN SOLID / GREEN FLASHING / OFF\r\nBattery Power: GREEN SOLID / GREEN
-    FLASHING / OFF\r\nReplace Battery: RED SOLID / RED FLASHING / OFF\r\nAlarm Silence:
-    YELLOW SOLID / YELLOW FLASHING / OFF\r\n\r\n-- Customer Availability --\r\nIf
-    NBN were to organise a service call in the next week, what day would be best between
-    Monday and Friday?:\r\nMornings or Afternoons?:\r\nWhat is the best contact phone
-    number for us to pass on to NBN?\r\nName of the person who will be on site:\r\nWhat
-    is the best way for SkyMesh get customer updates?: (sms / phone / email) [Provide
-    + email/phone number]\r\n\r\n-- General Troubleshooting --\r\nCustomer has agreed
-    to leave NTD and CPE powered on: Yes / No\r\n\r\nNTD, PSU, Cables and power points
-    and own equipment are all powered on and cables are all secure? Yes / No\r\nPSU
-    tested in alternative power source:\r\nFactory Reset NTD? Yes / No\r\nAny known
-    damage to equipment or cabling? Yes / No\r\nAny damage to visible to outdoor cabling?
-    Yes / No\r\nIf Yes, Description of damage:\r\n\r\nIntermittent issue?: Yes / No\r\nIf
-    Yes, when did it begin?:\r\nIf Yes, How often does it occur (be detailed):\r\nTime
-    of last DHCPACK/Time left on DHCP Lease: <time> / never\r\n\r\nAVC Diagnostics
-    Performed (include Test ID):\r\n\r\n*--------------STOP HERE IF THE OPTICAL LIGHT
-    IS STILL OFF/RED-----------------*\r\n \r\nDevice left connected to UNI-D: PC
-    / ROUTER\r\nMAC Address:\r\nIf Router, Brand & Model Number:\r\nSkyMesh Supplied?:
-    Yes / No\r\n\r\nTested with the 2nd patch cable?\r\nModels and MACs of devices
-    tested:\r\nDHCP Configuration verified for each device used for direct-to-NTD
-    testing? Yes / No\r\nIf customer offline, list ARP Entries when directly connected
-    to NTD(ignore OS-generated/static entries):\r\n\r\nIf recent, can customer PING
-    www.google.com? Yes / No\r\n\r\nPing statistics for 180.181.127.4:\r\nPackets:
-    Sent = 100, Received = n Lost = n (n% loss),\r\nApproximate round trip times in
-    milliseconds:\r\nMinimum = 0ms, Maximum = 0ms, Average = 0ms\r\n\r\nTraceroute
-    180.181.127.4:\r\nFTTH - Speed/Packet Loss\r\n\r\nThis is in addition to standard
-    troubleshooting:\r\n-- Speed / Packet loss Issues --\r\n\r\nCustomer connected
-    via Wired/Wireless?\r\nRouter Capable of Speed Expected? Yes / No\r\nSecurity
-    Software (include version):\r\nMultiple Web browsers tried? Yes /No\r\nList which
-    ones (include version):\r\nProxies disabled? Yes / No / NA\r\nVPNs disabled? Yes
-    / No / NA\r\nInternet options reset? Yes / No\r\n\r\nReset Winsock (netsh winsock
-    reset)? Yes / No / Not Windows\r\nReset TCP/IP (netsh int ip reset resetlog.txt)?
-    Yes / No / Not Windows\r\nNetwork adapters restarted? Yes / No\r\n\r\nNon-essential
-    programs closed? Yes / No\r\nTried Safe mode with Networking? Yes / No\r\n\r\nCustomer
-    experiencing Packet Loss?: Yes / No\r\nCustomer experiencing increased latency
-    than before?: Yes / No\r\n\r\nSpeed Test Results (morning, afternoon, and evening).
-    If not using netgauge.skymesh.net.au, specify servers used:\r\nDay 1(date)  Morning:
-    \   Afternoon:    Evening:\r\nDay 2(date)  Morning:    Afternoon:    Evening:
-    \r\nDay 3(date)  Morning:    Afternoon:    Evening:  \r\n(3 days of testing is
-    not required, but this is the format we'd like you to use to present your results,
-    you can include more tests to show the issue)\r\n\r\nAdditional Diagnostics/Comments:\r\nFTTH
-    - VOIP (UNID)\r\n\r\nThis is in addition to standard troubleshooting:\r\n-- VOIP
-    (UNID) --\r\nIntermittent Service?: Yes / No\r\nIf Yes, When did they notice?:\r\nIf
-    Yes, How often does it occur (be detailed):\r\n\r\nVOIP can register successfully
-    in the office: Yes / No\r\nCustomer tried with 2nd handset: Yes / No\r\nCustomer
-    tried with different phone cable: Yes / No / Unable\r\n\r\nATA Model:\r\nPower
-    cycled ATA: Yes / No\r\nATA Connected correctly: Yes / No\r\nATA is registered:
-    Yes / No\r\nATA Provisioning rule set correctly: Yes / No\r\nATA RTP Packet size
-    set to 0.020: Yes / No\r\nATA SIP ToS/DiffServ Value set to 0xb8: Yes / No\r\nATA
-    Inbound Proxy set to sip.skymesh.net.au: Yes / No\r\nATA Outbound Proxy set to
-    sip.skymesh.net.au: Yes / No\r\nATA Use Outbound Proxy set to Yes: Yes / No\r\nATA
-    SIP Username re-entered: Yes / No\r\nATA SIP Display name re-entered: Yes / No\r\nATA
-    SIP Password re-entered: Yes / No\r\nATA Codecs set to G711u: Yes / No\r\nATA
-    Dial Plan re-entered: Yes / No\r\nATA Factory Reset and reconfigured: Yes / No\r\nTried
-    configuring ATA Phone Phone Port 2 (if available): Yes / No\r\nFTTH - UNIV\r\n\r\nFault
-    Description (summary): \r\n\r\n-------------------------------------------\r\nAVC-ID:\r\n\r\nUNIV
-    Server: \r\n\r\n\r\n-- NTD Lights --\r\nPower: OFF / RED SOLID / GREEN SOLID /
-    GREEN FLASHING\r\nOptical: OFF / RED SOLID / GREEN SOLID / GREEN FLASHING\r\nAlarm:
-    OFF / RED SOLID / GREEN SOLID\r\nUNI-D1: OFF / YELLOW SOLID / YELLOW FLASHING
-    / GREEN SOLID / GREEN FLASHING \r\nUNI-D2: OFF / YELLOW SOLID / YELLOW FLASHING
-    / GREEN SOLID / GREEN FLASHING \r\nUNI-D3: OFF / YELLOW SOLID / YELLOW FLASHING
-    / GREEN SOLID / GREEN FLASHING \r\nUNI-D4: OFF / YELLOW SOLID / YELLOW FLASHING
-    / GREEN SOLID / GREEN FLASHING \r\nUNI-V1/2: OFF / GREEN SOLID / GREEN FLASHING
-    \r\nUpdate: OFF / RED SOLID/ GREEN SOLID\r\n\r\n-- Battery Pack Lights --\r\nInstalled
-    : YES / NO\r\nSystem Status: GREEN SOLID / GREEN FLASHING / OFF\r\nBattery Power:
-    GREEN SOLID / GREEN FLASHING / OFF\r\nReplace Battery: RED SOLID / RED FLASHING
-    / OFF\r\nAlarm Silence: YELLOW SOLID / YELLOW FLASHING / OFF\r\n\r\n-- Customer
-    Availability --\r\nIf NBN were to organise a service call in the next week, what
-    day would be best between Monday and Friday?:\r\nMornings or Afternoons?:\r\nWhat
-    is the best contact phone number for us to pass on to NBN?\r\nWhat is the best
-    contact email for us to pass on to NBN?: (Optional)\r\nName of the person who
-    will be on site:\r\nWhat is the best way for SkyMesh get customer updates?: (sms
-    / phone / email) [Provide + email/phone number]\r\n\r\n-- General Troubleshooting
-    --\r\nCustomer has agreed to leave NTD and CPE powered on:\r\n\r\nNTD, PSU, Cables
-    and power points and own equipment are all powered on and cables are all secure?
-    Yes / No\r\nPSU testing in alternative power source: \r\nNTD power cycled? Yes
-    / No\r\nNTD reset? Yes / No\r\nAny known damage to equipment or cabling? Yes /
-    No\r\nIf Yes, description of damage: \r\n\r\n -- VOIP (UNIV) --\r\nUNIV AVC ID:\r\nUNIV
-    CVC ID:\r\nActive UNIV port: UNIiV-1 / UNIV-2\r\n\r\nIntermittent Service?: Yes
-    / No\r\nIf Yes, When did they notice?:\r\nIf Yes, How often does it occur (be
-    detailed):\r\nUNI-V port shows active in SAMS: Yes /No\r\n\r\n--SIP CONFIG --\r\nFAIL
-    / UNTIL : \r\nName:\r\n\r\n--UNI-V Provisioning Data--\r\navc_id: \r\ncvc_id:\r\nPort_id:\r\nstatus:
-    ACTIVE / INACTIVE \r\nlinked:\r\n\r\n-- Layer 3 --\r\nNTD ATA OFFLINE?\r\nPing
-    statistics: \r\n\r\n-- ACS Request --\r\nnotification:\r\n\r\n--UNI-V lights--\r\nWhat
-    Does Uni-V light do:\r\n- When handset on hook?\r\n- When handset off hook?\r\n-
-    When service called?\r\n\r\nCustomers phone connected directly to UNI-V port:
-    Yes / No\r\nCustomer tried with 2nd handset: Yes / No\r\nCustomer tried with different
-    phone cable: Yes / No / Unable\r\nFor NBN\r\n\r\nRed Optical Light (no damage)\r\nThese
-    templates may be used when lodging faults in the NBN Service Portal.\r\nHi Team,\r\n\r\nService
-    is offline with a red optical light on the NTD. EU reports observing no obvious
-    damage to equipment or cabling.\r\n\r\nThanks,\r\nSkyMesh Support\r\nDHCP stuck
-    on 'offer' state - PBB misconfiguration\r\nHi Team,\r\n\r\nCould you please check
-    for possible configuration errors with this newly-provisioned service? DHCP Offer's
-    don't appear to be received by the CPE. \r\n- DHCP DISCOVER packets are received
-    by SkyMesh\r\n- DHCP OFFER packets confirmed leaving SkyMesh\r\n- NTD has been
-    reset; port reset also completed\r\n- alternate CPE has been tested: <MAC ADDR1>
-    & <MAC ADDR2> - same behaviour is observed with DHCP cycle not completing\r\n\r\nThanks,\r\nSkyMesh
-    Support\r\nNBN HFC\r\n\r\nHFC - Dead NTD\r\n\r\nFault Description (summary):\r\n\r\nNTD
-    Serial number:\r\nNTD Type: Model D 3.0 / D 3.1\r\n\r\nTested NTD in a different
-    power outlet: [Yes/No]\r\nIf unable, have you confirmed the outlet they're using
-    works with another device?: [Yes/No]\r\nTested NTD with Coaxial cable disconnected,
-    Did NTD power on?:[Yes/No] \r\nDid any other equipment in the property die at
-    the same time?: [Yes/No]\r\n\r\n-- Customer Availability --\r\nIf NBN were to
-    organise a service call in the next week, what day would be best between Monday
-    and Friday?:\r\nMornings or Afternoons?:\r\nWhat is the best contact phone number
-    for us to pass on to NBN?\r\nWhat is the best contact email for us to pass on
-    to NBN?: (Optional)\r\nName of the person who will be on site:\r\nWhat is the
-    best way for SkyMesh get customer updates?: (sms / phone / email) [Provide + email/phone
-    number]\r\nHFC - Offline / Dropouts\r\n\r\nNB: Ensure NTD has been left powered
-    on prior to lodgement!\r\nFault Description (summary):\r\n\r\n-------------------------------------------\r\nAVC-ID:\r\nNTD
-    Serial number:\r\nNTD Type: Model D 3.0 / D 3.1\r\n\r\n-- NTD Lights --\r\nPower:
-    OFF / GREEN SOLID / GREEN FLASHING\r\nDS: OFF / YELLOW SOLID / YELLOW FLASHING
-    / GREEN SOLID / GREEN FLASHING \r\nUS: OFF / YELLOW SOLID / YELLOW FLASHING /
-    GREEN SOLID / GREEN FLASHING \r\nOnline: OFF / GREEN SOLID / GREEN FLASHING \r\nLink
-    (at the Rear of NTD on v2 NTD): OFF / YELLOW SOLID / YELLOW FLASHING / GREEN SOLID
-    / GREEN FLASHING \r\n\r\n-- Customer Availability --\r\nIf NBN were to organise
-    a service call in the next week, what day would be best between Monday and Friday?:\r\nMornings
-    or Afternoons?:\r\nWhat is the best contact phone number for us to pass on to
-    NBN?\r\nWhat is the best contact email for us to pass on to NBN?: (Optional)\r\nName
-    of the person who will be on site:\r\nWhat is the best way for SkyMesh get customer
-    updates?: (sms / phone / email) [Provide email/phone number]\r\n\r\n-- General
-    Troubleshooting --\r\nCustomer has agreed to leave NTD and CPE powered on:\r\nNTD,
-    PSU, Cables and power points and own equipment are all powered on and cables are
-    all secure? Yes / No\r\nPSU tested in alternative power source: \r\nReseated Coaxial
-    cable?: Yes / No\r\nDoes the customer have cable TV? Yes / No\r\nAny known damage
-    to equipment or cabling? Yes / No\r\nAny damage to visible to outdoor cabling?
-    Yes / No\r\nIf Yes, Description of damage:\r\n\r\nIntermittent issue?: Yes / No\r\nIf
-    Yes, when did it begin?:\r\nIf Yes, How often does it occur (be detailed):\r\nTime
-    of last DHCPACK/Time left on DHCP Lease: <time> / never\r\n\r\nAVC Diagnostics
-    Performed (include Test ID):\r\n\r\n*--------------STOP HERE IF THE ONLINE LIGHT
-    IS STILL OFF-----------------*\r\n \r\nDevice left connected to UNI-D: PC / ROUTER\r\nMAC
-    Address:\r\nIf Router, Brand & Model Number:\r\nSkyMesh Supplied?: Yes / No\r\n\r\nTested
-    with the 2nd patch cable?\r\nModels and MACs of devices tested:\r\nDHCP Configuration
-    verified for each device used for direct-to-NTD testing? Yes / No\r\nIf customer
-    offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static
-    entries):\r\n\r\n*--------------STOP HERE IF THE CPE IS NOT GETTING A SKYMESH
-    IP ADDRESS-----------------*\r\n\r\nIf recent, can customer PING www.google.com?
-    Yes / No\r\n\r\nPing statistics for 180.181.127.4:\r\nPackets: Sent = 100, Received
-    = n Lost = n (n% loss),\r\nApproximate round trip times in milliseconds:\r\nMinimum
-    = 0ms, Maximum = 0ms, Average = 0ms\r\n\r\nTraceroute 180.181.127.4:\r\nHFC -
-    Speed/Packet Loss\r\n\r\nThis is in addition to standard troubleshooting:\r\n--
-    Speed / Packet loss Issues --\r\n\r\nCustomer connected via Wired/Wireless?\r\nRouter
-    Capable of Speed Expected? Yes / No\r\nSecurity Software (include version):\r\nMultiple
-    Web browsers tried? Yes /No\r\nList which ones (include version):\r\nProxies disabled?
-    Yes / No / NA\r\nVPNs disabled? Yes / No / NA\r\nInternet options reset? Yes /
-    No\r\n\r\nReset Winsock (netsh winsock reset)? Yes / No / Not Windows\r\nReset
-    TCP/IP (netsh int ip reset resetlog.txt)? Yes / No / Not Windows\r\nNetwork adapters
-    restarted? Yes / No\r\n\r\nNon-essential programs closed? Yes / No\r\nTried Safe
-    mode with Networking? Yes / No\r\n\r\nCustomer experiencing Packet Loss?: Yes
-    / No\r\nCustomer experiencing increased latency than before?: Yes / No\r\n\r\nSpeed
-    Test Results (morning, afternoon, and evening). If not using netgauge.skymesh.net.au,
-    specify servers used:\r\nDay 1(date)  Morning:    Afternoon:    Evening:\r\nDay
-    2(date)  Morning:    Afternoon:    Evening: \r\nDay 3(date)  Morning:    Afternoon:
-    \   Evening:  \r\n(you can include more tests to show the issue)\r\n\r\nAdditional
-    Diagnostics/Comments:\r\nHFC - VOIP (UNID)\r\n\r\nThis is in addition to standard
-    troubleshooting:\r\n-- VOIP (UNID) --\r\nIntermittent Service?: Yes / No\r\nIf
-    Yes, When did they notice?:\r\nIf Yes, How often does it occur (be detailed):\r\n\r\nVOIP
-    can register successfully in the office: Yes / No\r\nCustomer tried with 2nd handset:
-    Yes / No\r\nCustomer tried with different phone cable: Yes / No / Unable\r\n\r\nATA
-    Model:\r\nPower cycled ATA: Yes / No\r\nATA Connected correctly: Yes / No\r\nATA
-    is registered: Yes / No\r\nATA Provisioning rule set correctly: Yes / No\r\nATA
-    RTP Packet size set to 0.020: Yes / No\r\nATA SIP ToS/DiffServ Value set to 0xb8:
-    Yes / No\r\nATA Inbound Proxy set to sip.skymesh.net.au: Yes / No\r\nATA Outbound
-    Proxy set to sip.skymesh.net.au: Yes / No\r\nATA Use Outbound Proxy set to Yes:
-    Yes / No\r\nATA SIP Username re-entered: Yes / No\r\nATA SIP Display name re-entered:
-    Yes / No\r\nATA SIP Password re-entered: Yes / No\r\nATA Codecs set to G711u:
-    Yes / No\r\nATA Dial Plan re-entered: Yes / No\r\nATA Factory Reset and reconfigured:
-    Yes / No\r\nTried configuring ATA Phone Phone Port 2 (if available): Yes / No\r\nNBN
-    FW\r\n\r\nNB: Ensure NTD has been left powered on prior to lodgement!\r\nFW -
-    Offline ( Dead WNTD )\r\n\r\nFault Description (summary):\r\n\r\nTested NTD in
-    a different power outlet: [Yes/No]\r\nIf unable, have you confirmed the outlet
-    they're using works with another device?: [Yes/No]\r\nTested NTD with ODU cable
-    disconnected from wall? did NTD power light come on?: [Yes/No]\r\nDid any other
-    equipment in the property die at the same time?:\r\n\r\n-- Customer Availability
-    --\r\nIf NBN were to organise a service call in the next week, what day would
-    be best between Monday and Friday?:\r\nMornings or Afternoons?:\r\nWhat is the
-    best contact phone number for us to pass on to NBN?\r\nName of the person who
-    will be on site:\r\nWhat is the best way for SkyMesh get customer updates?: (sms
-    / phone / email) [Provide + email/phone number]\r\nFW - Offline\r\n\r\nFault Description
-    (summary):\r\n\r\n-------------------------------------------\r\nAVC-ID:\r\n\r\nWNTD
-    Lights:\r\nPower: OFF / GREEN SOLID\r\nStatus: OFF / RED SOLID / AMBER FLASHING
-    / GREEN FLASHING / GREEN SOLID\r\nODU: OFF / RED FLASHING / RED SOLID / GREEN
-    FLASHING / GREEN SOLID\r\nSignal Strength: RED SOLID, YELLOW SOLID, GREEN SOLID\r\n\r\nODU
-    Port lights:\r\nGreen: SOLID / FLASHING / OFF\r\nOrange: SOLID / FLASHING / OFF\r\n\r\nUNI-D
-    Port lights:\r\nGreen: SOLID / FLASHING / OFF\r\nOrange: SOLID / FLASHING / OFF\r\n\r\n--
-    Customer Availability --\r\nIf NBN were to organise a service call in the next
-    week, what day would be best between Monday and Friday?:\r\nMornings or Afternoons?:\r\nWhat
-    is the best contact phone number for us to pass on to NBN?\r\nName of the person
-    who will be on site:\r\nWhat is the best way for SkyMesh get customer updates?:
-    (sms / phone / email) [Provide + email/phone number]\r\n\r\n-- General Troubleshooting
-    --\r\nCustomer has agreed to leave NTD and CPE powered on: \r\nAre all devices
-    powered on and plugged in?\r\nWNTD power cycled?\r\nTested WNTD in another power
-    point (can fixed flashing status)?\r\nHas the Diamond Antenna or other NBN equipment
-    been damaged or otherwise been knocked out of alignment?: Yes / No\r\nIf Yes,
-    description of damage: \r\n\r\nIntermittent issue?: Yes / No\r\nIf Yes, when did
-    it begin?:\r\nIf Yes, How often does it occur (be detailed):\r\n\r\nTime of last
-    DHCPACK/Time left on DHCP Lease: <time> / never\r\n\r\nAVC Diagnostics Performed
-    (include Test ID):\r\n\r\n*--------------STOP HERE IF THE W-NTD ODU LIGHT IS STILL
-    OFF/RED-----------------*\r\n \r\nDevice left connected to UNI-D: PC / ROUTER\r\nMAC
-    Address: \r\nIf Router, Brand & Model Number: \r\nSkyMesh Supplied?: Yes / No\r\n\r\nTested
-    with the 2nd patch cable?\r\nModels and MACs of devices tested:\r\nDHCP Configuration
-    verified for each device used for direct-to-NTD testing? Yes / No\r\nIf customer
-    offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static
-    entries):\r\n\r\nIf recent, can customer PING www.google.com? Yes / No\r\n\r\nPing
-    statistics for 180.181.127.4:\r\nPackets: Sent = 100, Received = n Lost = n (n%
-    loss),\r\nApproximate round trip times in milliseconds:\r\nMinimum = 0ms, Maximum
-    = 0ms, Average = 0ms\r\n\r\nTraceroute 180.181.127.4:\r\n\r\nDropouts\r\nAdditional
-    information for intermittent loss of service faults\r\nEU has powered off the
-    NTD & CPE for 10min before powering back on?\r\nDate and times when the outages
-    were noticed: \r\nHow long does the service disconnect for each time it drops
-    out? \r\nAny changes to the NTD LED's during outages, if so what?\r\nFW - Speed\r\n\r\nThis
-    is in addition to standard troubleshooting.\r\n-- Speed / Packet loss Issues --\r\nTested
-    with the 2nd patch cable?\r\nModels and MACs of devices tested:\r\n \r\nIntermittent
-    issue?: Yes / No\r\nIf Yes, when did it begin?:\r\nIf Yes, How often does it occur
-    (be detailed):\r\n\r\nCustomer connected Wired/Wireless?:\r\nRouter Capable of
-    Speed Expected?: Yes / No\r\n\r\nSecurity Software (include version):\r\nMultiple
-    Web browsers tried: Yes /No\r\nList which ones (include version):\r\nProxies disabled:
-    Yes / No / NA\r\nVPNs disabled: Yes / No / NA\r\nIE Reset: Yes / No\r\n\r\nReset
-    Winsock (netsh winsock reset): Yes / No / Not Windows\r\nReset TCP/IP (netsh int
-    ip reset resetlog.txt): Yes / No / Not Windows\r\nNetwork adapters restarted:
-    Yes / No\r\n\r\nNon-essential programs closed: Yes / No\r\nLogged into Safe-Mode
-    w/ Networking: Yes / No / Not Windows\r\n\r\nSpeed Test Results (morning, afternoon,
-    and evening). If not using netgauge.skymesh.net.au, specify servers used:\r\nExample
-    Day 1 (date)  Morning:   Afternoon:   Evening: \r\nExample Day 2 (date)  Morning:
-    \  Afternoon:   Evening: \r\nExample Day 2 (date)  Morning:   Afternoon:   Evening:
-    \r\n\r\nCustomer experiencing Packet Loss?: Yes / No\r\nCustomer experiencing
-    increased latency than before?: Yes / No\r\n\r\nAdditional Diagnostics/Comments:\r\nFW
-    - VOIP/UNID\r\n\r\nThis is in addition to standard troubleshooting.\r\n-- VOIP
-    (UNID) --\r\n\r\nIntermittent Service?: Yes / No\r\nIf Yes, When did they notice?:\r\nIf
-    Yes, How often does it occur (be detailed):\r\n\r\nVOIP can register successfully
-    in the office: Yes / No\r\nCustomer tried with 2nd handset: Yes / No\r\nCustomer
-    tried with different phone cable: Yes / No / Unable\r\n\r\nATA Model:\r\nPower
-    cycled ATA: Yes / No\r\nATA Connected correctly: Yes / No\r\nATA is registered:
-    Yes / No\r\nATA Provisioning rule set correctly: Yes / No\r\nATA RTP Packet size
-    set to 0.020: Yes / No\r\nATA SIP ToS/DiffServ Value set to 0xb8: Yes / No\r\nATA
-    Inbound Proxy set to sip.skymesh.net.au: Yes / No\r\nATA Outbound Proxy set to
-    sip.skymesh.net.au: Yes / No\r\nATA Use Outbound Proxy set to Yes: Yes / No\r\nATA
-    SIP Username re-entered: Yes / No\r\nATA SIP Display name re-entered: Yes / No\r\nATA
-    SIP Password re-entered: Yes / No\r\nATA Codecs set to G711u: Yes / No\r\nATA
-    Dial Plan re-entered: Yes / No\r\n\r\nATA Factory Reset and reconfigured: Yes
-    / No\r\nTried configuring ATA Phone Phone Port 2 (if available): Yes / No\r\nFor
-    NBN\r\n\r\nCell Tower Utilisation Query\r\nNBN say...\r\nEven if you suspect that
-    it’s just a heavily utilised cell that’s causing the slow downs, it’s still recommended
-    to log a fault.\r\nThe reason for that is that we use the number of tickets raised
-    against a cell as one of the many inputs to deciding the priority of capacity
-    upgrades.\r\n\r\nThe EU has been getting slow speeds. The slow speeds do no correlate
-    to any CVC contention or fault condition.\r\n\r\nCan you please check with the
-    wireless team to see if there is any cellular contention affecting this service
-    and if so is there any upgrades planned that would benefit this user.\r\n\r\nOur
-    nbn CDM has indicated we can place such requests to check nbn cellular contention
-    without a complete troubleshoot.\r\n\r\nRecent speed tests results for this EU
-    from our speedtest server as follows\r\n\r\n<speed test results> \r\n \r\nThanks,\r\nSkyMesh
-    Support\r\nNBN FTTB/N\r\n\r\nNBN FTTB/N - Modem offline\r\n\r\nFault Description
-    (summary):\r\n\r\n-----------------------------------------------------------\r\nModem
-    lights: \r\nModem (brand & model):\r\nModem sync light indicates: sync / no sync
-    / negotiating\r\nModem online (internet) light indicates: online / offline\r\n\r\n--
-    Customer Availability --\r\nIf NBN were to organise a service call in the next
-    week, what day would be best between Monday and Friday?:\r\nMornings or Afternoons?:\r\nWhat
-    is the best contact phone number for us to pass on to NBN?\r\nWhat is the best
-    contact email for us to pass on to NBN?: (Optional)\r\nName of the person who
-    will be on site:\r\nWhat is the best way for SkyMesh get customer updates?: (sms
-    / phone / email) [Provide + email/phone number]\r\n\r\n-----------------------------------------------------------\r\n\r\nCustomer
-    has agreed to leave NTD and CPE powered on:\r\n\r\nLST results (include Test IDs):\r\n-
-    status:\r\n- service stability:\r\n- CPE type detected:\r\n- Physical profile:\r\n\r\nTroubleshooting
-    done:\r\n- Rebooted all equipment: \r\n- LQD run with robust re-sync option:\r\n-
-    Port reset attempted:\r\n- SELT test run with no devices or cables connected to
-    ports(include test code):\r\n- Number of phone sockets:\r\n- Alternate phone/VDSL
-    line cable tested:\r\n- Modem reset?\r\n- Alternate modem tested (include model
-    & FW version):\r\n\r\n- Has active PSTN service: yes / no<\r\n-- If so, is does
-    the PSTN voice service (if present) work correctly, and without line noise and/or
-    interference?\r\n\r\nModem Brand & Model Number:\r\nModem MAC Address: \r\nModem
-    firmware version: \r\nSkyMesh Supplied?: Yes / No\r\n\r\n*--------------STOP HERE
-    IF THE MODEM IS STILL INDICATING NO DSL SYNC-----------------* \r\n\r\nTested
-    with the 2nd patch cable?\r\nDevices tested while directly connected to Modem
-    (at the very least, obtain brand & model numbers + MAC addresses):\r\n\r\nPing
-    statistics for 180.181.127.4:\r\nPackets: Sent = 100, Received = n Lost = n (n%
-    loss),\r\nApproximate round trip times in milliseconds:\r\nMinimum = 0ms, Maximum
-    = 0ms, Average = 0ms\r\nTraceroute 180.181.127.4:\r\nLTS - Standard NBN Satellite\r\n\r\nNB:
-    Ensure NTD has been left powered on prior to lodgement!\r\nLTS - Standard NBN
-    Satellite - Offline/Dead Modem\r\n\r\nFault Description (summary):\r\n\r\n-------------------------------------------
-    \r\nTested NTD in a different power outlet: [Yes/No]\r\nIf unable, have you confirmed
-    the outlet they're using works with another device?: [Yes/No]\r\nDoes the modem
-    power up with RF cable disconnected?: [Yes/No]\r\nDid any other equipment in the
-    property die at the same time?: [Yes/No]\r\n\r\n-- Customer Availability --\r\nA
-    placeholder date is given to NBN, they'll pick the date with the customer.\r\n\r\nWhat
-    is the best contact phone number for us to pass on to NBN?\r\nWhat is the best
-    contact email for us to pass on to NBN?: (Optional)\r\nName of the person who
-    will be on site:\r\nWhat is the best way for SkyMesh get customer updates?: (sms
-    / phone / email) [Provide + email/phone number]\r\nLTS - Standard NBN Satellite
-    - Offline\r\n\r\nFault Description (summary):\r\n \r\n \r\n-------------------------------------------\r\n\r\nAVC
-    ID:\r\nSN (on back of modem):\r\nMAC (on back of modem):\r\nMAC (reported by NBN
-    in Diagnostic):\r\nNTD ID (sticker on the front): \r\n\r\nNBN Status Light: Off/Solid
-    White/Flashing White/Solid Blue/Flashing Blue/Solid Orange/Flashing Orange/Solid
-    Red/Flashing Red\r\nUNI-D Port: 1/2/3/4\r\nUNI-D Port Light:Green Solid/Green
-    Flashing/Orange Solid/Orange Flashing\r\nCustomer has agreed to leave NTD and
-    CPE powered on: [Yes/No]\r\n\r\n\r\n-- Customer Availability --\r\nA placeholder
-    date is given to NBN, they'll pick the date with the customer.\r\n\r\nWhat is
-    the best contact phone number for us to pass on to NBN?\r\nWhat is the best contact
-    email for us to pass on to NBN?: (Optional)\r\nName of the person who will be
-    on site:\r\nWhat is the best way for SkyMesh get customer updates?: (sms / phone
-    / email) [Provide + email/phone number]\r\n\r\nHave there been any changes made
-    to the site since installation?\r\nAny damage to NBN equipment visible? No/Yes
-    (provide details)\r\nLine of sight reported clear? [Yes/No]\r\nRecent Weather:\r\nPower-cycled
-    equipment? [Yes/No]\r\nEU has powered off the S-NTD & CPE for 20-30 min before
-    powering back on (must try at least once)? [Yes/No]\r\nRe-seated Satellite cable?
-    [Yes/No]\r\nSatellite cable secure and traced from wallplate to modem? [Yes/No]\r\n\r\nAVC
-    Diagnostics Performed (include Test ID):\r\n \r\n*-------------STOP HERE IF THE
-    S-NTD LIGHT IS STILL not Orange or Blue-----------------*\r\n\r\nDevice left connected
-    to UNI-D: PC / ROUTER\r\nMAC Address:\r\nIf Router, Brand & Model Number:\r\nSkyMesh
-    Supplied?: [Yes/No]\r\n\r\nTested with the 2nd patch cable?\r\nDevices tested
-    while directly connected to NTD (at the very least, obtain brand & model numbers
-    + MAC addresses):\r\nDHCP Configuration verified for each device used for direct-to-NTD
-    testing? [Yes/No]\r\nIP Address CPE getting while directly connected: \r\nIf customer
-    offline, list ARP Entries when directly connected to NTD(ignore OS-generated/static
-    entries):\r\n\r\n*-------------STOP HERE IF THE CPE DIRECTLY CONNECTED IS NOT
-    GETTING A SKYMESH IP-----------------*\r\nPing statistics for 180.181.127.4:\r\nPackets:
-    Sent = 100, Received = n Lost = n (n% loss),\r\nApproximate round trip times in
-    milliseconds:\r\nMinimum = 0ms, Maximum = 0ms, Average = 0ms\r\n\r\nTraceroute
-    180.181.127.4:\r\n\r\nTraceroute google.com\r\nDropouts\r\nAdditional information
-    for intermittent loss of service faults\r\nRemember to consider if the customer's
-    reported dropouts relate to an NBN fault or maintenance: http://cachet.skymesh.net.au/\r\nEU
-    has powered off the S-NTD & CPE for 10 - 15min before powering back on (must try
-    at least once)?\r\nDate and times when the outages were noticed: \r\nHow long
-    does the service disconnect for each time it drops out? \r\nHas the S-NTD been
-    switched off since the drops were first noticed? \r\nAny noticed LED changes on
-    the S-NTD during outages?\r\nWas the service online prior to the dropout (User
-    isn't just experiencing NBN Modem slow login issue)?\r\nIf the user is still offline
-    during the call, what is the current status and duration of their DHCP lease?\r\nLTS
-    - Standard NBN Satellite - Speed\r\n\r\nFault Description (summary):\r\n\r\n\r\n-------------------------------------------
-    \r\n\r\nAVC ID: \r\nSN (on back of modem): \r\nMAC (on back of modem):\r\nMAC
-    (reported by NBN in Diagnostic):\r\nNTD ID (sticker on the front): \r\nIP Address:
-    \r\n\r\nNBN Status Light: Off/Solid White/Flashing White/Solid Blue/Flashing Blue/Solid
-    Orange/Flashing Orange/Solid Red/Flashing Red\r\nUNI-D Port: 1/2/3/4\r\nUNI-D
-    Port Light:Green Solid/Green Flashing/Orange Solid/Orange Flashing\r\n\r\n-- Customer
-    Availability --\r\nA placeholder date is given to NBN, they'll pick the date with
-    the customer.\r\n\r\nWhat is the best contact phone number for us to pass on to
-    NBN?\r\nWhat is the best contact email for us to pass on to NBN?: (Optional)\r\nName
-    of the person who will be on site:\r\nWhat is the best way for SkyMesh get customer
-    updates?: (sms / phone / email) [Provide + email/phone number]\r\n\r\n\r\nHave
-    there been any changes made to the site since installation?\r\nAny damage to NBN
-    equipment visible? No/Yes (provide details)\r\nLine of sight reported clear? Yes
-    / No\r\nRecent Weather:\r\nPower-cycled equipment? Yes / No\r\nEU has powered
-    off the S-NTD & CPE for 20-30 min before powering back on (must try at least once)?\r\nRe-seated
-    Satellite cable? Yes / No\r\nSatellite cable secure and traced from wallplate
-    to modem? Yes / No\r\n \r\nRouter Bypassed (if installed)?: Yes/No\r\nMultiple
-    CPE Tried? (List Type and MAC address):\r\nSecond Ethernet Cable tested?:\r\n\r\nNBN
-    Portal:\r\nPort ID:\r\nPhysical Interface:\r\nDSCP Mapped: Yes/No\r\nTC 4: \r\nTC
-    1:\r\nC-Tag:\r\nAccess Service ID(AVC):\r\nTPEP Configuration\r\n    Web Page
-    Optimisation: \r\n    Transport Protocol:\r\n\r\nSkyMesh Speed Test Results(if
-    unable to access speedtest.net will suffice):\r\nTest 1(Morning): \r\nTest 2(early
-    afternoon):\r\nTest 3(Night time):\r\n \r\nPings:\r\nPing statistics for 180.181.127.4:\r\nPackets:
-    Sent = 100, Received = n Lost = n (n% loss),\r\nApproximate round trip times in
-    milliseconds:\r\nMinimum = 0ms, Maximum = 0ms, Average = 0ms\r\n\r\nPing statistics
-    for 180.181.127.3:\r\nPackets: Sent = 100, Received = n Lost = n (n% loss),\r\nApproximate
-    round trip times in milliseconds:\r\nMinimum = 0ms, Maximum = 0ms, Average = 0ms\r\n\r\nPing
-    any specific web pages or ip's the customer is having issues with:\r\n\r\nTraceroute
-    180.181.127.4:\r\n\r\nTraceroute google.com\r\n\r\nTraceroute to any specific
-    web pages or ip's the customer is having issues with:\r\nFor NBN\r\n\r\nThese
-    templates may be used when lodging faults in the NBN Service Portal.\r\nFlashing
-    White Status LED\r\nCrucial diagnostics:\r\nS-NTD has been powered off for at
-    least 10 minutes (then powered back on and left that way)\r\n\r\nNote: NBN can
-    resolve some faults with this symptom remotely.\r\nHi Team,\r\n\r\nService is
-    offline with flashing WHITE status light. EU has performed a 30-minute powercycle,
-    however S-NTD remains offline.\r\nCPE has been left powered on following troubleshooting.\r\n\r\nThanks,\r\nSkyMesh
-    Support\r\nDead Modem / S-NTD\r\nHi Team,\r\n\r\nS-NTD no longer powers on. Tested
-    alternate working power outlet, but no change observed.\r\n\r\nEU reports no visible
-    evidence of damage/electrical arcing.\r\n\r\nThanks,\r\nSkyMesh Support\r\nNo
-    Layer 2\r\nHi Team,\r\n\r\nService is offline. S-NTD has solid Orange status LED
-    and CPE is definitely connected correctly, however SkyMesh is not seeing any ARP
-    from the service.\r\n\r\nEU has performed a 30-minute powercycle, however service
-    remains offline.\r\n\r\nNTD Status test returns pass result; Loopback test returns
-    fail result.\r\n\r\nThanks,\r\nSkyMesh Support\r\nNo Layer 2 (never worked, NTD
-    Pending)\r\nHi Team,\r\n\r\nService is offline. S-NTD has solid Orange status
-    LED and CPE is definitely connected correctly, however SkyMesh is not seeing any
-    DHCP or even ARP from the service.\r\n \r\nNTD Status test returns pass result
-    but showing NTD State as Pending; Loopback test times out.\r\nNTD MAC from sticker:
-    <MAC>\r\n\r\nPlease check with Service Delivery Partner for configuration issues.\r\n\r\nThanks,\r\nSkyMesh
-    Support\r\nTCP Issues (works for a short time after reboot)\r\nHi Team,\r\n\r\nService
-    is unable to sustain TCP connections after 10-15 minutes of the S-NTD being rebooted
-    (extremely frequent connection resets observed)\r\nCustomer can ping and traceroute
-    to all relevant hosts, but TCP connections constantly reset, resulting in inability
-    to browse websites.\r\nS-NTD has been reset.\r\nAlternate working CPE has been
-    tested, but same symtpoms were observed.\r\n\r\nPacket capture from SkyMesh router
-    during service deterioration: <Link>\r\n\r\nCould you please investigate?\r\n\r\nRegards,\r\nSkyMesh
-    Support\r\nFlashing White S-NTD Dropouts\r\nHi Team,\r\n\r\nService is experiencing
-    intermittent dropouts. During the dropouts the S-NTD status LED will be flashing
-    white.\r\n\r\nS-NTD and CPE have been powercycled for thirty minutes and an isolation
-    test performed to no observable effect.\r\n\r\nThe following dropout log has been
-    collected from the EU:\r\n\r\n22/05 Start 1330 - End 1445 - Flashing White\r\nExample
-    2\r\nExample 3\r\n\r\nThanks,\r\nSkyMesh Support\r\nPSTN Fault\r\n\r\n-- Customer
-    Details --\r\nCustomer Name:\r\nCustomer Address:\r\nPSTN Number:\r\nFault Description:\r\n\r\n--
-    Troubleshooting --\r\n1.  Does the Customer have a DIAL TONE? YES / NO\r\n2.  Can
-    the Customer hear TONES / PULSES (for older handsets) when they DIAL? YES / NO\r\n3.
-    \ Can the Customer RECEIVE phone calls? YES / NO\r\n4.  Can the Customer MAKE
-    phone calls? YES / NO\r\n5.  When the customer is using the phone, do they hear
-    an automated voice message? YES / NO   If so, what does it say?\r\n6.  Has the
-    customer tested the phone line connection with another handset? YES / NO\r\n7.
-    \ Has the customer tested with different Phone Socket? YES / NO / NOT PRESENT\r\n8.
-    \ Has the customer tested with different Phone Cable? YES / NO\r\n9.  Is the customer
-    aware of any neighbours having the same issue? YES / NO\r\n10. Is the customer
-    aware of any power surges and/or lightning strikes recently? YES / NO\r\n11. Does
-    the customer have anything (eg. multiple handsets, modem, eftpos, alarm, etc.)
-    connected to other phone sockets (if present)? YES / NO\r\n12. What alternative
-    (e.g. MOBILE) contact number, can be passed onto Telstra in case of a site visit?
-    \r\n13. Does the customer want this (problematic) number diverted (to some other
-    number) until the problem is resolved knowing that they will have to pay the cost
-    of the call diversion? YES / NO\r\n14. What is the best 4 HOUR period during the
-    day (8am - 5pm) for a Telstra technician to attend the address, if necessary?\r\n15.
-    Customer is aware of the SkyMesh Phone “Conditions of Service” (available online
-    ). In particular \r\nsection 8.3(b) which states: “If we investigate a fault and
-    determine that the fault is attributable to a fault in your equipment, we may
-    charge you for any costs we \r\nincurred in investigating and repairing the fault,
-    including any costs incurred by requiring a technician to visit your premises”:
-    YES / NO \r\n16. Best method to contact customer of progress updates? (SMS, email,
-    phone - provide detail)\r\n17. Does the customer have any extra features attached
-    to their PSTN service (check TINA, List)?\r\n \r\n\r\nOptional questions.\r\nIs
-    the issue regarding a call-based service not working as expected? If so, which?\r\nADSL\r\n\r\nADSL
-    - Off-Line\r\n\r\nDetailed summary of reported fault:\r\n\r\n-------------------------------------------\r\n\r\nADSL
-    Phone Number:\r\nCustomer Address:\r\nCustomer contact number:\r\nLogin Username:\r\nPassword:\r\nLast
-    Radius Login:\r\n\r\n--Portal Information--\r\nType of Service: ADSL / ADSL2+\r\nProvisioning
-    Date of Service:\r\n\r\n-- Local Setup --\r\nList all devices normally connected
-    to phone sockets: <detail>\r\nPowercycled Equipment: Yes / No\r\nCheck cables
-    are connected properly: Yes / No\r\nIs the phone cable connecting modem to phone
-    port less than 3m?: Yes / No\r\nHas a second Phone Cable been tested with the
-    serivce?: Yes / No\r\nIs there any other device connected to the same phone socket?:
-    <detail>\r\nDoes customer have a line splitter on the connection: Yes / No\r\nIf
-    so, is it connected correctly: Yes / No\r\nDoes the customers PSTN line work (phone
-    has dial tone): Yes / No\r\nIsolation test has been done:  Yes / No\r\nDid isolation
-    test bring connection online: Yes / No\r\nHas customer tried a different phone
-    socket if available: Yes / No\r\n\r\n-- Modem --\r\nADSL Modem Model: <details>\r\nHow
-    many connection ports on back of modem?: __ LAN / __ DSL / __WAN   / __ PSTN\r\nDoes
-    the Modem show an active online / internet light?:  Yes / No\r\nDoes the Modem
-    show an active DSL / Sync light?: Yes / No\r\nStatus page on modem shows connection
-    to internet: Yes / No\r\nMTU set to 1452: Yes / No\r\nVCI set to 8: Yes / No\r\nVPI
-    set to 35: Yes / No\r\nModem downstream sync rate (Kbps):\r\nModem upstream sync
-    rate (Kbps):\r\nCustomer username details:\r\nPassword correct: Yes / No\r\nRouter
-    WAN IP:\r\nRouter LAN IP:\r\nRouter DNS Settings:\r\nDid Modem Need to be Factory
-    Reset & setup with correct settings?: Yes / No\r\n\r\n-- Computer --\r\nDirect
-    Connection to Modem: Yes / No\r\nPC IPv4 Address:\r\nPC IPv4 Default Gateway:\r\nPC
-    Subnet Mask:\r\nPC DNS Servers:\r\nDisabled Firewall: Yes / No\r\nPing Default
-    Gateway: Yes / No\r\nPing www.google.com: Yes / No\r\nPing 8.8.8.8: Yes / No\r\nCustomer
-    has been made aware that if a technician is sent out and the fault is found to
-    be in their equipment they may be charged for the cost of the technician and callout
-    fees:  Yes / No\r\nCustomer has been made aware to leave the modem switched on
-    and physically connected whilst troubleshooting is being done by our upstream
-    provider: Yes/ No �\r\nADSL - Intermittent Sync / Dropouts\r\n\r\nADSL Phone Number:\r\nCustomer
-    Address:\r\nCustomer contact number:\r\nLogin Username:\r\nPassword:\r\nLast Radius
-    Login:\r\n\r\n--Portal Information--\r\nType of Service: ADSL / ADSL2+\r\nProvisioning
-    Date of Service:\r\n\r\n--Drop out information--\r\nFrequency of dropouts:\r\nHow
-    long do they last:\r\nWhat Time of Day do they occur?    6AM -12PM / 12PM - 4PM
-    / 4 PM-10 PM / 10PM - 6AM\r\n\r\n-- Local Setup --\r\nList all devices normally
-    connected to phone sockets: <detail>\r\nPowercycled Equipment: Yes / No\r\nCheck
-    cables are connected properly: Yes / No\r\nIs the phone cable connecting modem
-    to phone port less than 3m?: Yes / No\r\nHas a second Phone Cable been tested
-    with the serivce?: Yes / No\r\nIs there any other device connected to the same
-    phone socket?: <detail>\r\nDoes customer have a line splitter on the connection:
-    Yes / No\r\nIf so, is it connected correctly: Yes / No\r\nDoes the customers PSTN
-    line work (phone has dial tone): Yes / No\r\nIsolation test has been done:  Yes
-    / No\r\nDid isolation test bring connection online: Yes / No\r\nHas customer tried
-    a different phone socket if available: Yes / No\r\n\r\n-- Modem --\r\nADSL Modem
-    Model: <details>\r\nHow many connection ports on back of modem?: __ LAN / __ DSL
-    / __WAN   / __ PSTN\r\nDoes the Modem show an active online / internet light?:
-    \ Yes / No\r\nDoes the Modem show an active DSL / Sync light?: Yes / No\r\nStatus
-    page on modem shows connection to internet: Yes / No\r\nMTU set to 1452: Yes /
-    No\r\nVCI set to 8: Yes / No\r\nVPI set to 35: Yes / No\r\nModem downstream sync
-    rate (Kbps):\r\nModem upstream sync rate (Kbps):\r\nCustomer username details:\r\nPassword
-    correct: Yes / No\r\nRouter WAN IP:\r\nRouter LAN IP:\r\nRouter DNS Settings:\r\nDid
-    Modem Need to be Factory Reset & setup with correct settings?: Yes / No\r\n\r\n--
-    Computer --\r\nDirect Connection to Modem: Yes / No\r\nPC IPv4 Address:\r\nPC
-    IPv4 Default Gateway:\r\nPC Subnet Mask:\r\nPC DNS Servers:\r\nDisabled Firewall:
-    Yes / No\r\nPing Default Gateway: Yes / No\r\nPing www.google.com: Yes / No\r\nPing
-    8.8.8.8: Yes / No\r\nCustomer has been made aware that if a technician is sent
-    out and the fault is found to be in their equipment they may be charged for the
-    cost of the technician and callout fees:  Yes / No\r\nCustomer has been made aware
-    to leave the modem switched on and physically connected whilst troubleshooting
-    is being done by our upstream provider: Yes/ No\r\n\r\nADSL - No Data Flow\r\n\r\nDetailed
-    summary of reported fault:\r\n \r\n \r\n-------------------------------------------\r\nADSL
-    Phone Number:\r\nCustomer Address:\r\nCustomer contact number:\r\nLogin Username:\r\nPassword:\r\nLast
-    Radius Login:\r\n\r\n--Portal Information--\r\nType of Service: ADSL / ADSL2+\r\nProvisioning
-    Date of Service:\r\nFrequency of dropouts:\r\nHow long do they last:\r\nWhat Time
-    of Day do they occur?    6AM -12PM / 12PM - 4PM / 4 PM-10 PM / 10PM - 6AM\r\n\r\n--
-    Local Setup --\r\nList all devices normally connected to phone sockets: <detail>\r\nPowercycled
-    Equipment: Yes / No\r\nCheck cables are connected properly: Yes / No\r\nIs the
-    phone cable connecting modem to phone port less than 3m?: Yes / No\r\nHas a second
-    Phone Cable been tested with the serivce?: Yes / No\r\nIs there any other device
-    connected to the same phone socket?: <detail>\r\nDoes customer have a line splitter
-    on the connection: Yes / No\r\nIf so, is it connected correctly: Yes / No\r\nDoes
-    the customers PSTN line work (phone has dial tone): Yes / No\r\nIsolation test
-    has been done:  Yes / No\r\nDid isolation test bring connection online: Yes /
-    No\r\nHas customer tried a different phone socket if available: Yes / No\r\n\r\n--
-    Modem --\r\nADSL Modem Model: <details>\r\nHow many connection ports on back of
-    modem?: __ LAN / __ DSL / __WAN   / __ PSTN\r\nDoes the Modem show an active online
-    / internet light?:  Yes / No\r\nDoes the Modem show an active DSL / Sync light?:
-    Yes / No\r\nStatus page on modem shows connection to internet: Yes / No\r\nMTU
-    set to 1452: Yes / No\r\nVCI set to 8: Yes / No\r\nVPI set to 35: Yes / No\r\nWhat
-    Encapsulation method the Modem is using?\r\nWhat Modulation method the Modem is
-    using?\r\nModem downstream sync rate (Kbps):\r\nModem upstream sync rate (Kbps):\r\nCustomer
-    username details:\r\nPassword correct: Yes / No\r\nRouter WAN IP:\r\nRouter LAN
-    IP:\r\nRouter DNS Settings:\r\nDid Modem Need to be Factory Reset & setup with
-    correct settings?: Yes / No\r\n\r\n-- Computer --\r\nDirect Connection to Modem:
-    Yes / No\r\nPC IPv4 Address:\r\nPC IPv4 Default Gateway:\r\nPC Subnet Mask:\r\nPC
-    DNS Servers:\r\nTried setting Static IP: Yes / No\r\nDisabled Firewall: Yes /
-    No\r\nPC Security Scan run: Yes / No\r\nRest TCP/IP and Winsock: Yes / No\r\nPing
-    Default Gateway: Yes / No\r\nPing www.google.com: Yes / No\r\nPing 8.8.8.8: Yes
-    / No\r\n100 pings www.google.com.au\r\n100 pings 8.8.8.8\r\nTrace Route 8.8.8.8\r\nCustomer
-    has been made aware that if a technician is sent out and the fault is found to
-    be in their equipment they may be charged for the cost of the technician and callout
-    fees:  Yes / No\r\nCustomer has been made aware to leave the modem switched on
-    and physically connected whilst troublehsooting is being done by our upstream
-    provider: Yes/ No\r\nADSL - Speed\r\n\r\nDetailed summary of reported fault:\r\n\r\n\r\n-------------------------------------------\r\nADSL
-    Phone Number:\r\nCustomer Address:\r\nCustomer contact number:\r\nLogin Username:\r\nPassword:\r\nLast
-    Radius Login:\r\n\r\nCustomers Plan:\r\nCustomer shaped/FAP: Yes / No\r\n  \r\n--Portal
-    Information--\r\nType of Service: ADSL / ADSL2+\r\nProvisioning Date of Service:\r\nLine
-    Speed Ordered:  256/ 64 Kbps   | 512 / 128 Kbps | 1.5 Mbps / 256 Kbps | 8 Mbps
-    / 384 Kbps | 24 Mbps / 820 Kbps\r\n  \r\n-- Local Setup --\r\nList all devices
-    normally connected to phone sockets: <detail>\r\nPowercycled Equipment: Yes /
-    No\r\nCheck cables are connected properly: Yes / No\r\nIs the phone cable connecting
-    modem to phone port less than 3m?: Yes / No\r\nHas a second Phone Cable been tested
-    with the serivce?: Yes / No\r\nIs there any other device connected to the same
-    phone socket?: <detail>\r\nDoes customer have a line splitter on the connection:
-    Yes / No\r\nIf so, is it connected correctly: Yes / No\r\nDoes the customers PSTN
-    line work (phone has dial tone): Yes / No\r\nIsolation test has been done:  Yes
-    / No\r\nDid isolation test bring connection online: Yes / No\r\nHas customer tried
-    a different phone socket if available: Yes / No\r\n  \r\n-- Modem --\r\nADSL Modem
-    Model: <details>\r\nHow many connection ports on back of modem?: __ LAN / __ DSL
-    / __WAN   / __ PSTN\r\nDoes the Modem show an active online / internet light?:
-    \ Yes / No\r\nDoes the Modem show an active DSL / Sync light?: Yes / No\r\nStatus
-    page on modem shows connection to internet: Yes / No\r\nMTU set to 1452: Yes /
-    No\r\nVCI set to 8: Yes / No\r\nVPI set to 35: Yes / No\r\nModem downstream sync
-    rate (Kbps):\r\nModem upstream sync rate (Kbps):\r\nCustomer username details:\r\nPassword
-    correct: Yes / No\r\nRouter WAN IP:\r\nRouter LAN IP:\r\nRouter DNS Settings:’\r\nDid
-    Modem Need to be Factory Reset & setup with correct settings?: Yes / No\r\n \r\n--
-    Computer --\r\nDirect Connection to Modem: Yes / No\r\nPC IPv4 Address:\r\nPC
-    IPv4 Default Gateway:\r\nPC Subnet Mask:\r\nPC DNS Servers:\r\nDisabled Firewall:
-    Yes / No\r\nPC Security Scan run: Yes / No\r\nRest TCP/IP and Winsock: Yes / No\r\nPing
-    Default Gateway: Yes / No\r\nPing www.google.com: Yes / No\r\nnetstat -a results:\r\nPing
-    8.8.8.8: Yes / No\r\n100 pings www.google.com.au\r\n100 pings 8.8.8.8\r\nTrace
-    Route 8.8.8.8\r\nSpeedtest Results (speedtest.skymesh.net.au):\r\n\r\n\r\nCustomer
-    has been made aware that if a technician is sent out and the fault is found to
-    be in their equipment they may be charged for the cost of the technician and callout
-    fees:  Yes / No\r\nCustomer has been made aware to leave the modem switched on
-    and physically connected whilst troubleshooting is being done by our upstream
-    provider: Yes/ No\r\nTicket Submissions for additional work\r\n\r\nService Calls\r\n\r\nUT
-    serial:\r\nFault type:\r\nWarranty expires:\r\nPreferred contact:\r\nPostal Address
-    (confirmed with customer):\r\n-- Please BSC --\r\niUAT Complete\r\niUAT has successfully
-    been completed with this customer\r\n  \r\n New UT: <new_UTSN>\r\n Old UT: <old_UTSN>\r\n\r\nComplaint
-    Ticket\r\n\r\nName: \r\n\r\nPreferred Phone Number:\r\n\r\nDoes this Complaint
-    have an Urgent component? YES / NO\r\n\r\nNotes: Customer is not happy about……………\r\nDeploy
-    Replacement Router\r\n\r\nFor issues with Netcomm NF13ACV, please ensure you try
-    reapplying the firemware: https://helpdesk.netcommwireless.com/helpdesk/WebObjects/Helpdesk.woa/wa/CommonActions/download?dl=_v-GyIHWzyJ-u-6-3QSE7w&id=1\r\nDead
-    Router\r\nCustomer has a dead router\r\nRouter Model:\r\nInternet service type:
-    \r\nUnit is a permaloan or is within warranty still?: Yes / No (If no, use '-
-    Deploy Router' instead)\r\n\r\nPlease send replacement router to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nPower
-    LED (next to DC input): On / Off\r\nConfirmed they are using the correct power
-    adapter?\r\nTried another power point?: Yes / No\r\nAny other equipment failed
-    at the same time?:\r\n\r\nOther information of note:\r\n\r\n**** Warranty does
-    not cover Storm Damage****\r\nSlow Speeds\r\nCustomers router causing slow speeds.\r\nRouter
-    Model:\r\nInternet service type: \r\nUnit is a permaloan or is within warranty
-    still?: Yes / No (If no, use '- Deploy Router' instead)\r\n\r\nPlease send replacement
-    router to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nCustomer connected to router
-    using: Wireless / Ethernet\r\nPower cycle Router: Yes / No\r\nConfirmed they are
-    using the correct power adapter? Yes / No\r\nBypassed Router: Yes / No\r\nStill
-    having slow speeds after bypass? Yes / No\r\nFR Router: Yes / No\r\nRouter firmware
-    version: \r\nStill having slow speeds after FR? Yes / No\r\nTested with a second
-    client device? Yes / No\r\n\r\nExample Speed Tests:\r\nWith router:\r\nWithout
-    router:\r\nDropouts\r\nSync Loss\r\nCustomers router causing Sync loss.\r\nRouter
-    Model:\r\nInternet service type: FTTB / FTTN\r\nUnit is a permaloan or is within
-    warranty still?: Yes / No (If no, use '- Deploy Router' instead)\r\n\r\nPlease
-    send replacement router to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nPower cycle
-    router: Yes / No\r\nConfirmed they are using the correct power adapter? Yes /
-    No\r\nFR and reconfigure Router: Yes / No\r\nRouter firmware version: \r\nSecond
-    phone cable tested: Yes / No\r\nCompleted Isolation test (only modem connected
-    to phone port): Yes / No\r\nTested all phone ports in house: Yes / No\r\n\r\nNBN
-    testing shows Modem is likely cause(include tests):  \r\n\r\nOther information
-    of note:\r\n\r\nInternet dropouts\r\nCustomers router causing internet dropouts.\r\nRouter
-    Model:\r\nInternet service type: \r\nUnit is a permaloan or is within warranty
-    still?: Yes / No (If no, use '- Deploy Router' instead)\r\n\r\nPlease send replacement
-    router to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nDropouts only happening on one
-    computer? Yes / No\r\n(if yes, then issue most likely local)\r\nCustomer connected
-    to router using: Wireless / Ethernet\r\n- If wireless, have you ruled out distance
-    or interference as a factor (eg. wireless phone handsets)? Please describe the
-    troubleshooting done:\r\nPower cycle router: Yes / No\r\nConfirmed they are using
-    the correct power adapter? Yes / No\r\nFR Router and reconfigure: Yes / No\r\nRouter
-    firmware version:\r\n\r\nOther information of note:\r\nConnection issues\r\nUnable
-    to connect to router\r\nUnable to connect to router.\r\nRouter Model:\r\nInternet
-    service type: \r\nUnit is a permaloan or is within warranty still?: Yes / No (If
-    no, use '- Deploy Router' instead)\r\n\r\nPlease send replacement router to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nCustomer
-    connected to router using: Wireless / Ethernet\r\nRouter showing as online?: Yes
-    / No\r\nLAN port light: On / Off\r\nCPE IP address via router: \r\nPower cycle
-    router: Yes / No\r\nConfirmed they are using the correct power adapter? Yes /
-    No\r\nDifferent Ethernet cable tried: Yes / No\r\nBypass router: Yes / No\r\nCan
-    the customer connect after Bypass: Yes / No\r\nFR Router and re-configured: Yes
-    / No\r\n\r\nOther information of note:\r\nUnable to connect to internet\r\nUnable
-    to connect to internet via router\r\nRouter Model:\r\nInternet service type: \r\nUnit
-    is a permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router'
-    instead)\r\n\r\nPlease send replacement router to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nCustomer
-    connected to router using: Wireless / Ethernet\r\nRouter showing as online?: Yes
-    / No\r\nLAN port light: On / Off\r\nCPE IP address via router: \r\nPower cycle
-    router: Yes / No\r\nConfirmed they are using the correct power adapter? Yes /
-    No\r\nDifferent Ethernet cable tried: Yes / No\r\nBypass router: Yes / No\r\nCan
-    the customer connect after Bypass: Yes / No\r\nFR Router and re-configured: Yes
-    / No\r\n\r\nOther information of note:\r\nUnable to Authenticate PPPOE\r\nUnable
-    to Authenticate PPPOE\r\nRouter Model:\r\nInternet service type: \r\nUnit is a
-    permaloan or is within warranty still?: Yes / No (If no, use '- Deploy Router'
-    instead)\r\n\r\nPlease send replacement router to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nPower
-    cycle router: Yes / No\r\nConfirmed they are using the correct power adapter?
-    Yes / No\r\nFR and reconfigure Router: Yes / No\r\nRouter firmware version: \r\nPPP
-    Credentials Used: \r\n\r\nWAN connection Troubleshooting:\r\nRouter bypassed (direct
-    PPP dial from PC):\r\nSecond Ethernet cable tested: Yes / No\r\n\r\nVDSL connection
-    Troubleshooting:\r\nSecond phone cable tested: Yes / No\r\nCompleted Isolation
-    test (only modem connected to phone port if applicable): Yes / No\r\n\r\nOther
-    information of note:\r\nDeploy SDA\r\n\r\nCustomer has a dead SDA.\r\nPlease send
-    replacement to: <address>\r\nDeploy Replacement VoIP Device\r\n\r\nDeploy Replacement
-    Router with VoIP\r\nCustomer has router with non-functioning VoIP function\r\nRouter
-    Model:\r\nInternet service type: \r\nUnit is a permaloan or is within warranty
-    still?: Yes / No (If no, use '- Deploy Router' instead)\r\n\r\nPlease sent replacement
-    router with Voip capability to \r\nAddressLine1\r\nAddressLine2\r\n\r\nVoIP Deployment
-    RT#:\r\nType of Service: \r\nSIP Username:\r\nSIP Password:\r\n\r\nLine registers
-    with softphone in the office and is able to make and receive calls: Yes / No\r\nFR
-    and reconfigured : Yes / No\r\nSecond Line tested: Yes / No / N/A\r\nSecond phone
-    and cable tested: Yes / No\r\nDeploy Replacement ATA\r\nCustomer has non-functioning
-    ATA\r\nATA Model: \r\nInternet service type:  \r\nUnit is a permaloan or is within
-    warranty still?: Yes / No (If no, use '- Deploy ATA' instead)\r\n\r\nPlease send
-    replacement ATA to:\r\nAddressLine1\r\nAddressLine2\r\n\r\nVoIP Deployment RT#:\r\nType
-    of Service: \r\nSIP Username:\r\nSIP Password:\r\n\r\nATA connected correctly:
-    Yes / No\r\nLine registers with softphone in the office and is able to make and
-    receive calls: Yes / No\r\nRouter bypassed (if present and applicable): Yes /
-    No\r\nATA Settings correct: Yes / No\r\nFactory Reset Tried: Yes / No\r\nSecond
-    phone and cable tested: Yes / No"
-  :complete: false
+  :notes: FW | Outage, Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 3
+  :reference: 3733363
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | APPT Booked?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 10
+  :reference: 4038933
+  :vocus_ticket: 322204
+  :service_type: fttn/b (VOCUS)
+  :priority: '2'
+  :notes: OFFLINE | Online?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 15
+  :reference: 4054645
+  :vocus_ticket: 0
+  :service_type: fttp
+  :priority: '2'
+  :notes: OFFLINE | Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 16
+  :reference: 4054522
+  :vocus_ticket: 0
+  :service_type: pstn
+  :priority: '5'
+  :notes: OFFLINE | Call Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 18
+  :reference: 4051561
+  :vocus_ticket: 0
+  :service_type: pstn
+  :priority: '5'
+  :notes: OFFLINE | Online?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 20
+  :reference: 4057549
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '2'
+  :notes: Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 21
+  :reference: 3989293
+  :vocus_ticket: 0
+  :service_type: voip/univ
+  :priority: '4'
+  :notes: FIXED | Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 22
+  :reference: 4054545
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '3'
+  :notes: OFFLINE | Work done?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 23
+  :reference: 4062265
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '4'
+  :notes: DATA | CALL 1PM Contact?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
 2017-08-23:
 - :id: 0
-  :reference: 122312
+  :reference: 4051886
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: ROUTER | Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+2017-08-19:
+- :id: 0
+  :reference: 4041261
   :vocus_ticket: 0
   :service_type: lts
   :priority: '1'
-  :notes: '12321'
-  :complete: false
+  :notes: OFFLINE | Usage? Contact?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
-2017-08-16:
-- :id: 0
-  :reference: 12312
+- :id: 1
+  :reference: 4052182
   :vocus_ticket: 0
-  :service_type: fttp (VOCUS)
+  :service_type: fttn/b (VOCUS)
   :priority: '1'
-  :notes: '1231223'
-  :complete: false
+  :notes: OFFLINE | Contact? Active Session?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
-2017-07-16:
-- :id: 0
-  :reference: 1231
+- :id: 3
+  :reference: 4046470
   :vocus_ticket: 0
-  :service_type: fttp (VOCUS)
-  :priority: '5'
+  :service_type: fttp
+  :priority: '2'
   :notes: OFFLINE | Contact?
-  :complete: false
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
-2017-08-18:
-- :id: 0
-  :reference: 12312
+- :id: 5
+  :reference: 4054434
   :vocus_ticket: 0
-  :service_type: fttn/b
+  :service_type: lts
   :priority: '1'
-  :notes: OFFLINE | Usage?
-  :complete: false
+  :notes: USAGE | Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 7
+  :reference: 4036182
+  :vocus_ticket: 0
+  :service_type: fw (VOCUS)
+  :priority: '2'
+  :notes: OFFLINE | Wrong PPPoE Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 12
+  :reference: 4032159
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '1'
+  :notes: SPEED | Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 14
+  :reference: 3944576
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '4'
+  :notes: OFFLINE | Work done? Online?
+  :complete: true
   :nbn_ticket: 0
   :nbn_search: ''
 2017-08-24:
-- :id: 0
-  :reference: 1
+- :id: 1
+  :reference: 4062110
   :vocus_ticket: 0
-  :nbn_search: INC0001231
+  :service_type: fw
+  :priority: '1'
+  :notes: OFFLINE | Work done?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 2
+  :reference: 4057802
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: CANCELLED SERVICE?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 3
+  :reference: 4045772
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: DROPOUTS ROUTER | 2DAYS Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 4
+  :reference: 4050275
+  :vocus_ticket: 0
+  :service_type: fw
+  :priority: '1'
+  :notes: FW SPEED | 2DAYS Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 5
+  :reference: 4052488
+  :vocus_ticket: 0
+  :service_type: fttp (VOCUS)
+  :priority: '1'
+  :notes: OFFLINE | 2DAYS Contact?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 12
+  :reference: 4062748
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '2'
+  :notes: OFFLINE | Online?
+  :complete: true
+  :nbn_search: ''
+- :id: 13
+  :reference: 4066221
+  :vocus_ticket: 0
+  :nbn_ticket: 5650316
+  :service_type: hfc
+  :priority: '1'
+  :notes: OUTAGE | Online?
+  :complete: true
+  :nbn_search: ''
+- :id: 15
+  :reference: 4038623
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '2'
+  :notes: CHARGEN | Usage?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+2017-08-25:
+- :id: 0
+  :reference: 4049736
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Online?
+  :complete: true
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 1
+  :reference: 4062167
+  :vocus_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: DROPOUTS | Contact? / CLOSE
+  :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 3
+  :reference: 4064956
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Contact?
+  :complete: true
+  :nbn_search: ''
+- :id: 4
+  :reference: 4065134
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: fw
+  :priority: '1'
+  :notes: OFFLINE | Online? Usage?
+  :complete: false
+  :nbn_search: ''
+- :id: 5
+  :reference: 3922729
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: fttp
+  :priority: '1'
+  :notes: SPEED | Contact? Send2Day
+  :complete: false
+  :nbn_search: ''
+- :id: 6
+  :reference: 4051784
+  :vocus_ticket: 0
+  :nbn_ticket: 0
   :service_type: fttn/b
   :priority: '1'
-  :notes: OFFLINE |
+  :notes: OFFLINE | Work done?
+  :complete: true
+  :nbn_search: ''
+- :id: 7
+  :reference: 4055847
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: DROPOUTS | Contact? send 2Days
   :complete: false
+  :nbn_search: ''
+- :id: 9
+  :reference: 4049924
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: fttp
+  :priority: '1'
+  :notes: SPEED | Contact? 2Days
+  :complete: false
+  :nbn_search: ''
+- :id: 10
+  :reference: 4056268
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '1'
+  :notes: ROUTER COMPAT | Contact? give 2 day warning
+  :complete: false
+  :nbn_search: ''
+- :id: 11
+  :reference: 4054477
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: SETUP HELP | Online? 2daywarning
+  :complete: false
+  :nbn_search: ''
+- :id: 12
+  :reference: 4067539
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Contact? Online?
+  :complete: true
+  :nbn_search: ''
+- :id: 14
+  :reference: 4035582
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '2'
+  :notes: OFFLINE | Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 15
+  :reference: 4045496
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: fttp
+  :priority: '3'
+  :notes: OFFLINE | NBN response?
+  :complete: false
+  :nbn_search: ''
+- :id: 16
+  :reference: 4042046
+  :vocus_ticket: 322661
+  :nbn_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '5'
+  :notes: OFFLINE | CALL 9am-12am Contact?
+  :complete: false
+  :nbn_search: ''
+2017-08-29:
+- :id: 0
+  :reference: 4049222
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: IPV6 | Work done?
+  :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 1
+  :reference: 4050460
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: ROUTER CONFIGURE |  Contact?
+  :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 2
+  :reference: 4049000
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: BROWSING IPV6 | Work done?
+  :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 3
+  :reference: 3970493
+  :vocus_ticket: 0
+  :service_type: hfc (VOCUS)
+  :priority: '1'
+  :notes: ROUTER RETURNED?
+  :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 4
+  :reference: 4067633
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Online? Usage?
+  :complete: false
+  :nbn_search: ''
+2017-08-27:
+- :id: 0
+  :reference: 4062477
+  :vocus_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: ROUTER | Deployed?
+  :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
+- :id: 1
+  :reference: 4052461
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: legacy service
+  :priority: '1'
+  :notes: Router Deployed?
+  :complete: false
+  :nbn_search: ''
+- :id: 2
+  :reference: 3924013
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: voip/univ
+  :priority: '1'
+  :notes: Contact?
+  :complete: false
+  :nbn_search: ''
+2017-08-30:
+- :id: 0
+  :reference: 4034652
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: BROWSING | IPV6 -- Email if solved
+  :complete: false
+  :nbn_search: ''
+- :id: 1
+  :reference: 4042603
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: BROWSING | ipv6 resolved?
+  :complete: false
+  :nbn_search: ''
+2017-08-26:
+- :id: 0
+  :reference: 4065649
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: hfc (VOCUS)
+  :priority: '1'
+  :notes: SPEED | Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 1
+  :reference: 4066072
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: legacy service
+  :priority: '1'
+  :notes: Router Deployed?
+  :complete: false
+  :nbn_search: ''
+- :id: 2
+  :reference: 4067568
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Service re-ordered?
+  :complete: false
+  :nbn_search: ''
+- :id: 4
+  :reference: 4067865
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: fttp
+  :priority: '1'
+  :notes: OFFLINE | Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 5
+  :reference: 3999365
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: DROPOUTS | NBN response?
+  :complete: false
+  :nbn_search: ''
+- :id: 6
+  :reference: 3996144
+  :vocus_ticket: 322668
+  :nbn_ticket: 0
+  :service_type: fttn/b (VOCUS)
+  :priority: '4'
+  :notes: PACKETLOSS | Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 7
+  :reference: 4067188
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: EMAILS | Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 8
+  :reference: 4069180
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Online? Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 9
+  :reference: 4030213
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: fw
+  :priority: '1'
+  :notes: DROPOUTS | 2DAYS Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 10
+  :reference: 4037925
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: DROPOUTS | 2DAYS Contact?
+  :complete: false
+  :nbn_search: ''
+- :id: 11
+  :reference: 4069265
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: OFFLINE | Contact? Online?
+  :complete: false
+  :nbn_search: ''
+2017-09-06:
+- :id: 0
+  :reference: 3852992
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: hfc (VOCUS)
+  :priority: '2'
+  :notes: DROPOUTS | Contact? Len
+  :complete: false
+  :nbn_search: ''
+2017-08-31:
+- :id: 0
+  :reference: 3912775
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '1'
+  :notes: ROUTER | Returned?
+  :complete: false
+  :nbn_search: ''
+- :id: 1
+  :reference: 3953325
+  :vocus_ticket: 0
+  :nbn_ticket: 0
+  :service_type: lts
+  :priority: '3'
+  :notes: OFFLINE | Work done?
+  :complete: false
+  :nbn_search: ''

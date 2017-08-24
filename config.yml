@@ -1,6 +1,6 @@
-reference_url: 'https://rt.skymesh.net.au/Ticket/Display.html?id='
-vocus_url: 'https://members.wcg.net.au/view_ticket.php?id='
-nbn_url: 'https://www1.nbnco.com.au/online_customers/page/home?search='
+reference_url: 'place_ref_url'
+vocus_url: 'place_vocus_url'
+nbn_url: 'place_nbn_url'
 service_types:
 - fttn/b
 - fttp
@@ -22,3 +22,4 @@ quick_notes:
 - Work done?
 - NBN response?
 - Vocus response?
+- 2DaysWarning
