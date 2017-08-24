@@ -99,7 +99,7 @@ def generate_reminder(params, reminders_hash, date)
   new_reminder = { id: next_element_id(reminders_hash[date]),
                    reference: params[:reference].strip.to_i,
                    vocus_ticket: params[:vocus_ticket].strip.to_i,
-                   nbn_ticket: params[:nbn_ticket].strip.to_i,
+                   nbn_search: params[:nbn_search].strip,
                    service_type: service_type,
                    priority: params[:priority],
                    notes: params[:notes].strip,
@@ -132,6 +132,7 @@ configure do
   config_file File.expand_path('../config.yml', __FILE__)
   enable :sessions
   set :session_secret, "0165359735"
+  set :bind, '0.0.0.0'
 end
 
 helpers do
@@ -166,7 +167,7 @@ helpers do
 
   def service_url(reminder)
     vocus = reminder[:vocus_ticket]
-    nbn = reminder[:nbn_ticket]
+    nbn = reminder[:nbn_search]
     return settings.vocus_url + vocus.to_s if vocus > 0
     settings.nbn_url + nbn.to_s
   end
@@ -290,8 +291,13 @@ get "/:date/:id/complete" do
   File.open(reminder_path, "w") do |file|
     file.write reminders_hash.to_yaml
   end
-  session[:success] = "Reminder Marked as Complete"
-  redirect "/"
+
+  if env["HTTP_X_REQUESTED_WITH"] == "XMLHttpRequest"
+    status 204
+  else
+    session[:success] = "Reminder Marked as Complete"
+    redirect "/"
+  end
 end
 
 get "/:date/:id/incomplete" do
@@ -306,8 +312,13 @@ get "/:date/:id/incomplete" do
   File.open(reminder_path, "w") do |file|
     file.write reminders_hash.to_yaml
   end
-  session[:success] = "Reminder Marked as Incomplete"
-  redirect "/"
+
+  if env["HTTP_X_REQUESTED_WITH"] == "XMLHttpRequest"
+    status 204
+  else
+    session[:success] = "Reminder Marked as Incomplete"
+    redirect "/"
+  end
 end
 
 post "/:date/:id/delete" do
@@ -375,6 +386,9 @@ post "/:date/:id/edit" do
       file.write reminders_hash.to_yaml
     end
 
+    rt_reminder = "#{set_service_type(params).upcase} #{params[:notes]}"
+    session[:reminder_copy_content] = rt_reminder
+    session[:reminder_copy_date] = "#{display_date(new_date)}"
     session[:success] = session[:success] = "#{set_service_type(params).upcase} #{params[:notes]} <br/> #{display_date(new_date)}"
     redirect "/"
   end
@@ -481,7 +495,7 @@ post "/edit_custom_clips/delete/:file" do
   file_path = data_path + "/#{session[:username]}/custom_clips/#{params[:file]}"
 
   File.delete(file_path)
-  session[:success] = "Quick CLipboard #{params[:file]} has been deleted."
+  session[:success] = "Quick Clipboard #{params[:file]} has been deleted."
   redirect "/"
 end
 

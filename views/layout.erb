@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="/stylesheets/whitespace-reset.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <!--  <script type="text/javascript" src="/scripts/jquery-3.2.1.min.js"></script> -->
@@ -21,16 +21,17 @@
     <% end %>
     <% if session[:success] %>
       <p class="flash success"><%= session.delete(:success) %></p>
+      <div class="reminder_copy_buttons">
+        <% if session[:reminder_copy_content] %>
+          <p class="copy_data" id="reminder_copy"><%= session.delete(:reminder_copy_content) %></p>
+          <a class="copy-text button" data-clipboard-target="#reminder_copy" href="#">COPY RT NOTE</a>
+        <% end %>
 
-      <% if session[:reminder_copy_content] %>
-        <p class="copy_data" id="reminder_copy"><%= session.delete(:reminder_copy_content) %></p>
-        <a style="margin-left:20px;" class="copy-text button" data-clipboard-target="#reminder_copy" href="#">COPY RT NOTE</a>
-      <% end %>
-
-      <% if session[:reminder_copy_date] %>
-        <p class="copy_data" id="date_copy"><%= session.delete(:reminder_copy_date) %></p>
-        <a class="copy-text button" data-clipboard-target="#date_copy" href="#">COPY DATE</a>
-      <% end %>
+        <% if session[:reminder_copy_date] %>
+          <p class="copy_data" id="date_copy"><%= session.delete(:reminder_copy_date) %></p>
+          <a class="copy-text button" data-clipboard-target="#date_copy" href="#">COPY DATE</a>
+        <% end %>
+      </div>
     <% end %>
     <%= yield %>
   </body>

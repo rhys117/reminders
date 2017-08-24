@@ -16,7 +16,9 @@ header, main {
   margin: 0 auto;
 }
 
-.reminder_copy_data {
+.reminder_copy_buttons {
+  max-width: 1200px;
+  margin: 0 auto;
   padding-left: 20px;
 }
 

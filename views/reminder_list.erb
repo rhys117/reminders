@@ -69,7 +69,7 @@
     <article class="<%= date_classes(date) %>">
       <h2><%= display_date(date) %></h2>
       <table id="reminder_table">
-        <tr>
+        <tr class="table_header">
           <th>Ref #</th>
           <th>Service Type</th>
           <th>Notes</th>
@@ -80,7 +80,7 @@
               <a target="_blank" href="<%= reference_url(reminder[:reference]) %>"><%= reminder[:reference] %></a>
             </td>
             <td>
-              <% if reminder[:vocus_ticket] > 0  || reminder[:nbn_ticket] > 0 %>
+              <% if reminder[:vocus_ticket] > 0  || reminder[:nbn_search].length > 0 %>
                 <a target="_blank" href="<%= service_url(reminder) %>">
                   <%= reminder[:service_type].upcase %></td>
                 </a>
@@ -89,7 +89,7 @@
               <% end %>
             <td><%= reminder[:notes] %></td>
             <td>
-              <form class="alter_complete_status" method="get" action="/<%= date %>/<%= reminder[:id] %>/<%= inverse_complete_value(reminder) %>">
+              <form method="get" action="/<%= date %>/<%= reminder[:id] %>/<%= inverse_complete_value(reminder) %>">
                 <button type="submit"><%= inverse_complete_value(reminder).capitalize %></button>
               </form>
             </td>
@@ -144,9 +144,9 @@
         </label>
       </section>
 
-      <section class="nbn_ticket">
-        <label for="nbn_ticket"><h3>nbn Incident Number:</h3>
-          <input type="number" name="nbn_ticket" value="<%= params[:nbn_ticket] %>">
+      <section class="nbn_search">
+        <label for="nbn_search"><h3>nbn Search (INC, CRQ):</h3>
+          <input type="text" name="nbn_search" value="<%= params[:nbn_search] %>">
         </label>
       </section>
 

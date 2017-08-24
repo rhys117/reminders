@@ -1,0 +1,78 @@
+Hi Moui,
+
+Please download and install the latest DLink firmware (AU 2.07) from the following link.
+http://support.dlink.com.au/Download/download.aspx?product=DVA-2800
+
+To install this firmware please login to the device interface by visiting 192.168.1.1 in a web browser connected on to your DLink router. Your device admin password is: mdy7anzc
+
+Once in the device interface hover over management in the top right and click on 'upgrade' then select the file that you have downloaded from the link above. 
+
+If you've lost internet or voip connection after this is complete, please check the following settings: 
+
+At the top of the page hover over the settings tab. When the drop down menu appears click internet.
+
+When you have entered internet setup please set the following settings.
+
+WAN Access Type: Residential Gateway
+Interface:            Ethernet 0
+Service Type: Internet VOIP
+Enable Interface: Enabled
+
+ISP Settings
+-VLAN Tagged: Disabled
+
+IPv4 Settings
+- My Internet Connection is:       Dynamic IP (DHCP)
+
+IPv6 Settings
+- IPv6PD: Enabled
+- My Internet Connection is: Auto Configuration              
+- DNS Type: Obtain DNS server Address
+
+Once complete at the top of the page you will see a save button. Please click this save button to allow the router to save your settings.
+
+Setting up your D-Link Talkbox 2800 (DVA2800) WiFi networks
+
+1. At the top of the page hover over the settings tab. When the drop down menu appears click Wireless.
+
+When you have entered Wireless setup please set the following settings.
+
+2.4GHz
+- Status: Enabled
+- Wi-Fi Name (SSID):  SkyMesh NBN M3T
+- Password: 5cazsctl
+
+
+5GHz
+- Status: Enabled
+- Wi-Fi Name (SSID): ( Please enter your WiFi network name here)
+- Password: ( Please enter your WiFi password here)
+
+Once complete at the top of the page you will see a save button. Please click this save button to allow the router to save your Wireless settings.
+
+Now hover over the settings tab and click on VOIP button.
+VOIP Provider:  SkyMesh NT,WA,SA
+Local Port: 5060
+
+Register Server: sip.skymesh.net.au
+Proxy: sip.skymesh.net.au
+Outbound Server: sip.skymesh.net.au
+Port: 5060
+
+Register Life Time: 120
+Link Test Interval: This option should be greyed out
+Enable Link Test: Disabled
+Retry Interval: 60
+Enable P-Asserter-Identitiy: Disabled 
+
+VOIP 1
+Enable: Enabled
+Username: 0893109713
+Password: 22936900
+URI: Empty 
+
+These are the basic settings you will need to setup your D-Link Talkbox 2800 (DVA2800). If you require any further support please contact us on 1300 759 637.
+
+Regards,
+Rhys.
+SkyMesh

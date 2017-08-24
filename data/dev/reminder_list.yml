@@ -7,6 +7,8 @@
   :priority: '3'
   :notes: test
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 - :id: 3
   :reference: 12312
   :vocus_ticket: 0
@@ -14,6 +16,8 @@
   :priority: '4'
   :notes: SPEED |
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 2017-08-19:
 - :id: 0
   :reference: 12312
@@ -22,6 +26,8 @@
   :priority: '1'
   :notes: aaaaaa
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 - :id: 2
   :reference: 122312
   :vocus_ticket: 0
@@ -29,6 +35,8 @@
   :priority: '1'
   :notes: '12321'
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 - :id: 3
   :reference: 1
   :vocus_ticket: 0
@@ -828,6 +836,8 @@
     No\r\nATA Settings correct: Yes / No\r\nFactory Reset Tried: Yes / No\r\nSecond
     phone and cable tested: Yes / No"
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 2017-08-23:
 - :id: 0
   :reference: 122312
@@ -836,6 +846,8 @@
   :priority: '1'
   :notes: '12321'
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 2017-08-16:
 - :id: 0
   :reference: 12312
@@ -844,6 +856,8 @@
   :priority: '1'
   :notes: '1231223'
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 2017-07-16:
 - :id: 0
   :reference: 1231
@@ -852,6 +866,8 @@
   :priority: '5'
   :notes: OFFLINE | Contact?
   :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
 2017-08-18:
 - :id: 0
   :reference: 12312
@@ -859,4 +875,15 @@
   :service_type: fttn/b
   :priority: '1'
   :notes: OFFLINE | Usage?
+  :complete: false
+  :nbn_ticket: 0
+  :nbn_search: ''
+2017-08-24:
+- :id: 0
+  :reference: 1
+  :vocus_ticket: 0
+  :nbn_search: INC0001231
+  :service_type: fttn/b
+  :priority: '1'
+  :notes: OFFLINE |
   :complete: false
